@@ -1,0 +1,45 @@
+---
+title: "Ektron: Finding “Missing” Content in the Index on 64bit Windows"
+date: 2011-11-01
+lastmod: 2012-02-02
+draft: false
+tags: ["esync","ektron","indexing service","troubleshooting"]
+authors: ["martincjarvis"]
+---
+<p>When content is created on an <a title="The ektron homepage" href="http://bit.ly/d0YHh7" target="_blank">Ektron</a> with a large content id (commonly on eSync enabled workareas) it may corrupt the content id.&nbsp; </p>  <p>For example if a new content item has an id of 6442451035 it will actually be indexed with a contentid of 2147483739.&nbsp; This is because the original id is larger than an unsigned integer can hold.    </p><div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper">     <div style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px" id="codeSnippet">       <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum1">   1:</span> <span style="color: #0000ff">long</span> contentId = 6442451035;</pre>
+<!--CRLF-->
+
+      <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum2">   2:</span> Console.WriteLine((<span style="color: #0000ff">uint</span>)contentId); <span style="color: #008000">//2147483739</span></pre>
+<!--CRLF--></div>
+  </div>
+<p></p>
+
+<p>You can then query your public index to see if content has been misindexed by running a query to find your content</p>
+
+<p><font face="Courier New">SELECT Filename, Path, ContentID64, ContentLanguage FROM <strong>&lt;&lt;PUBLIC_CATALOG&gt;&gt;</strong>..SCOPE() WHERE contentid64=<strong>6442451035</strong> OR contentid64=<strong>2147483739</strong></font></p>
+
+<p><a href="http://lh5.ggpht.com/-mbZJZSuGekY/TypzeanJJWI/AAAAAAAAAOk/dnhuuYMAEpE/s1600-h/image%25255B3%25255D.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" src="images/image_thumb[1].png" width="621" height="256" class="img-responsive"></a></p>
+
+<p>If the content is not indexed at all, you won’t find any content and the issue is something else.&nbsp; However, if you get&nbsp; a result but the CONTENTID64 value is wrong, then you should be able to fix the problem.</p>
+
+<p>To fix this you can follow the following procedure:</p>
+
+<ol>
+  <li>Download <a href="http://bit.ly/qlxfilter" target="_blank">Updated QLXFilters</a> (and check that they are newer than your current dlls!)</li>
+
+  <li>Backup QLXFilter.dll from c:\windows\system32 and c:\windows\sysWoW64 on the server </li>
+
+  <li>Stop the Indexing Service </li>
+
+  <li>Replace the dlls with the updated versions</li>
+
+  <li>Start the Indexing Service </li>
+
+  <li>Run a full SearchConfigUI, if you have assets missing from the current server please untick Documents from the advanced tab. </li>
+
+  <li>Select Re-index existing Catalogues&nbsp; - this may affect the stability of you website.</li>
+
+  <li>After this has completed please check the Docs to Index on the indexing service and ensure that this has finished indexing.</li>
+
+  <li>After this is complete please run your query and you should now see the results return correctly. </li>
+</ol>  

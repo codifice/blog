@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>webhost4life on Codifice</title>
+    <link>https://codifice.uk/tags/webhost4life/</link>
+    <description>Recent content in webhost4life on Codifice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 16 Jun 2010 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://codifice.uk/tags/webhost4life/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>VWT2OC: The Host Is Dead! Long Live the Host!</title>
+      <link>https://codifice.uk/posts/2010-06-16-vwt2oc-host-is-dead-long-live-host/</link>
+      <pubDate>Wed, 16 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-06-16-vwt2oc-host-is-dead-long-live-host/</guid>
+      <description>My WebHost4Life Trials are over.&amp;nbsp; I was finally let in to a secret cabal of WH4L users who know the secret truth behind the ‘migration’ myth….the old control panel still exists!&amp;nbsp; Yay!&amp;nbsp; It only took a week of chasing support staff daily.&amp;nbsp; So, now I’ve got control of the database, DNS records, etc, etc.&amp;nbsp; VWT2OC has moved to it’s new home with Arvixe.&amp;nbsp; The page load for the n2cms build has dropped from ~15s to ~4s from an empty cache and the first request time for a freshly recycled app pool is ~10 seconds – not a minute!</description>
+    </item>
+    
+    <item>
+      <title>N2CMS Meet VWT2OC: Day 7 – Soldiering On</title>
+      <link>https://codifice.uk/posts/2010-06-12-n2cms-meet-vwt2oc-day-7-soldiering-on/</link>
+      <pubDate>Sat, 12 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-06-12-n2cms-meet-vwt2oc-day-7-soldiering-on/</guid>
+      <description>Well, WebHost4Life are still trying to fix their migration issues (72 hours and counting!) which have taken down the current website and database which has quite effectively stopped my actual development on the project.&amp;nbsp; D’oh!&amp;nbsp; Apparently, the failure is so severe that they can’t even provide a back up of the database.&amp;nbsp; Double D’oh!&amp;nbsp; This has pretty much derailed my project plan….
+I’ll definitely be recommending we jump ship and go with a better hosting provider.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>arvixe on Codifice</title>
+    <link>https://codifice.uk/tags/arvixe/</link>
+    <description>Recent content in arvixe on Codifice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 08 Jul 2011 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://codifice.uk/tags/arvixe/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Preventing spamming from a mail forwarding address</title>
+      <link>https://codifice.uk/posts/2011-07-08-preventing-spamming-from-mail/</link>
+      <pubDate>Fri, 08 Jul 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2011-07-08-preventing-spamming-from-mail/</guid>
+      <description>My webhosting company (arvixe) recently suspended my account due to a flood of ‘Inbox Full’ emails being sent to a mail forwarding alias (which then forwarded to the same accounts, which were full – D’Oh!).&amp;nbsp; After a bit of investigation it turns out some kind soul has been spoofing emails from that account.
+Apparently, there’s a nice little DNS entry that you can add so that email servers can validate that the emails have only been sent from recognised servers.</description>
+    </item>
+    
+    <item>
+      <title>VWT2OC: The Host Is Dead! Long Live the Host!</title>
+      <link>https://codifice.uk/posts/2010-06-16-vwt2oc-host-is-dead-long-live-host/</link>
+      <pubDate>Wed, 16 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-06-16-vwt2oc-host-is-dead-long-live-host/</guid>
+      <description>My WebHost4Life Trials are over.&amp;nbsp; I was finally let in to a secret cabal of WH4L users who know the secret truth behind the ‘migration’ myth….the old control panel still exists!&amp;nbsp; Yay!&amp;nbsp; It only took a week of chasing support staff daily.&amp;nbsp; So, now I’ve got control of the database, DNS records, etc, etc.&amp;nbsp; VWT2OC has moved to it’s new home with Arvixe.&amp;nbsp; The page load for the n2cms build has dropped from ~15s to ~4s from an empty cache and the first request time for a freshly recycled app pool is ~10 seconds – not a minute!</description>
+    </item>
+    
+  </channel>
+</rss>

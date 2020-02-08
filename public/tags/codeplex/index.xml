@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>codeplex on Codifice</title>
+    <link>https://codifice.uk/tags/codeplex/</link>
+    <description>Recent content in codeplex on Codifice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 15 Jan 2012 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://codifice.uk/tags/codeplex/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Announcing MVC3 Validation Groups</title>
+      <link>https://codifice.uk/posts/2012-01-15-announcing-mvc3-validation-groups/</link>
+      <pubDate>Sun, 15 Jan 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2012-01-15-announcing-mvc3-validation-groups/</guid>
+      <description>I’ve recently had to organise the validation for long/multipart forms.&amp;nbsp; Ordinarily, you’d divide the form up into smaller models and create a wizard style user journey.&amp;nbsp; But in this case the UI design called for the user to arbitrarily jump back and forth between pages in the wizard and other restrictions meant that we couldn’t persist each sub-page on change.&amp;nbsp; What we needed were validation groups!
+As this work involved a bit of the old copy-paste-adapt from the standard MVC code, it’s a bit complicated to go into the fine details of how to replicate the functionality for yourself.</description>
+    </item>
+    
+  </channel>
+</rss>

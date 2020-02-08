@@ -1,0 +1,15 @@
+id = "martincjarvis"
+lang = "en"
+
+[email]
+username = "martin"
+host = "codifice.uk"
+
+[name]
+display = "Martin Jarvis"
+
+[social]
+email = "martin@codifice.uk"
+github  = "mcj-codificer"
+twitter = "codificeuk"
+linkedin = "martincjarvis"

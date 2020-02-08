@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ektron on Codifice</title>
+    <link>https://codifice.uk/tags/ektron/</link>
+    <description>Recent content in ektron on Codifice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 01 Nov 2011 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://codifice.uk/tags/ektron/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ektron: Finding “Missing” Content in the Index on 64bit Windows</title>
+      <link>https://codifice.uk/posts/2011-11-01-ektron-finding-missing-content-in-index/</link>
+      <pubDate>Tue, 01 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2011-11-01-ektron-finding-missing-content-in-index/</guid>
+      <description>When content is created on an Ektron with a large content id (commonly on eSync enabled workareas) it may corrupt the content id.&amp;nbsp; For example if a new content item has an id of 6442451035 it will actually be indexed with a contentid of 2147483739.&amp;nbsp; This is because the original id is larger than an unsigned integer can hold. 1: long contentId = 6442451035;  2: Console.WriteLine((uint)contentId); //2147483739</description>
+    </item>
+    
+    <item>
+      <title>Ektron: Treating Office Files as Normal DMS Assets</title>
+      <link>https://codifice.uk/posts/2011-08-04-ektron-treating-office-files-as-normal/</link>
+      <pubDate>Thu, 04 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2011-08-04-ektron-treating-office-files-as-normal/</guid>
+      <description>One of the features of Ektron is tight office integration allowing the editing of office files directly from the workarea.&amp;nbsp; However, in some circumstances you may want to treat these as normal DMS assets (like PDF files) as their the end results of an offline publishing process.
+The Ektron support fix for this is to modify the workarea files (detailed below), which would then need to be re-applyed with every upgrade.</description>
+    </item>
+    
+    <item>
+      <title>Ektron: High Indexing Service Processor Usage (Potential) Fix</title>
+      <link>https://codifice.uk/posts/2010-12-16-ektron-high-indexing-service-processor/</link>
+      <pubDate>Thu, 16 Dec 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-12-16-ektron-high-indexing-service-processor/</guid>
+      <description>One of our larger client Ektron sites has had a history of poor performance that always seemed to be related to Indexing immediately after publishing content or syncing content to the live environment.&amp;nbsp; The site heavily uses indexed smart form fields and indexed metadata fields for ordering/sorting lists of content.
+The symptoms were:
+ High CIDAEMON processor usage (95-100% of a processor core)  Total Documents to Index in Indexing Service Manager getting stuck  Indexing Service ‘Service Too Busy’ exceptions  Analysing Crash Dumps of the CIDAEMON process shows the ‘hot’ thread stuck in the QLXFilter.</description>
+    </item>
+    
+    <item>
+      <title>EKTRON: Diagnosing 8.0 Extension Strategy Loading Failures</title>
+      <link>https://codifice.uk/posts/2010-11-18-ektron-diagnosing-80-extension-strategy/</link>
+      <pubDate>Thu, 18 Nov 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-11-18-ektron-diagnosing-80-extension-strategy/</guid>
+      <description>I’ve recently hit a problem with deploying&amp;nbsp; Ektron Extensions (the 8.0 replacement for Plugins), essentially every time my Extension ‘Strategy’ was called the workarea would display an error similar to:
+ Value cannot be null. Parameter name: type 
+ Fortunately, in the Application Event log (for the CMS400 Source) there’s a bit more information:
+1: Timestamp: 18/11/2010 18:43:01  2: Message: Could not load the MartinOnDotNet.Helpers.Ektron.Extensions.Monitoring.UserMonitoringStrategy, MartinOnDotNet.Helpers.Ektron.Extensions.Monitoring implementation from the configuration file  3: Category: Error  4: Priority: -1  5: EventId: 0  6: Severity: Error   This shows that the declaration in the web.</description>
+    </item>
+    
+    <item>
+      <title>HowTo: Creating Strongly Typed Code Using Microsoft.VisualBasic.Collection</title>
+      <link>https://codifice.uk/posts/2010-08-18-howto-creating-strongly-typed-code/</link>
+      <pubDate>Wed, 18 Aug 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-08-18-howto-creating-strongly-typed-code/</guid>
+      <description>One of the 3rd Party CMS’s that I frequently work with (Ektron) has a lot of legacy API code that uses Microsoft.VisualBasic.Collections ( from hereon referred to as Collection) to pass data into the database.&amp;nbsp; These API’s methods are slowly being replaced with strongly typed entity style methods, but the most stable and reliable methods use Collections.
+There are many reasons to dislike Collections, but my top ones are:
+ You can’t see the key’s of the values inside – this often leads to Exception led logic  Weakly Typed   What’s in the Box?</description>
+    </item>
+    
+    <item>
+      <title>Ektron: SQL Script To Clone A Menu into Multiple Languages</title>
+      <link>https://codifice.uk/posts/2010-07-27-ektron-sql-script-to-clone-menu-into/</link>
+      <pubDate>Tue, 27 Jul 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-07-27-ektron-sql-script-to-clone-menu-into/</guid>
+      <description>I’ve recently needed to have a multilingual menu where the id for each menu item is the same across all languages, this is a bit of a tall order using the workarea as only the root menu item will share the id.
+So I’ve knocked out a quick’n’dirty TSQL script to clone a menu across across several languages whilst maintaining the relevant ids.
+1: BEGIN TRANSACTION  2:&amp;nbsp;   3: CREATE TABLE #NewMenu (  4: [mnu_id] [bigint] NOT NULL,  5: [mnu_name] [nvarchar](255) NULL,  6: [mnu_description] [nvarchar](255) NULL,  7: [folder_id] [bigint] NOT NULL,  8: [recursive] [int] NOT NULL,  9: [user_id] [bigint] NULL,  10: [date_created] [datetime] NOT NULL,  11: [last_edit_date] [datetime] NULL,  12: [last_edit_lname] [nvarchar](50) NOT NULL,  13: [last_edit_fname] [nvarchar](50) NOT NULL,  14: [mnu_type] [int] NOT NULL,  15: [mnu_link] [nvarchar](255) NULL,  16: [template_link] [nvarchar](255) NULL,  17: [parent_id] [bigint] NULL,  18: [ancestor_id] [bigint] NULL,  19: [content_language] [int] NOT NULL,  20: [mnu_image] [nvarchar](512) NULL,  21: [mnu_image_override] [int] NULL,  22: [mnu_to_folders] [nvarchar](512) NULL,  23: [mnu_to_templates] [nvarchar](255) NULL,  24: [dynamic_replication_method] [int] NULL)  25: GO  26:&amp;nbsp;   27: WITH MenuCTE AS (  28: SELECT *  29: FROM [dbo].</description>
+    </item>
+    
+    <item>
+      <title>Ektron: Safely Impersonating Users within Ektron</title>
+      <link>https://codifice.uk/posts/2010-07-21-ektron-safely-impersonating-users/</link>
+      <pubDate>Wed, 21 Jul 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-07-21-ektron-safely-impersonating-users/</guid>
+      <description>I recently hit an scenario where I needed to impersonate a lesser privileged workarea user to perform some content creation/approvals whilst working within the Approval Chain. My initial attempts leveraged my ElevatedPermissionScope class, which failed with an error similar to:
+1: System.Exception: Index was outside the bounds of the   2: array.[EkSite--&amp;gt;;GetPermissions(Int,Int,Int,String,[&amp;amp;Collection)]][EkSite-&amp;gt;GetPermissions(Int,Int,String,[&amp;amp;Collection]]  3: at   4: Ektron.Cms.EkException.ThrowException(Exception ex, EventLogEntryType EventType)  5: at   6: Ektron.Cms.EkException.ThrowException(Exception ex)  7: at   8: Ektron.</description>
+    </item>
+    
+    <item>
+      <title>Ektron: Fix for Primary Key Constraint Error When Creating A User</title>
+      <link>https://codifice.uk/posts/2010-06-22-ektron-fix-for-primary-key-constraint/</link>
+      <pubDate>Tue, 22 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-06-22-ektron-fix-for-primary-key-constraint/</guid>
+      <description>We’ve recently had an issue with creating users in our Ektron 8.0.1 installation where we could no longer create users.&amp;nbsp; The error we got was:
+ Error cms_addUser: Error[cms_SetupDefaultNotificationPreferencesForUser]:
+Violation of PRIMARY KEY constraint &#39;PK_notification_preference_default&#39;.
+Cannot insert duplicate key in object &#39;dbo.notification_preference_default&#39;.
+[EkUser-&amp;gt;AddUserv2_0][UserApi-&amp;gt;AddUser]  Scary Stuff.
+Still, the Ektron provided fixes are simple enough (although by no means intuitive!):
+Simple Fix  Restart Ektron Windows Services  Perform a full eSync (from Synchronisation screen)   Complex Fix If the above doesn’t work try this:</description>
+    </item>
+    
+    <item>
+      <title>Ektron 8.01: PlatformNotSupportedException – Tracking Down and Fixing Another Multilingual Gotcha!</title>
+      <link>https://codifice.uk/posts/2010-06-15-ektron-801-platformnotsupportedexceptio/</link>
+      <pubDate>Tue, 15 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-06-15-ektron-801-platformnotsupportedexceptio/</guid>
+      <description>I’m still tracing though issues after upgrading to 8.01, this time looking at why requests for static files are return 500 - Internal Server Errors when French is selected, but not English. Hmm.
+Looking at the Event Logs shows lots of errors like this:
+1: Exception type: PlatformNotSupportedException   2:&amp;nbsp;   3: Exception message: The DefaultHttpHandler.BeginProcessRequest method is not   4: supported by IIS integrated pipeline mode.    This is telling me that I’m trying to serve a file via the IIS 7 Integrated Pipeline using a handler that’s specifically designed for IIS 6 (or IIS Classic Pipeline).</description>
+    </item>
+    
+    <item>
+      <title>Ektron 8.0.1: Fixing New Handlers Multilingual Bug</title>
+      <link>https://codifice.uk/posts/2010-06-14-ektron-801-fixing-new-handlers/</link>
+      <pubDate>Mon, 14 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-06-14-ektron-801-fixing-new-handlers/</guid>
+      <description>I recently had to upgrade an multilingual Ektron project and all went relatively well.&amp;nbsp; However, whilst debugging the site – I noticed that we were getting a lot of Formatting Exceptions when running the site in French (fr-FR) but not English (en-GB).&amp;nbsp; I tracked this down to the new ‘workarea/csslib/ektronCss.ashx’ and ‘workarea/java/ektronJs.ashx’ handlers and in particular around the mechanism for parsing the ‘If-Modified-Since’ header:
+1: public class ektronCss : IHttpHandler {  2:   3: public void ProcessRequest (HttpContext context)   4: {  5: // Ommitted for clarity until line 19   6: CultureInfo provider = CultureInfo.</description>
+    </item>
+    
+    <item>
+      <title>Using MbUnit StaticTestFactory to Validate Sitemap.xml Links</title>
+      <link>https://codifice.uk/posts/2010-05-05-using-mbunit-statictestfactory-to/</link>
+      <pubDate>Wed, 05 May 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-05-05-using-mbunit-statictestfactory-to/</guid>
+      <description>I’ve been investigating a replacement for our current link checker (SEO Optimization Toolkit) to be run automatically as part of our build so that we can get a quick heads up if one of our dynamic pages breaks.&amp;nbsp; The problem is that as most of our sites are built with Ektron there’s a lot of potential for a combination of content and code to break individual pages that share a template with working pages.</description>
+    </item>
+    
+    <item>
+      <title>Fixing the Precompilation Marker File Ektron Issue on IIS 7</title>
+      <link>https://codifice.uk/posts/2010-04-22-fixing-precompilation-marker-file/</link>
+      <pubDate>Thu, 22 Apr 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-04-22-fixing-precompilation-marker-file/</guid>
+      <description>After recently updating a 7.65 based website to 8.0 we recently found that parts of the workarea were unusable.&amp;nbsp; The upgrade went well and all the pre-deployment checks went well.&amp;nbsp; However, when we performed the UAT deployment the workarea was broken.&amp;nbsp; Where the treeview menu on the left should be, there was a helpful message:
+ This is a marker file generated by the precompilation tool, and should not be deleted!</description>
+    </item>
+    
+    <item>
+      <title>Elevating Ektron User Permissions Safely</title>
+      <link>https://codifice.uk/posts/2010-04-19-elevating-ektron-user-permissions/</link>
+      <pubDate>Mon, 19 Apr 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-04-19-elevating-ektron-user-permissions/</guid>
+      <description>When you’re coding against the Ektron API you frequently find yourself needing to add/modify content as a result of a user action or similar privileged tasks.&amp;nbsp; To do this you need to impersonate a more privileged user (such as&amp;nbsp; InternalAdmin) for the duration of the task and then revert to the current users privileges. The approach most frequently quoted on the Ektron dev forums is along the lines of:
+1: public void DoElevatedPermission()  2: {  3: int currentCallerId;  4: int currentUserId;  5:&amp;nbsp;   6: Ektron.</description>
+    </item>
+    
+    <item>
+      <title>Enabling Concurrent Logins in Ektron</title>
+      <link>https://codifice.uk/posts/2010-04-16-enabling-concurrent-logins-in-ektron/</link>
+      <pubDate>Fri, 16 Apr 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-04-16-enabling-concurrent-logins-in-ektron/</guid>
+      <description>For one of our major clients we needed a semi-secure area – you needed credentials to view the content within, but there was only one set of credentials.&amp;nbsp;&amp;nbsp; This meant that multiple users could access the site concurrently with the same credentials and this is a bit of a problem for the Ektron security model as it’s based around a one session per login model.
+This model is enforced by a unique integer that is generated on login and persisted in the database (in [dbo].</description>
+    </item>
+    
+    <item>
+      <title>Ektron: A Fix For Uploading Assets into a Folder Called Assets</title>
+      <link>https://codifice.uk/posts/2010-04-08-ektron-fix-for-uploading-assets-into/</link>
+      <pubDate>Thu, 08 Apr 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-04-08-ektron-fix-for-uploading-assets-into/</guid>
+      <description>An interesting bug came in today from a client that had been uploading content and images into their workarea for their upcoming release.&amp;nbsp; Most of their images weren’t being displayed on the site or in the workarea.
+When the image url was navigated to directly, instead of an server error or file not found we saw this:
+ Error: Asset requested doesn&#39;t exist in the system
+ I beg to differ!</description>
+    </item>
+    
+    <item>
+      <title>Educating Clients About The Way the Web Works</title>
+      <link>https://codifice.uk/posts/2010-04-05-educating-clients-about-way-web-works/</link>
+      <pubDate>Mon, 05 Apr 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-04-05-educating-clients-about-way-web-works/</guid>
+      <description>Craig’s pointed out an interesting discussion about managing client expectations (that kicked off from a very preachy design article) around the final display of a website across browsers.&amp;nbsp;&amp;nbsp; This sort of discussion has been around for a while now and I think clients are starting to wise up to browser display issues.
+Personally, I’m fairly indifferent about how most websites look provided they behave as I expect don’t actively get in my way.</description>
+    </item>
+    
+    <item>
+      <title>Ektron and Web Application Projects (Part 3)</title>
+      <link>https://codifice.uk/posts/2010-03-27-ektron-compiled-workarea-workaround/</link>
+      <pubDate>Sat, 27 Mar 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-03-27-ektron-compiled-workarea-workaround/</guid>
+      <description>In this series of posts I’ve described a method of keeping your code and the required Ektron workarea separated.&amp;nbsp; This method essentially turns the ‘drop-in compiled workarea’ feature request on it’s head, by dropping your compiled code into the work area.&amp;nbsp; It’s the same result, just a slightly difference process (that you can do right now!):
+ In Part 1, I discussed why you might want to develop your website outside of the default Ektron workarea and gave a brief overview of your options.</description>
+    </item>
+    
+    <item>
+      <title>Ektron and Web Application Projects (Part 2)</title>
+      <link>https://codifice.uk/posts/2010-03-24-ektron-and-web-application-projects/</link>
+      <pubDate>Wed, 24 Mar 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-03-24-ektron-and-web-application-projects/</guid>
+      <description>In Part 1, I discussed why you might want to develop your website outside of the default Ektron workarea and gave a brief overview of your options.
+This time around, I’m going to show how to configure your Visual Studio Solution and projects and IIS to get you started.
+You will need:
+ A standard Ektron cms400min workarea website (I usually just call mine /Web – and copy directly from a fresh cms400min install!</description>
+    </item>
+    
+    <item>
+      <title>Diagnosing an Ektron eSync Relationship</title>
+      <link>https://codifice.uk/posts/2010-03-23-ektron-esync-error-servicechannel/</link>
+      <pubDate>Tue, 23 Mar 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-03-23-ektron-esync-error-servicechannel/</guid>
+      <description>Ektron’s eSync service is a great product when it’s working but getting the initial configuration right can be a bit fiddly.&amp;nbsp; I’ve compiled a quick diagnostic procedure to resolve the most common issues, as well as some of the more common issues.
+Note: The Ektron Windows Service is usually in: C:\Program Files\Ektron\EktronWindowsService30. After any configuration change restart the Ektron Windows Service on every node in the relationship.
+ Restart the Ektron Windows Service on every node within the relationship  Ensure that the Ektron license is valid for every database within the relationship  Ensure that you can access http://&amp;lt;DOMAINNAME&amp;gt;/workarea/ServerControlWS.</description>
+    </item>
+    
+    <item>
+      <title>Ektron and Web Application Projects (Part 1)</title>
+      <link>https://codifice.uk/posts/2010-03-22-working-with-ektron-using-web/</link>
+      <pubDate>Mon, 22 Mar 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-03-22-working-with-ektron-using-web/</guid>
+      <description>Like a lot of enterprise CMS production Ektron expects you to work in a particular way and provides lots of help for non-developers to quickly produce websites with minimal technical skills.&amp;nbsp; But what if you have more technical needs?
+One of the downsides (in my opinion) of developing websites against Ektron, is the expectation that you will be integrating your code into the existing workarea Web Site Project.&amp;nbsp; Now, there are pros and cons on Web Site over Web Application projects but the big disadvantage for me is the sheer size of the workarea brings Visual Studio to a crawl when your editing code.</description>
+    </item>
+    
+  </channel>
+</rss>

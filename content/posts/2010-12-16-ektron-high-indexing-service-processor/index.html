@@ -1,0 +1,166 @@
+---
+title: "Ektron: High Indexing Service Processor Usage (Potential) Fix"
+date: 2010-12-16
+lastmod: 2010-12-16
+draft: false
+tags: ["esync","ektron","tuning","indexing service","troubleshooting","performance"]
+authors: ["martincjarvis"]
+---
+<p>One of our larger client Ektron sites has had a history of poor performance that always seemed to be related to Indexing immediately after publishing content or syncing content to the live environment.&nbsp; The site heavily uses indexed smart form fields and indexed metadata fields for ordering/sorting lists of content.</p>  <p>The symptoms were:</p>  <ul>   <li>High CIDAEMON processor usage (95-100% of a processor core) </li>    <li>Total Documents to Index in Indexing Service Manager getting stuck </li>    <li>Indexing Service ‘Service Too Busy’ exceptions </li>    <li>Analysing Crash Dumps of the CIDAEMON process shows the ‘hot’ thread stuck in the QLXFilter.dll module </li> </ul>  <p>After performing the basic performance optimisations (removing any unnecessary catalogs such as <strong><em>System</em></strong> and <strong><em>Web</em></strong>) there was no real performance improvements and as more content was added (at quite a high rate) the performance issues quickly became outages.</p>  <p>Fortunately, with support from <a title="The ektron homepage" href="http://bit.ly/d0YHh7" target="_blank">Ektron</a>, we managed to identify (and fix) the potential cause… a misconfiguration in one of the 3rd Party components the indexing service uses to parse the asset xml files.&nbsp; This file can be found in:</p>  <ul>   <li>C:\Windows\System32\QLFiltXml.xml </li>    <li>C:\Windows\SysWOW64\QLFiltXml.xml (64 bit machines only) </li> </ul>  <p>Opening these files in IE (and collapsing to just Top Level nodes) showed the default filters only:</p>  <p><a href="http://lh5.ggpht.com/_Vz_CYzsjR7M/TQp3cpDQc0I/AAAAAAAAAHA/OBNVB_oyMMs/s1600-h/image%5B2%5D.png"><img style="background-image: none; border-right-width: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="image" border="0" alt="image" src="images/image_thumb.png" width="244" height="146" class="img-responsive"></a></p>  <p>There should be a filter for each configured smart form with indexed fields:</p>  <p><a href="http://lh4.ggpht.com/_Vz_CYzsjR7M/TQp3dYMAnvI/AAAAAAAAAHI/S1HQ3RSiWW0/s1600-h/image%5B5%5D.png"><img style="background-image: none; border-right-width: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="image" border="0" alt="image" src="images/image_thumb[1].png" width="244" height="225" class="img-responsive"></a></p>  <p>You can identify which smart form corresponds which filter by checking the ‘Title’ element.</p>  <p>It appears the during the upgrade from v7.6.6-&gt;v8.0.1 something went wrong which prevented the Ektron Windows Service from correctly maintaining the configuration file. </p>  <h5>Repairing the QLXFilter configuration</h5>  <p>The steps to repair the file are fairly straightforward (<em>but make sure Ektron support is at hand for any unforeseen complications!</em>).</p>  <ol>   <li>Delete all Catalogs from the Indexing Service (via Indexing Service Manager) </li>    <li>Stop the Indexing Service </li>    <li>Ensure that QLXFilter.dll is properly registered.&nbsp; Open a command prompt and execute      <blockquote><font face="Courier New">regsvr32 c:\Windows\System32\QLXFilter.dll</font></blockquote>   </li>    <li>Locate your ‘FriendlyNamesDefinition.txt (check the ‘<font face="Courier New">DefaultColumnFile</font>’ property value of the ‘<font face="Courier New">[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\ContentIndexCommon]</font>’ key) and remove any of the non-standard&nbsp; columns (indexed smart form fields, etc).       <br>      <br>A list of standard column definitions is:       <br>      <div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper">       <div is:="is:" columns="columns" standard="standard" of="of" list="list" ="&lt;div"="" a="a">         <div style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px" id="codeSnippet">           <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum1">   1:</span> [Names]</pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum2">   2:</span> DateCreated (VT_FILETIME) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktDateCreated</pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum3">   3:</span> DateModified (VT_FILETIME) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktDateModified</pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum4">   4:</span> GoLiveDate (VT_FILETIME) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktGoLiveDate</pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum5">   5:</span> ExpiryDate (VT_FILETIME) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktExpiryDate</pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum6">   6:</span> ExpiryType (DBTYPE_I4) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktExpiryType</pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum7">   7:</span> TaxCategory (DBTYPE_WSTR | DBTYPE_BYREF) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktTaxCategory</pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum8">   8:</span> ContentID (DBTYPE_I4) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktContentID</pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum9">   9:</span> ContentLanguage (DBTYPE_I4) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktContentLanguage</pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum10">  10:</span> ContentType (DBTYPE_I4) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktContentType </pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum11">  11:</span> FolderId (DBTYPE_I4) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktFolderId</pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum12">  12:</span> QuickLink (DBTYPE_WSTR | DBTYPE_BYREF) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktQuickLink</pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum13">  13:</span> FolderName (DBTYPE_WSTR | DBTYPE_BYREF) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktFolderName </pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum14">  14:</span> MapLongitude (DBTYPE_R8) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktLongitude </pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum15">  15:</span> MapLatitude (DBTYPE_R8) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktLatitude </pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum16">  16:</span> MapAddress (DBTYPE_WSTR | DBTYPE_BYREF) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktAddress </pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum17">  17:</span> EDescription (DBTYPE_WSTR | DBTYPE_BYREF) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktEDescription </pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum18">  18:</span> Keywords (DBTYPE_WSTR | DBTYPE_BYREF) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktKeywords </pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum19">  19:</span> Title (DBTYPE_WSTR | DBTYPE_BYREF) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktTitle </pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum20">  20:</span> MetaInfo (DBTYPE_WSTR | DBTYPE_BYREF) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktMetaInfo</pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum21">  21:</span> CMSPath (DBTYPE_WSTR | DBTYPE_BYREF) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktCMSPath</pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum22">  22:</span> CMSSize (DBTYPE_I4) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktCMSSize</pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum23">  23:</span> InPerm (DBTYPE_I4) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktInPerm</pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum24">  24:</span> Searchable (DBTYPE_I4) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktSearchable</pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum25">  25:</span> description  (DBTYPE_WSTR | DBTYPE_BYREF) = d5cdd505-2e9c-101b-9397-08002b2cf9ae  Ektdescription</pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum26">  26:</span> MapDate (VT_FILETIME) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktMapDate</pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum27">  27:</span> ContentID64 (DBTYPE_I8) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktContentID64</pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum28">  28:</span> FolderId64 (DBTYPE_I8) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktFolderId64</pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum29">  29:</span> EProductType (DBTYPE_I4) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktProductType</pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum30">  30:</span> ESkuNumber(DBTYPE_WSTR | DBTYPE_BYREF) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktSkuNumber</pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum31">  31:</span> ESizeMeasure (DBTYPE_I4) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktSizeMeasure</pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum32">  32:</span> EHeight(DBTYPE_R8) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktHeight</pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum33">  33:</span> EWidth(DBTYPE_R8) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktWidth</pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum34">  34:</span> ELength(DBTYPE_R8) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktLength</pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum35">  35:</span> EWeight(DBTYPE_R8) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktWeight</pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum36">  36:</span> EWeightMeasure (DBTYPE_I4) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktWeightMeasure</pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum37">  37:</span> EUnitsInStock (DBTYPE_I4) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktUnitsInStock</pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum38">  38:</span> EUnitsOnOrder (DBTYPE_I4) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktUnitsOnOrder</pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum39">  39:</span> EReorderLevel (DBTYPE_I4) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktReorderLevel</pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum40">  40:</span> EPurchased (DBTYPE_I4) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktPurchased</pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum41">  41:</span> EImage(DBTYPE_WSTR | DBTYPE_BYREF) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktImage </pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum42">  42:</span> ECurrencyId (DBTYPE_I4) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktCurrencyId </pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum43">  43:</span> EListPrice (DBTYPE_R8) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktListPrice </pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum44">  44:</span> ESalePrice (DBTYPE_R8) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktSalePrice </pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum45">  45:</span> EBuyable (DBTYPE_I4) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktBuyable </pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum46">  46:</span> xmlconfigid (DBTYPE_I8) = d5cdd505-2e9c-101b-9397-08002b2cf9ae Ektxmlconfigid</pre>
+<!--CRLF-->
+
+          <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum47">  47:</span> DisabledTaxCategory (DBTYPE_WSTR | DBTYPE_BYREF) = d5cdd505-2e9c-101b-9397-08002b2cf9ae EktDisabledTaxCategory</pre>
+<!--CRLF--></div>
+      </div>
+    </div>
+  </li>
+
+  <li>Run the Ektron ‘SearchConfigUI’ utility to ‘Create New Catalogs’ (after checking all the settings are correct).&nbsp; </li>
+
+  <li>Once ‘SearchConfigUI’ has passed the ‘Updating XML Configuration for XML Content’ step then you can ensure that: 
+    <ol>
+      <li>The QLFiltXml.xml file to ensure the correct filters have been installed </li>
+
+      <li>The FriendlyNamesDefinition.txt to ensure that your indexed properties have been restored </li>
+    </ol>
+  </li>
+
+  <li>Once ‘SearchConfigUI’ has completed then you should be able to monitor the Indexing Service scanning the files in a more reasonable and consistent manner </li>
+</ol>
+
+<p>The performance issue should now be fixed/reduced, hope this helps.</p>  

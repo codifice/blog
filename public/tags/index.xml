@@ -1,0 +1,815 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Codifice</title>
+    <link>https://codifice.uk/tags/</link>
+    <description>Recent content in Tags on Codifice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 22 Nov 2012 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://codifice.uk/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>episerver</title>
+      <link>https://codifice.uk/tags/episerver/</link>
+      <pubDate>Thu, 22 Nov 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/episerver/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nuget</title>
+      <link>https://codifice.uk/tags/nuget/</link>
+      <pubDate>Thu, 22 Nov 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/nuget/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>.net 4.0</title>
+      <link>https://codifice.uk/tags/.net-4.0/</link>
+      <pubDate>Sun, 15 Jan 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/.net-4.0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>codeplex</title>
+      <link>https://codifice.uk/tags/codeplex/</link>
+      <pubDate>Sun, 15 Jan 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/codeplex/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mvc</title>
+      <link>https://codifice.uk/tags/mvc/</link>
+      <pubDate>Sun, 15 Jan 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/mvc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>validation groups</title>
+      <link>https://codifice.uk/tags/validation-groups/</link>
+      <pubDate>Sun, 15 Jan 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/validation-groups/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ektron</title>
+      <link>https://codifice.uk/tags/ektron/</link>
+      <pubDate>Tue, 01 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/ektron/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>esync</title>
+      <link>https://codifice.uk/tags/esync/</link>
+      <pubDate>Tue, 01 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/esync/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>indexing service</title>
+      <link>https://codifice.uk/tags/indexing-service/</link>
+      <pubDate>Tue, 01 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/indexing-service/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>troubleshooting</title>
+      <link>https://codifice.uk/tags/troubleshooting/</link>
+      <pubDate>Tue, 01 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/troubleshooting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>js</title>
+      <link>https://codifice.uk/tags/js/</link>
+      <pubDate>Tue, 16 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/js/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>update panel</title>
+      <link>https://codifice.uk/tags/update-panel/</link>
+      <pubDate>Tue, 16 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/update-panel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>csharp</title>
+      <link>https://codifice.uk/tags/csharp/</link>
+      <pubDate>Thu, 04 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/csharp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ado.net</title>
+      <link>https://codifice.uk/tags/ado.net/</link>
+      <pubDate>Thu, 14 Jul 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/ado.net/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>extension method</title>
+      <link>https://codifice.uk/tags/extension-method/</link>
+      <pubDate>Thu, 14 Jul 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/extension-method/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>refactor</title>
+      <link>https://codifice.uk/tags/refactor/</link>
+      <pubDate>Thu, 14 Jul 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/refactor/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>arvixe</title>
+      <link>https://codifice.uk/tags/arvixe/</link>
+      <pubDate>Fri, 08 Jul 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/arvixe/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>svn</title>
+      <link>https://codifice.uk/tags/svn/</link>
+      <pubDate>Tue, 10 May 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/svn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>version control</title>
+      <link>https://codifice.uk/tags/version-control/</link>
+      <pubDate>Tue, 10 May 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/version-control/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>best practise</title>
+      <link>https://codifice.uk/tags/best-practise/</link>
+      <pubDate>Tue, 03 May 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/best-practise/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>exception handling</title>
+      <link>https://codifice.uk/tags/exception-handling/</link>
+      <pubDate>Tue, 03 May 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/exception-handling/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tip</title>
+      <link>https://codifice.uk/tags/tip/</link>
+      <pubDate>Mon, 02 May 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/tip/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>performance</title>
+      <link>https://codifice.uk/tags/performance/</link>
+      <pubDate>Thu, 16 Dec 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/performance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tuning</title>
+      <link>https://codifice.uk/tags/tuning/</link>
+      <pubDate>Thu, 16 Dec 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/tuning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>caching</title>
+      <link>https://codifice.uk/tags/caching/</link>
+      <pubDate>Wed, 03 Nov 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/caching/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>database</title>
+      <link>https://codifice.uk/tags/database/</link>
+      <pubDate>Mon, 01 Nov 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sql</title>
+      <link>https://codifice.uk/tags/sql/</link>
+      <pubDate>Mon, 01 Nov 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/sql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>infrastructure</title>
+      <link>https://codifice.uk/tags/infrastructure/</link>
+      <pubDate>Sat, 30 Oct 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/infrastructure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://codifice.uk/tags/linux/</link>
+      <pubDate>Sat, 30 Oct 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>off topic</title>
+      <link>https://codifice.uk/tags/off-topic/</link>
+      <pubDate>Sat, 30 Oct 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/off-topic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>qnap</title>
+      <link>https://codifice.uk/tags/qnap/</link>
+      <pubDate>Sat, 30 Oct 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/qnap/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>raid</title>
+      <link>https://codifice.uk/tags/raid/</link>
+      <pubDate>Sat, 30 Oct 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/raid/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>poet</title>
+      <link>https://codifice.uk/tags/poet/</link>
+      <pubDate>Mon, 20 Sep 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/poet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>security</title>
+      <link>https://codifice.uk/tags/security/</link>
+      <pubDate>Mon, 20 Sep 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>generics</title>
+      <link>https://codifice.uk/tags/generics/</link>
+      <pubDate>Sun, 05 Sep 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/generics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tidyproxy</title>
+      <link>https://codifice.uk/tags/tidyproxy/</link>
+      <pubDate>Sun, 05 Sep 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/tidyproxy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wcf</title>
+      <link>https://codifice.uk/tags/wcf/</link>
+      <pubDate>Sun, 05 Sep 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/wcf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>databound</title>
+      <link>https://codifice.uk/tags/databound/</link>
+      <pubDate>Tue, 03 Aug 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/databound/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>templated</title>
+      <link>https://codifice.uk/tags/templated/</link>
+      <pubDate>Tue, 03 Aug 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/templated/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cte</title>
+      <link>https://codifice.uk/tags/cte/</link>
+      <pubDate>Tue, 27 Jul 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/cte/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dont try this at home</title>
+      <link>https://codifice.uk/tags/dont-try-this-at-home/</link>
+      <pubDate>Tue, 27 Jul 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/dont-try-this-at-home/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hack</title>
+      <link>https://codifice.uk/tags/hack/</link>
+      <pubDate>Tue, 27 Jul 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/hack/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>localization</title>
+      <link>https://codifice.uk/tags/localization/</link>
+      <pubDate>Tue, 27 Jul 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/localization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>elevatedpermissionscope</title>
+      <link>https://codifice.uk/tags/elevatedpermissionscope/</link>
+      <pubDate>Wed, 21 Jul 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/elevatedpermissionscope/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>css</title>
+      <link>https://codifice.uk/tags/css/</link>
+      <pubDate>Tue, 20 Jul 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/css/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>masterpage</title>
+      <link>https://codifice.uk/tags/masterpage/</link>
+      <pubDate>Tue, 20 Jul 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/masterpage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>usability</title>
+      <link>https://codifice.uk/tags/usability/</link>
+      <pubDate>Tue, 20 Jul 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/usability/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>debugdiag</title>
+      <link>https://codifice.uk/tags/debugdiag/</link>
+      <pubDate>Sat, 10 Jul 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/debugdiag/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>e053534f</title>
+      <link>https://codifice.uk/tags/e053534f/</link>
+      <pubDate>Sat, 10 Jul 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/e053534f/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>iis</title>
+      <link>https://codifice.uk/tags/iis/</link>
+      <pubDate>Sat, 10 Jul 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/iis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>stackoverflowexception</title>
+      <link>https://codifice.uk/tags/stackoverflowexception/</link>
+      <pubDate>Sat, 10 Jul 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/stackoverflowexception/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>windbg</title>
+      <link>https://codifice.uk/tags/windbg/</link>
+      <pubDate>Sat, 10 Jul 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/windbg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>readability</title>
+      <link>https://codifice.uk/tags/readability/</link>
+      <pubDate>Thu, 01 Jul 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/readability/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>regex</title>
+      <link>https://codifice.uk/tags/regex/</link>
+      <pubDate>Thu, 01 Jul 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/regex/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>globalization</title>
+      <link>https://codifice.uk/tags/globalization/</link>
+      <pubDate>Mon, 28 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/globalization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>build</title>
+      <link>https://codifice.uk/tags/build/</link>
+      <pubDate>Thu, 24 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/build/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>msbuild</title>
+      <link>https://codifice.uk/tags/msbuild/</link>
+      <pubDate>Thu, 24 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/msbuild/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vwt2oc</title>
+      <link>https://codifice.uk/tags/vwt2oc/</link>
+      <pubDate>Wed, 16 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/vwt2oc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>webhost4life</title>
+      <link>https://codifice.uk/tags/webhost4life/</link>
+      <pubDate>Wed, 16 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/webhost4life/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>n2cms</title>
+      <link>https://codifice.uk/tags/n2cms/</link>
+      <pubDate>Sat, 12 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/n2cms/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>blogger</title>
+      <link>https://codifice.uk/tags/blogger/</link>
+      <pubDate>Thu, 10 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/blogger/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>user interface</title>
+      <link>https://codifice.uk/tags/user-interface/</link>
+      <pubDate>Thu, 10 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/user-interface/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>addon</title>
+      <link>https://codifice.uk/tags/addon/</link>
+      <pubDate>Wed, 09 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/addon/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>batch</title>
+      <link>https://codifice.uk/tags/batch/</link>
+      <pubDate>Wed, 09 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/batch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>forum</title>
+      <link>https://codifice.uk/tags/forum/</link>
+      <pubDate>Wed, 09 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/forum/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>yaf</title>
+      <link>https://codifice.uk/tags/yaf/</link>
+      <pubDate>Wed, 09 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/yaf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web deployment project</title>
+      <link>https://codifice.uk/tags/web-deployment-project/</link>
+      <pubDate>Tue, 08 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/web-deployment-project/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>personal project</title>
+      <link>https://codifice.uk/tags/personal-project/</link>
+      <pubDate>Sun, 06 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/personal-project/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web application project</title>
+      <link>https://codifice.uk/tags/web-application-project/</link>
+      <pubDate>Sun, 06 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/web-application-project/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>control adapters</title>
+      <link>https://codifice.uk/tags/control-adapters/</link>
+      <pubDate>Sun, 23 May 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/control-adapters/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>example</title>
+      <link>https://codifice.uk/tags/example/</link>
+      <pubDate>Thu, 13 May 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/example/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web site project</title>
+      <link>https://codifice.uk/tags/web-site-project/</link>
+      <pubDate>Thu, 13 May 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/web-site-project/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mbunit</title>
+      <link>https://codifice.uk/tags/mbunit/</link>
+      <pubDate>Wed, 05 May 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/mbunit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>seo</title>
+      <link>https://codifice.uk/tags/seo/</link>
+      <pubDate>Wed, 05 May 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/seo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>statictestfactory</title>
+      <link>https://codifice.uk/tags/statictestfactory/</link>
+      <pubDate>Wed, 05 May 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/statictestfactory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>unit testing</title>
+      <link>https://codifice.uk/tags/unit-testing/</link>
+      <pubDate>Wed, 05 May 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/unit-testing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>static analysis</title>
+      <link>https://codifice.uk/tags/static-analysis/</link>
+      <pubDate>Sat, 10 Apr 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/static-analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bouncers</title>
+      <link>https://codifice.uk/tags/bouncers/</link>
+      <pubDate>Thu, 08 Apr 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/bouncers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>branding</title>
+      <link>https://codifice.uk/tags/branding/</link>
+      <pubDate>Mon, 05 Apr 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/branding/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>client relationship</title>
+      <link>https://codifice.uk/tags/client-relationship/</link>
+      <pubDate>Mon, 05 Apr 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/client-relationship/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>content</title>
+      <link>https://codifice.uk/tags/content/</link>
+      <pubDate>Mon, 05 Apr 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/content/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>design</title>
+      <link>https://codifice.uk/tags/design/</link>
+      <pubDate>Mon, 05 Apr 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/design/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>fluffy stuff</title>
+      <link>https://codifice.uk/tags/fluffy-stuff/</link>
+      <pubDate>Mon, 05 Apr 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/fluffy-stuff/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>opinion</title>
+      <link>https://codifice.uk/tags/opinion/</link>
+      <pubDate>Mon, 05 Apr 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/opinion/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>white label</title>
+      <link>https://codifice.uk/tags/white-label/</link>
+      <pubDate>Mon, 05 Apr 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/white-label/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ektron wap</title>
+      <link>https://codifice.uk/tags/ektron-wap/</link>
+      <pubDate>Sat, 27 Mar 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/ektron-wap/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>faulted</title>
+      <link>https://codifice.uk/tags/faulted/</link>
+      <pubDate>Tue, 23 Mar 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/faulted/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>servicechannel</title>
+      <link>https://codifice.uk/tags/servicechannel/</link>
+      <pubDate>Tue, 23 Mar 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/servicechannel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>clientbase</title>
+      <link>https://codifice.uk/tags/clientbase/</link>
+      <pubDate>Sat, 20 Mar 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/tags/clientbase/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

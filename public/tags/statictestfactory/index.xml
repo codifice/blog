@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>statictestfactory on Codifice</title>
+    <link>https://codifice.uk/tags/statictestfactory/</link>
+    <description>Recent content in statictestfactory on Codifice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 05 May 2010 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://codifice.uk/tags/statictestfactory/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Using MbUnit StaticTestFactory to Validate Sitemap.xml Links</title>
+      <link>https://codifice.uk/posts/2010-05-05-using-mbunit-statictestfactory-to/</link>
+      <pubDate>Wed, 05 May 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-05-05-using-mbunit-statictestfactory-to/</guid>
+      <description>I’ve been investigating a replacement for our current link checker (SEO Optimization Toolkit) to be run automatically as part of our build so that we can get a quick heads up if one of our dynamic pages breaks.&amp;nbsp; The problem is that as most of our sites are built with Ektron there’s a lot of potential for a combination of content and code to break individual pages that share a template with working pages.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>generics on Codifice</title>
+    <link>https://codifice.uk/tags/generics/</link>
+    <description>Recent content in generics on Codifice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 05 Sep 2010 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://codifice.uk/tags/generics/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Yummy! Cleaner, sweeter WCF proxy usage with DynamicTidyProxy!</title>
+      <link>https://codifice.uk/posts/2010-09-05-yummy-cleaner-sweeter-wcf-proxy-usage/</link>
+      <pubDate>Sun, 05 Sep 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-09-05-yummy-cleaner-sweeter-wcf-proxy-usage/</guid>
+      <description>This is a follow up to my previous (in fact my first) post “Mmmmm… clean, sweet WCF proxy usage with TidyProxy!”, which showed how to safely use an arbitrary WCF proxy class safely.&amp;nbsp; 
+A substantial part of my day-to-day development is working with WCF services, mainly web and MSMQ and after a few teething troubles everything’s been ticking along nicely.&amp;nbsp; Generally these are internal windows-&amp;gt;web comm’s where I can control both client and server implementations, so lots of shared types.</description>
+    </item>
+    
+    <item>
+      <title>Building a Better FindControl</title>
+      <link>https://codifice.uk/posts/2010-08-03-building-better-findcontrol/</link>
+      <pubDate>Tue, 03 Aug 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-08-03-building-better-findcontrol/</guid>
+      <description>There are times in any semi-advanced ASP.NET developers life when they’re working with databound templated controls (such as the Repeater) and they need to find a control without knowing where it is, or even if its there.
+Normally, you’re reduced to using the standard FindControl method available on any control.&amp;nbsp; But this only finds controls with a given id within the same NamingContainer.&amp;nbsp; I’ve written some extension methods to try and get around the (many) issues that I’ve had with FindControl and hopefully people will find them useful.</description>
+    </item>
+    
+    <item>
+      <title>N2CMS Meet VWT2OC: Day 7 – Soldiering On</title>
+      <link>https://codifice.uk/posts/2010-06-12-n2cms-meet-vwt2oc-day-7-soldiering-on/</link>
+      <pubDate>Sat, 12 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-06-12-n2cms-meet-vwt2oc-day-7-soldiering-on/</guid>
+      <description>Well, WebHost4Life are still trying to fix their migration issues (72 hours and counting!) which have taken down the current website and database which has quite effectively stopped my actual development on the project.&amp;nbsp; D’oh!&amp;nbsp; Apparently, the failure is so severe that they can’t even provide a back up of the database.&amp;nbsp; Double D’oh!&amp;nbsp; This has pretty much derailed my project plan….
+I’ll definitely be recommending we jump ship and go with a better hosting provider.</description>
+    </item>
+    
+    <item>
+      <title>Mmmmm… clean, sweet WCF proxy usage with TidyProxy!</title>
+      <link>https://codifice.uk/posts/2010-03-20-mmmmm-clean-sweet-wcf-proxy-usage/</link>
+      <pubDate>Sat, 20 Mar 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-03-20-mmmmm-clean-sweet-wcf-proxy-usage/</guid>
+      <description>Everyone knows (hopefully) how WCF has made multi-tiered application development easier and cleaner.&amp;nbsp; You get nicely generated client proxies that reuse common libraries straight out of Visual Studio – no more having to convert between your DTOs and the Web Service DTOs.&amp;nbsp; They even implement IDisposable - you can just wrap them in using statements and you’re good to go!&amp;nbsp; How neat is that!
+1: using (var proxy = new TidyProxy&amp;lt;SomeWCFServiceClient&amp;gt;()) 2: { 3: proxy.</description>
+    </item>
+    
+  </channel>
+</rss>

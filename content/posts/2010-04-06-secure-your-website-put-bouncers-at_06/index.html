@@ -1,0 +1,51 @@
+---
+title: "Secure Your Website, Put Bouncers at the Door (Part 2)"
+date: 2010-04-06
+lastmod: 2010-04-06
+draft: false
+tags: ["bouncers","best practise","security","static analysis","csharp","performance"]
+authors: ["martincjarvis"]
+---In part 1, I gave an overview of the similarities in securing a good night club and a website.&nbsp;&nbsp; In this part I’ll give an overview of what we as developers can do to implement these measures:<br>
+<h4>
+4 and 5 Authentication and HTTPS</h4>
+The implementation of these is very much driven by the business requirements of the site, if the site’s free to access and there’s no personal information they’re a non-issue.&nbsp; There’s <a href="http://bit.ly/9zCK7s" target="_blank" title="Microsoft ASP.Net Authentication Overview">plenty</a> of <a href="http://bit.ly/dzMgKx" target="_blank" title="A Code Project Article on Implementing Custom Forms Authentication">good</a> <a href="http://msdn.microsoft.com/en-us/library/aa480476.aspx" target="_blank" title="Patterns and Practices Reference on Authentication and Authorisation">documentation</a> on implementing authentication on ASP.Net and if you require HTTPS then I can’t recommend Matt Sollars’ <a href="http://bit.ly/dpstXD" target="_blank" title="HTTPS Switching Module">Automatic HTTPS switching module</a> enough.<br>
+<h4>
+3. Robots.txt</h4>
+This is the file that no website should be without!&nbsp; If your website has an administration, registration,login or otherwise secure page that you don’t want people to find easily via a quick Google hack, here’s the place to stop it being indexed!&nbsp;&nbsp; It’s so important it has an <a href="http://bit.ly/bqicWo" target="_blank" title="The Robots.txt Website">entire website</a> dedicated to it, it’s a two minute job that could save masses of embarrassment (or data loss).&nbsp; An example robots.txt could be:<br>
+<div id="codeSnippetWrapper" style="background-color: #f4f4f4; border: 1px solid silver; cursor: text; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 20px 0px 10px; max-height: 200px; overflow: auto; padding: 4px; text-align: left; width: 97.5%;">
+<div id="codeSnippet" style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; overflow: visible; padding: 0px; text-align: left; width: 100%;">
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum1" style="color: #606060;">   1:</span> Sitemap: http:<span style="color: green;">//www.example.com/sitemap.xml</span></pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum2" style="color: #606060;">   2:</span>&nbsp; </pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum3" style="color: #606060;">   3:</span> User-agent: *</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum4" style="color: #606060;">   4:</span> Disallow: /secure/</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum5" style="color: #606060;">   5:</span> Disallow: /admin/</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum6" style="color: #606060;">   6:</span> Disallow: /googlehackablepages/</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum7" style="color: #606060;">   7:</span> Disallow: /configs/</pre>
+</div>
+</div>
+<h4>
+2. Input Sanitation</h4>
+This is another no-brainer.&nbsp; Don’t concatenate strings into SQL statements&nbsp; - ever!&nbsp; Use parameterised queries be they stored procedure or dynamic queries there’s simply no excuse. <br>
+<a href="http://bit.ly/8YPi5S" title="XKCD: Exploits of a Mom"><img src="//imgs.xkcd.com/comics/exploits_of_a_mom.png" class="img-responsive"></a><br>
+For XSS injection this is a little trickier,&nbsp;&nbsp; I believe in escaping/html encoding text coming out of a database rather than when it’s going in simply because you can never be 100% certain that someone hasn’t fiddled the data in the database.&nbsp; Microsoft have released a good <a href="http://bit.ly/9xSnwU" target="_blank" title="Microsoft Cross-Site Scripting Utility">XSS encoding</a> utility recently to handle this.<br>
+<h4>
+1. Input Validation</h4>
+By far the most important web development task is input validation.&nbsp; This has to happen on every request for every value that’s received from the client, this is your websites front door.&nbsp; Unfortunately, it’s also pretty mundane so there’s not much out there on the best practise.&nbsp; Lot’s on <a href="http://bit.ly/clAEnw" target="_blank" title="MSDN: Article on ASP.Net Validators">ASP.Net validation controls</a>, which handle your business rule validation but not much on minimising the surface area of attack for your website.<br>
+As a developer you should have some pretty strict expectations about what will be contained in a variable and where it comes from.&nbsp; For example: if you use a CMS, you should know that the id for the content that your displaying is referenced is the ‘id’ query string value and should be a positive integer.&nbsp; Anything, outside of this is an erroneous value and should be rejected.<br>
+In this example there’s a implied checks that we need to test every time we read in that value:<br>
+<ol>
+<li>The ‘id’ value is always read from the query string (not a cookie or form variable)</li>
+<li>The ‘id’ is a whole number (integer)</li>
+<li>The ‘id’ is always greater than zero</li>
+</ol>
+(<i>and that’s before we check to see if the ‘id’ actually matches any content!</i>)<br>
+We can perform these tests easily enough by reading the value explicitly from the query string, converting it to an integer and testing that it’s greater than zero: <br>
+<div id="codeSnippetWrapper" style="background-color: #f4f4f4; border: 1px solid silver; cursor: text; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 20px 0px 10px; max-height: 200px; overflow: auto; padding: 4px; text-align: left; width: 97.5%;">
+<div id="codeSnippet" style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; overflow: visible; padding: 0px; text-align: left; width: 100%;">
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum1" style="color: #606060;">   1:</span> <span style="color: blue;">string</span> <span style="color: blue;">value</span> = Request.QueryString[<span style="color: #006080;">"id"</span>]; <span style="color: green;">//Not Request["id"] as this will hunt for a matching key in querystring, form variables and cookies</span></pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum2" style="color: #606060;">   2:</span> <span style="color: blue;">int</span> id = 0;</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum3" style="color: #606060;">   3:</span> <span style="color: blue;">if</span> (!Int32.TryParse(<span style="color: blue;">value</span>, <span style="color: blue;">out</span> id)) id = 0;</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum4" style="color: #606060;">   4:</span> <span style="color: blue;">if</span> (id&lt;=0) <span style="color: blue;">throw</span> <span style="color: blue;">new</span> NotSupportedException(<span style="color: blue;">string</span>.Format(CultureInfo.InvariantCulture, <span style="color: #006080;">"The querystring parameter 'id' must be a positive integer value, the value given was '{0}'"</span>,Request.QueryString[<span style="color: #006080;">"id"</span>]));</pre>
+</div>
+</div>
+But that’s a lot of code that needs to be written each time a variable is read from a request….in part 3, I’ll go into the ‘nitty-gritty’ input validation and take a look at the most common methods of parsing values and present much tidier code.

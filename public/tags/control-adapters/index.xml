@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>control adapters on Codifice</title>
+    <link>https://codifice.uk/tags/control-adapters/</link>
+    <description>Recent content in control adapters on Codifice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 23 May 2010 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://codifice.uk/tags/control-adapters/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Taking Control of Your Control Adapters</title>
+      <link>https://codifice.uk/posts/2010-05-23-taking-control-of-your-control-adapters/</link>
+      <pubDate>Sun, 23 May 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-05-23-taking-control-of-your-control-adapters/</guid>
+      <description>I was recently put in a difficult position when I was attempting to integrate some of our reliable, established Control Adapters into a new Ektron project.&amp;nbsp;&amp;nbsp; When the Ektron workarea controls were ‘adapted’ (in this case a checkbox) it broke some supporting JQuery statements.&amp;nbsp; So the quandary I found my self in was, so I amend the workarea code to add the control attribute to ‘opt-out’ of using the adapter, or modify the control adapters (and all of their dependent projects) to use an ‘opt-in’ attribute instead?</description>
+    </item>
+    
+  </channel>
+</rss>

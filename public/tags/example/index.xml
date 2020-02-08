@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>example on Codifice</title>
+    <link>https://codifice.uk/tags/example/</link>
+    <description>Recent content in example on Codifice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 13 May 2010 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://codifice.uk/tags/example/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Basic Example of On-The-Fly Config Section Encryption</title>
+      <link>https://codifice.uk/posts/2010-05-13-basic-example-of-on-fly-config-section/</link>
+      <pubDate>Thu, 13 May 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-05-13-basic-example-of-on-fly-config-section/</guid>
+      <description>I recently answered a question about how you could securely modify a value within an encrypted configuration website without having to create a duplicate config file.&amp;nbsp; Well, the answer’s pretty simple and straightforward – just use the API!
+A quick example page could be:
+1: &amp;lt;%@@ Page Language=&#34;C#&#34; AutoEventWireup=&#34;true&#34; CodeFile=&#34;Default.aspx.cs&#34; Inherits=&#34;_Default&#34; %&amp;gt;  2:&amp;nbsp;   3: &amp;lt;!DOCTYPE html PUBLIC &#34;-//W3C//DTD XHTML 1.0 Transitional//EN&#34; &#34;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&#34;&amp;gt;  4: &amp;lt;html xmlns=&#34;http://www.w3.org/1999/xhtml&#34;&amp;gt;  5: &amp;lt;head runat=&#34;</description>
+    </item>
+    
+  </channel>
+</rss>

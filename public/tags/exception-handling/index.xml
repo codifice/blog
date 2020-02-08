@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>exception handling on Codifice</title>
+    <link>https://codifice.uk/tags/exception-handling/</link>
+    <description>Recent content in exception handling on Codifice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 03 May 2011 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://codifice.uk/tags/exception-handling/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Logging is the new Exception Swallowing</title>
+      <link>https://codifice.uk/posts/2011-05-03-logging-is-new-exception-swallowing/</link>
+      <pubDate>Tue, 03 May 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2011-05-03-logging-is-new-exception-swallowing/</guid>
+      <description>For a long time now I’ve been stamping down hard on empty catch blocks in code, for obvious reasons.&amp;nbsp; When I can dictate coding standards that’s pretty much top the list.&amp;nbsp;   Every ‘catch’ block must (at a minimum) log or throw   I now realise I made a mistake with this rule...it should be:
+  Every ‘catch’ block must (at a minimum) throw or log   It’s a subtle (the wording – not the formatting) difference in the way we need to think about this rule but it’s one I think we don’t think about enough.</description>
+    </item>
+    
+    <item>
+      <title>Security: Protect against POET Attacks with Custom Errors!</title>
+      <link>https://codifice.uk/posts/2010-09-20-security-protect-against-poet-attacks/</link>
+      <pubDate>Mon, 20 Sep 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-09-20-security-protect-against-poet-attacks/</guid>
+      <description>There’s been a big deal made of a serious security flaw in ASP.Net which potentially affects a lot of .Net sites, that allows a 3rd Party to trick ASP.Net into serving sensitive files within a web application folder.&amp;nbsp; Microsoft have released official advise on how to temporarily patch the problem which revolves around forcing Error&amp;nbsp; and Page Not found pages to return the same status page.&amp;nbsp; This would need to stay in place until a permanent fix is released.</description>
+    </item>
+    
+    <item>
+      <title>Ektron: Fix for Primary Key Constraint Error When Creating A User</title>
+      <link>https://codifice.uk/posts/2010-06-22-ektron-fix-for-primary-key-constraint/</link>
+      <pubDate>Tue, 22 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-06-22-ektron-fix-for-primary-key-constraint/</guid>
+      <description>We’ve recently had an issue with creating users in our Ektron 8.0.1 installation where we could no longer create users.&amp;nbsp; The error we got was:
+ Error cms_addUser: Error[cms_SetupDefaultNotificationPreferencesForUser]:
+Violation of PRIMARY KEY constraint &#39;PK_notification_preference_default&#39;.
+Cannot insert duplicate key in object &#39;dbo.notification_preference_default&#39;.
+[EkUser-&amp;gt;AddUserv2_0][UserApi-&amp;gt;AddUser]  Scary Stuff.
+Still, the Ektron provided fixes are simple enough (although by no means intuitive!):
+Simple Fix  Restart Ektron Windows Services  Perform a full eSync (from Synchronisation screen)   Complex Fix If the above doesn’t work try this:</description>
+    </item>
+    
+    <item>
+      <title>ASP.Net and Custom Error Pages, an SEO nightmare?</title>
+      <link>https://codifice.uk/posts/2010-03-20-aspnet-and-custom-error-pages-seo/</link>
+      <pubDate>Sat, 20 Mar 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-03-20-aspnet-and-custom-error-pages-seo/</guid>
+      <description>It’s a (conscientious) developer’s worst fear:
+ You’ve slaved long and hard to produce a top-notch, blistering fast website that fully shows off your coding prowess and skills, you unveil the website to critical acclaim and universal client approval (imagine the cheering crowds) but then out-of-hours the database server fails!&amp;nbsp; Yerrk!
+All the developer’s are out celebrating a successful so no-one notices the log file growing bigger and bigger, screaming to be heard….</description>
+    </item>
+    
+  </channel>
+</rss>

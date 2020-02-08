@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vwt2oc on Codifice</title>
+    <link>https://codifice.uk/tags/vwt2oc/</link>
+    <description>Recent content in vwt2oc on Codifice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 16 Jun 2010 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://codifice.uk/tags/vwt2oc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>VWT2OC: The Host Is Dead! Long Live the Host!</title>
+      <link>https://codifice.uk/posts/2010-06-16-vwt2oc-host-is-dead-long-live-host/</link>
+      <pubDate>Wed, 16 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-06-16-vwt2oc-host-is-dead-long-live-host/</guid>
+      <description>My WebHost4Life Trials are over.&amp;nbsp; I was finally let in to a secret cabal of WH4L users who know the secret truth behind the ‘migration’ myth….the old control panel still exists!&amp;nbsp; Yay!&amp;nbsp; It only took a week of chasing support staff daily.&amp;nbsp; So, now I’ve got control of the database, DNS records, etc, etc.&amp;nbsp; VWT2OC has moved to it’s new home with Arvixe.&amp;nbsp; The page load for the n2cms build has dropped from ~15s to ~4s from an empty cache and the first request time for a freshly recycled app pool is ~10 seconds – not a minute!</description>
+    </item>
+    
+    <item>
+      <title>N2CMS Meet VWT2OC: Day 7 – Soldiering On</title>
+      <link>https://codifice.uk/posts/2010-06-12-n2cms-meet-vwt2oc-day-7-soldiering-on/</link>
+      <pubDate>Sat, 12 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-06-12-n2cms-meet-vwt2oc-day-7-soldiering-on/</guid>
+      <description>Well, WebHost4Life are still trying to fix their migration issues (72 hours and counting!) which have taken down the current website and database which has quite effectively stopped my actual development on the project.&amp;nbsp; D’oh!&amp;nbsp; Apparently, the failure is so severe that they can’t even provide a back up of the database.&amp;nbsp; Double D’oh!&amp;nbsp; This has pretty much derailed my project plan….
+I’ll definitely be recommending we jump ship and go with a better hosting provider.</description>
+    </item>
+    
+    <item>
+      <title>N2CMS Templates RSS Feed Fix</title>
+      <link>https://codifice.uk/posts/2010-06-10-n2cms-templates-rss-feed-fix/</link>
+      <pubDate>Thu, 10 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-06-10-n2cms-templates-rss-feed-fix/</guid>
+      <description>N2CMS comes with some pretty fully featured examples, the most useful to me is the N2.Templates example site.&amp;nbsp; Unfortunately, as it stands the RSS feed is broken and give the error:
+Cannot use filters when using MaxResults, sorry. Fortunately a fix can be found the N2.Templates.Mvc project, you just need to replace the following functions in N2.Templates.Items.RssFeed :
+1: public virtual IEnumerable&amp;lt;ISyndicatable&amp;gt; GetItems()  2: {  3: foreach (ISyndicatable item in N2.</description>
+    </item>
+    
+    <item>
+      <title>N2CMS Forum Addon: Fixing the Theme</title>
+      <link>https://codifice.uk/posts/2010-06-09-n2cms-forum-addon-fixing-theme/</link>
+      <pubDate>Wed, 09 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-06-09-n2cms-forum-addon-fixing-theme/</guid>
+      <description>My work on the VWT2OC site is on hiatus at the moment due to hosting issues so I thought I’d blog a useful fix that I’ve found.
+I’ve noticed a bug with the Forum Addon.&amp;nbsp; The first page would be correctly themed but any subsequent pages were not when running against a build of the latest N2CMS.
+On investigation it seems that the Forum Pages CurrentItem was resolving to null which prevented the ThemeConcern for assigning the correct theme:</description>
+    </item>
+    
+    <item>
+      <title>N2CMS Meet VWT2OC: Day 4 – Wheel Spinning</title>
+      <link>https://codifice.uk/posts/2010-06-09-n2cms-meet-vwt2oc-day-4-wheel-spinning/</link>
+      <pubDate>Wed, 09 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-06-09-n2cms-meet-vwt2oc-day-4-wheel-spinning/</guid>
+      <description>Well, Webhost4Life have yet to restore the current site so I can’t work through the develop model/import data/rinse/repeat iterations which I’ll need to ensure a clean migration at the end of the project.&amp;nbsp; Still at least they’re keeping me updated…and not at all keeping me in the dark with vague promised that someone&#39;s working on it.&amp;nbsp; Bastards.
+I guess it’s my fault for trusting them to do all the database backups (like they’re paid to do)….</description>
+    </item>
+    
+    <item>
+      <title>N2CMS Meet VWT2OC: Day 3 – Grinding to a Halt!</title>
+      <link>https://codifice.uk/posts/2010-06-08-n2cms-meet-vwt2oc-day-3-grinding-to/</link>
+      <pubDate>Tue, 08 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-06-08-n2cms-meet-vwt2oc-day-3-grinding-to/</guid>
+      <description>Well, it was going way too well to last.&amp;nbsp; It’s become apparent that the existing site is in some sort of half migrated mangled state after the hosting provider changed systems.&amp;nbsp; This has been like a half-brick to the head as when they’ve tried to fix the issue, more and more keep getting uncovered.&amp;nbsp; The sites been down for most of the day as a result (and is still down 24 hours later ….</description>
+    </item>
+    
+    <item>
+      <title>N2CMS Meet VWT2OC: Day 2 – N2CMS Configuration</title>
+      <link>https://codifice.uk/posts/2010-06-07-n2cms-meet-vwt2oc-day-2-n2cms/</link>
+      <pubDate>Mon, 07 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-06-07-n2cms-meet-vwt2oc-day-2-n2cms/</guid>
+      <description>Yesterday went well and I’ve now got the basic N2CMS install working and the Forum Addon has been installed, so my objectives for today are:
+ Day 2 – N2CMS Configuration  Integrate the Membership Provider from n2cms/forum/legacy vwt2oc  Construct basic site structure (homepage/articles/forum/gallery/events calendar/etc)  Create VWT2OC basic theme     Integrating the Membership Provider One of the first tasks I need to undertake is integrating the underlying security model.</description>
+    </item>
+    
+    <item>
+      <title>N2CMS Meet VWT2OC: Day 1 – Project Setup</title>
+      <link>https://codifice.uk/posts/2010-06-06-n2cms-meet-vwt2oc-day-1-project-setup/</link>
+      <pubDate>Sun, 06 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-06-06-n2cms-meet-vwt2oc-day-1-project-setup/</guid>
+      <description>It’s on!&amp;nbsp; I’ve got 8 days to overhaul the Volkswagen Type 2 Owners Club (www.vwt2oc.com) before work beckons again….&amp;nbsp; A month ago I decided to rebuild the existing website using n2cms.&amp;nbsp; Unfortunately, in that time when I was going to research best practise and get some test sites working….I’ve done nothing.&amp;nbsp; So, I’ve decided to incentivise myself by blogging my progress….
+My Basic Plan of Action is:
+ Day 1 – Project Setup  SVN Configuration  Create Build Script to compile N2CMS for project  Integrate Forum Add On with n2cms    Day 2 – N2CMS Configuration  Integrate the Membership Provider from n2cms/forum/legacy vwt2oc  Construct basic site structure (homepage/articles/forum/gallery/events calendar/etc)  Create VWT2OC basic theme    Day 3 – VWT2OC Membership Model  Implement Club Member/Membership Data Model in n2cms  Basic Admin Screens for Members  Initial member import routine from current site    Day 4 – My Account and Personalization  Improve member import routine  Membership Reports/Maintenance from with N2CMS  Initial ‘My Account’ page for front end    Day 5 – End User Approval/eCommerce  Deploy to temporary hosted location for client approval of WIP  Import Membership Purchasing Mechanism for legacy app  Integrate NoChex/Paypal payment gateways    Day 6 – Review of Progress  Review functionality and prioritise urgent issues with work so far    Day 7 + 8 – Getting a functional site   Ha!</description>
+    </item>
+    
+    <item>
+      <title>N2CMS Meet VWT2OC: Project History</title>
+      <link>https://codifice.uk/posts/2010-05-10-n2cms-meet-vwt2oc-project-history/</link>
+      <pubDate>Mon, 10 May 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-05-10-n2cms-meet-vwt2oc-project-history/</guid>
+      <description>Many moons ago (~3 years) I did a bit of family rate development to create a simple website for the Volkswagen Type 2 Owners Club – www.vwt2oc.com.&amp;nbsp; The brief was fairly sparse on detail, they needed a website to manage their memberships and take orders online, a few content manages pages and a basic forum to take over from their previous mainly static site that was looking a little long in the tooth.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ektron wap on Codifice</title>
+    <link>https://codifice.uk/tags/ektron-wap/</link>
+    <description>Recent content in ektron wap on Codifice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 27 Mar 2010 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://codifice.uk/tags/ektron-wap/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ektron and Web Application Projects (Part 3)</title>
+      <link>https://codifice.uk/posts/2010-03-27-ektron-compiled-workarea-workaround/</link>
+      <pubDate>Sat, 27 Mar 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-03-27-ektron-compiled-workarea-workaround/</guid>
+      <description>In this series of posts I’ve described a method of keeping your code and the required Ektron workarea separated.&amp;nbsp; This method essentially turns the ‘drop-in compiled workarea’ feature request on it’s head, by dropping your compiled code into the work area.&amp;nbsp; It’s the same result, just a slightly difference process (that you can do right now!):
+ In Part 1, I discussed why you might want to develop your website outside of the default Ektron workarea and gave a brief overview of your options.</description>
+    </item>
+    
+    <item>
+      <title>Ektron and Web Application Projects (Part 2)</title>
+      <link>https://codifice.uk/posts/2010-03-24-ektron-and-web-application-projects/</link>
+      <pubDate>Wed, 24 Mar 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-03-24-ektron-and-web-application-projects/</guid>
+      <description>In Part 1, I discussed why you might want to develop your website outside of the default Ektron workarea and gave a brief overview of your options.
+This time around, I’m going to show how to configure your Visual Studio Solution and projects and IIS to get you started.
+You will need:
+ A standard Ektron cms400min workarea website (I usually just call mine /Web – and copy directly from a fresh cms400min install!</description>
+    </item>
+    
+    <item>
+      <title>Ektron and Web Application Projects (Part 1)</title>
+      <link>https://codifice.uk/posts/2010-03-22-working-with-ektron-using-web/</link>
+      <pubDate>Mon, 22 Mar 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-03-22-working-with-ektron-using-web/</guid>
+      <description>Like a lot of enterprise CMS production Ektron expects you to work in a particular way and provides lots of help for non-developers to quickly produce websites with minimal technical skills.&amp;nbsp; But what if you have more technical needs?
+One of the downsides (in my opinion) of developing websites against Ektron, is the expectation that you will be integrating your code into the existing workarea Web Site Project.&amp;nbsp; Now, there are pros and cons on Web Site over Web Application projects but the big disadvantage for me is the sheer size of the workarea brings Visual Studio to a crawl when your editing code.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tidyproxy on Codifice</title>
+    <link>https://codifice.uk/tags/tidyproxy/</link>
+    <description>Recent content in tidyproxy on Codifice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 05 Sep 2010 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://codifice.uk/tags/tidyproxy/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Yummy! Cleaner, sweeter WCF proxy usage with DynamicTidyProxy!</title>
+      <link>https://codifice.uk/posts/2010-09-05-yummy-cleaner-sweeter-wcf-proxy-usage/</link>
+      <pubDate>Sun, 05 Sep 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-09-05-yummy-cleaner-sweeter-wcf-proxy-usage/</guid>
+      <description>This is a follow up to my previous (in fact my first) post “Mmmmm… clean, sweet WCF proxy usage with TidyProxy!”, which showed how to safely use an arbitrary WCF proxy class safely.&amp;nbsp; 
+A substantial part of my day-to-day development is working with WCF services, mainly web and MSMQ and after a few teething troubles everything’s been ticking along nicely.&amp;nbsp; Generally these are internal windows-&amp;gt;web comm’s where I can control both client and server implementations, so lots of shared types.</description>
+    </item>
+    
+    <item>
+      <title>Mmmmm… clean, sweet WCF proxy usage with TidyProxy!</title>
+      <link>https://codifice.uk/posts/2010-03-20-mmmmm-clean-sweet-wcf-proxy-usage/</link>
+      <pubDate>Sat, 20 Mar 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-03-20-mmmmm-clean-sweet-wcf-proxy-usage/</guid>
+      <description>Everyone knows (hopefully) how WCF has made multi-tiered application development easier and cleaner.&amp;nbsp; You get nicely generated client proxies that reuse common libraries straight out of Visual Studio – no more having to convert between your DTOs and the Web Service DTOs.&amp;nbsp; They even implement IDisposable - you can just wrap them in using statements and you’re good to go!&amp;nbsp; How neat is that!
+1: using (var proxy = new TidyProxy&amp;lt;SomeWCFServiceClient&amp;gt;()) 2: { 3: proxy.</description>
+    </item>
+    
+  </channel>
+</rss>

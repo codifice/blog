@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang='en'><head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='Well, it was going way too well to last.&nbsp; It’s become apparent that the existing site is in some sort of half migrated mangled state after the hosting provider changed systems.&nbsp; This has been like a half-brick to the head as when they’ve tried to fix the issue, more and more keep getting uncovered.&nbsp; The sites been down for most of the day as a result (and is still down 24 hours later ….'>
+<meta name='theme-color' content='#ffcd00'>
+
+<meta property='og:title' content='N2CMS Meet VWT2OC: Day 3 – Grinding to a Halt! • Martin Jarvis'>
+<meta property='og:description' content='Well, it was going way too well to last.&nbsp; It’s become apparent that the existing site is in some sort of half migrated mangled state after the hosting provider changed systems.&nbsp; This has been like a half-brick to the head as when they’ve tried to fix the issue, more and more keep getting uncovered.&nbsp; The sites been down for most of the day as a result (and is still down 24 hours later ….'>
+<meta property='og:url' content='https://codifice.uk/posts/2010-06-08-n2cms-meet-vwt2oc-day-3-grinding-to/'>
+<meta property='og:site_name' content='Codifice'>
+<meta property='og:type' content='article'><meta property='og:image' content='https://www.gravatar.com/avatar/f3a1aad34bc567d039ed8504c741fc38?s=256'><meta property='article:section' content='posts'><meta property='article:tag' content='addon'><meta property='article:tag' content='vwt2oc'><meta property='article:tag' content='n2cms'><meta property='article:tag' content='web deployment project'><meta property='article:published_time' content='2010-06-08T00:00:00Z'/><meta property='article:modified_time' content='2010-06-09T00:00:00Z'/><meta name='twitter:card' content='summary'><meta name='twitter:creator' content='@codificeuk'>
+
+<meta name="generator" content="Hugo 0.63.2" />
+
+  <title>N2CMS Meet VWT2OC: Day 3 – Grinding to a Halt! • Martin Jarvis</title>
+  <link rel='canonical' href='https://codifice.uk/posts/2010-06-08-n2cms-meet-vwt2oc-day-3-grinding-to/'>
+  
+  
+  <link rel='icon' href='/favicon.png'>
+<link rel='stylesheet' href='/assets/css/main.ab98e12b.css'><link rel='stylesheet' href='/css/custom.css'><style>
+:root{--color-accent:#ffcd00;}
+</style>
+
+  
+
+</head>
+<body class='page type-posts has-sidebar'>
+
+  <div class='site'><div id='sidebar' class='sidebar'>
+  <a class='screen-reader-text' href='#main-menu'>Skip to Main Menu</a>
+
+  <div class='container'><section class='widget widget-about sep-after'>
+  <header>
+    
+    <div class='logo'>
+      <a href='/'>
+        <img src='/images/logo.png'>
+      </a>
+    </div>
+    
+    <h2 class='title site-title '>
+      <a href='/'>
+      Codifice
+      </a>
+    </h2>
+    <div class='desc'>
+    Artisan Development and Architecture
+    </div>
+  </header>
+
+</section>
+<section class='widget widget-sidebar_menu sep-after'><nav id='sidebar-menu' class='menu sidebar-menu' aria-label='Sidebar Menu'>
+    <div class='container'>
+      <ul><li class='item'>
+  <a href='/'>Home</a></li><li class='item'>
+  <a href='/posts/'>Posts</a></li></ul>
+    </div>
+  </nav>
+
+</section><section class='widget widget-search sep-after'>
+  <header>
+    <h4 class='title widget-title'>Search</h4>
+  </header>
+
+  <form action='/search' id='search-form' class='search-form'>
+    <label>
+      <span class='screen-reader-text'>Search</span>
+      <input id='search-term' class='search-term' type='search' name='q' placeholder='Search&hellip;'>
+    </label></form>
+
+</section>
+<section class='widget widget-recent_posts sep-after'>
+  <header>
+    <h4 class='title widget-title'>Recent Posts</h4>
+  </header>
+
+  <ul class='list'>
+  
+    <li class='item'>
+  <div class='meta'>
+    <span>
+  <span class='screen-reader-text'>Posted on </span>
+  <time datetime='2012-11-22T00:00:00Z'>2012, Nov 22</time>
+</span>
+
+  </div>
+  <header class='item-header'>
+    <h3 class='item-title'>
+      <a href='/posts/2012-11-22-notes-on-configuring-new-episerver-6-r2/'>Notes on Configuring a New EPiServer 6 R2 Website for Continuous Integration</a>
+    </h3>
+  </header>
+</li>
+
+  
+    <li class='item'>
+  <div class='meta'>
+    <span>
+  <span class='screen-reader-text'>Posted on </span>
+  <time datetime='2012-01-15T00:00:00Z'>2012, Jan 15</time>
+</span>
+
+  </div>
+  <header class='item-header'>
+    <h3 class='item-title'>
+      <a href='/posts/2012-01-15-announcing-mvc3-validation-groups/'>Announcing MVC3 Validation Groups</a>
+    </h3>
+  </header>
+</li>
+
+  
+    <li class='item'>
+  <div class='meta'>
+    <span>
+  <span class='screen-reader-text'>Posted on </span>
+  <time datetime='2011-11-01T00:00:00Z'>2011, Nov 01</time>
+</span>
+
+  </div>
+  <header class='item-header'>
+    <h3 class='item-title'>
+      <a href='/posts/2011-11-01-ektron-finding-missing-content-in-index/'>Ektron: Finding “Missing” Content in the Index on 64bit Windows</a>
+    </h3>
+  </header>
+</li>
+
+  
+    <li class='item'>
+  <div class='meta'>
+    <span>
+  <span class='screen-reader-text'>Posted on </span>
+  <time datetime='2011-08-16T00:00:00Z'>2011, Aug 16</time>
+</span>
+
+  </div>
+  <header class='item-header'>
+    <h3 class='item-title'>
+      <a href='/posts/2011-08-16-persisting-page-title-across-update/'>Persisting the Page Title across Update Panel Post backs</a>
+    </h3>
+  </header>
+</li>
+
+  
+    <li class='item'>
+  <div class='meta'>
+    <span>
+  <span class='screen-reader-text'>Posted on </span>
+  <time datetime='2011-08-04T00:00:00Z'>2011, Aug 04</time>
+</span>
+
+  </div>
+  <header class='item-header'>
+    <h3 class='item-title'>
+      <a href='/posts/2011-08-04-ektron-treating-office-files-as-normal/'>Ektron: Treating Office Files as Normal DMS Assets</a>
+    </h3>
+  </header>
+</li>
+
+  
+  </ul>
+</section>
+<section class='widget widget-taxonomy_cloud sep-after'>
+  <header>
+    <h4 class='title widget-title'>Tags</h4>
+  </header>
+
+  <div class='container list-container'>
+  <ul class='list taxonomy-cloud'><li>
+        <a href='/tags/.net-4.0/' style='font-size:1em'>.net 4.0</a>
+      </li><li>
+        <a href='/tags/addon/' style='font-size:1.0666666666666667em'>addon</a>
+      </li><li>
+        <a href='/tags/ado.net/' style='font-size:1em'>ado.net</a>
+      </li><li>
+        <a href='/tags/arvixe/' style='font-size:1.0333333333333334em'>arvixe</a>
+      </li><li>
+        <a href='/tags/batch/' style='font-size:1em'>batch</a>
+      </li><li>
+        <a href='/tags/best-practise/' style='font-size:1.3333333333333333em'>best practise</a>
+      </li><li>
+        <a href='/tags/blogger/' style='font-size:1em'>blogger</a>
+      </li><li>
+        <a href='/tags/bouncers/' style='font-size:1.0666666666666667em'>bouncers</a>
+      </li><li>
+        <a href='/tags/branding/' style='font-size:1em'>branding</a>
+      </li><li>
+        <a href='/tags/build/' style='font-size:1em'>build</a>
+      </li><li>
+        <a href='/tags/caching/' style='font-size:1.0333333333333334em'>caching</a>
+      </li><li>
+        <a href='/tags/client-relationship/' style='font-size:1em'>client relationship</a>
+      </li><li>
+        <a href='/tags/clientbase/' style='font-size:1em'>clientbase</a>
+      </li><li>
+        <a href='/tags/codeplex/' style='font-size:1em'>codeplex</a>
+      </li><li>
+        <a href='/tags/content/' style='font-size:1em'>content</a>
+      </li><li>
+        <a href='/tags/control-adapters/' style='font-size:1em'>control adapters</a>
+      </li><li>
+        <a href='/tags/csharp/' style='font-size:2em'>csharp</a>
+      </li><li>
+        <a href='/tags/css/' style='font-size:1em'>css</a>
+      </li><li>
+        <a href='/tags/cte/' style='font-size:1em'>cte</a>
+      </li><li>
+        <a href='/tags/database/' style='font-size:1.0333333333333334em'>database</a>
+      </li><li>
+        <a href='/tags/databound/' style='font-size:1em'>databound</a>
+      </li><li>
+        <a href='/tags/debugdiag/' style='font-size:1em'>debugdiag</a>
+      </li><li>
+        <a href='/tags/design/' style='font-size:1em'>design</a>
+      </li><li>
+        <a href='/tags/dont-try-this-at-home/' style='font-size:1em'>dont try this at home</a>
+      </li><li>
+        <a href='/tags/e053534f/' style='font-size:1em'>e053534f</a>
+      </li><li>
+        <a href='/tags/ektron/' style='font-size:1.6333333333333333em'>ektron</a>
+      </li><li>
+        <a href='/tags/ektron-wap/' style='font-size:1.0666666666666667em'>ektron wap</a>
+      </li><li>
+        <a href='/tags/elevatedpermissionscope/' style='font-size:1em'>elevatedpermissionscope</a>
+      </li><li>
+        <a href='/tags/episerver/' style='font-size:1em'>episerver</a>
+      </li><li>
+        <a href='/tags/esync/' style='font-size:1.0666666666666667em'>esync</a>
+      </li><li>
+        <a href='/tags/example/' style='font-size:1em'>example</a>
+      </li><li>
+        <a href='/tags/exception-handling/' style='font-size:1.1em'>exception handling</a>
+      </li><li>
+        <a href='/tags/extension-method/' style='font-size:1.1666666666666667em'>extension method</a>
+      </li><li>
+        <a href='/tags/faulted/' style='font-size:1em'>faulted</a>
+      </li><li>
+        <a href='/tags/fluffy-stuff/' style='font-size:1em'>fluffy stuff</a>
+      </li><li>
+        <a href='/tags/forum/' style='font-size:1.0333333333333334em'>forum</a>
+      </li><li>
+        <a href='/tags/generics/' style='font-size:1.1em'>generics</a>
+      </li><li>
+        <a href='/tags/globalization/' style='font-size:1.1em'>globalization</a>
+      </li><li>
+        <a href='/tags/hack/' style='font-size:1em'>hack</a>
+      </li><li>
+        <a href='/tags/iis/' style='font-size:1.1666666666666667em'>iis</a>
+      </li><li>
+        <a href='/tags/indexing-service/' style='font-size:1.0333333333333334em'>indexing service</a>
+      </li><li>
+        <a href='/tags/infrastructure/' style='font-size:1em'>infrastructure</a>
+      </li><li>
+        <a href='/tags/js/' style='font-size:1.0333333333333334em'>js</a>
+      </li><li>
+        <a href='/tags/linux/' style='font-size:1em'>linux</a>
+      </li><li>
+        <a href='/tags/localization/' style='font-size:1.1em'>localization</a>
+      </li><li>
+        <a href='/tags/masterpage/' style='font-size:1em'>masterpage</a>
+      </li><li>
+        <a href='/tags/mbunit/' style='font-size:1em'>mbunit</a>
+      </li><li>
+        <a href='/tags/msbuild/' style='font-size:1em'>msbuild</a>
+      </li><li>
+        <a href='/tags/mvc/' style='font-size:1em'>mvc</a>
+      </li><li>
+        <a href='/tags/n2cms/' style='font-size:1.2333333333333334em'>n2cms</a>
+      </li><li>
+        <a href='/tags/nuget/' style='font-size:1em'>nuget</a>
+      </li><li>
+        <a href='/tags/off-topic/' style='font-size:1em'>off topic</a>
+      </li><li>
+        <a href='/tags/opinion/' style='font-size:1em'>opinion</a>
+      </li><li>
+        <a href='/tags/performance/' style='font-size:1.1666666666666667em'>performance</a>
+      </li><li>
+        <a href='/tags/personal-project/' style='font-size:1.0333333333333334em'>personal project</a>
+      </li><li>
+        <a href='/tags/poet/' style='font-size:1em'>poet</a>
+      </li><li>
+        <a href='/tags/qnap/' style='font-size:1em'>qnap</a>
+      </li><li>
+        <a href='/tags/raid/' style='font-size:1em'>raid</a>
+      </li><li>
+        <a href='/tags/readability/' style='font-size:1em'>readability</a>
+      </li><li>
+        <a href='/tags/refactor/' style='font-size:1.0333333333333334em'>refactor</a>
+      </li><li>
+        <a href='/tags/regex/' style='font-size:1em'>regex</a>
+      </li><li>
+        <a href='/tags/security/' style='font-size:1.2em'>security</a>
+      </li><li>
+        <a href='/tags/seo/' style='font-size:1.0333333333333334em'>seo</a>
+      </li><li>
+        <a href='/tags/servicechannel/' style='font-size:1em'>servicechannel</a>
+      </li><li>
+        <a href='/tags/sql/' style='font-size:1.1333333333333333em'>sql</a>
+      </li><li>
+        <a href='/tags/stackoverflowexception/' style='font-size:1em'>stackoverflowexception</a>
+      </li><li>
+        <a href='/tags/static-analysis/' style='font-size:1.1333333333333333em'>static analysis</a>
+      </li><li>
+        <a href='/tags/statictestfactory/' style='font-size:1em'>statictestfactory</a>
+      </li><li>
+        <a href='/tags/svn/' style='font-size:1.0666666666666667em'>svn</a>
+      </li><li>
+        <a href='/tags/templated/' style='font-size:1em'>templated</a>
+      </li><li>
+        <a href='/tags/tidyproxy/' style='font-size:1.0333333333333334em'>tidyproxy</a>
+      </li><li>
+        <a href='/tags/tip/' style='font-size:1.1333333333333333em'>tip</a>
+      </li><li>
+        <a href='/tags/troubleshooting/' style='font-size:1.5em'>troubleshooting</a>
+      </li><li>
+        <a href='/tags/tuning/' style='font-size:1.0333333333333334em'>tuning</a>
+      </li><li>
+        <a href='/tags/unit-testing/' style='font-size:1em'>unit testing</a>
+      </li><li>
+        <a href='/tags/update-panel/' style='font-size:1em'>update panel</a>
+      </li><li>
+        <a href='/tags/usability/' style='font-size:1.1333333333333333em'>usability</a>
+      </li><li>
+        <a href='/tags/user-interface/' style='font-size:1.0333333333333334em'>user interface</a>
+      </li><li>
+        <a href='/tags/validation-groups/' style='font-size:1em'>validation groups</a>
+      </li><li>
+        <a href='/tags/version-control/' style='font-size:1.0666666666666667em'>version control</a>
+      </li><li>
+        <a href='/tags/vwt2oc/' style='font-size:1.2666666666666666em'>vwt2oc</a>
+      </li><li>
+        <a href='/tags/wcf/' style='font-size:1.0666666666666667em'>wcf</a>
+      </li><li>
+        <a href='/tags/web-application-project/' style='font-size:1.1333333333333333em'>web application project</a>
+      </li><li>
+        <a href='/tags/web-deployment-project/' style='font-size:1em'>web deployment project</a>
+      </li><li>
+        <a href='/tags/web-site-project/' style='font-size:1.1em'>web site project</a>
+      </li><li>
+        <a href='/tags/webhost4life/' style='font-size:1.0333333333333334em'>webhost4life</a>
+      </li><li>
+        <a href='/tags/white-label/' style='font-size:1em'>white label</a>
+      </li><li>
+        <a href='/tags/windbg/' style='font-size:1em'>windbg</a>
+      </li><li>
+        <a href='/tags/yaf/' style='font-size:1.0333333333333334em'>yaf</a>
+      </li></ul>
+</div>
+
+
+</section>
+</div>
+
+  <div class='sidebar-overlay'></div>
+</div><div class='main'><nav id='main-menu' class='menu main-menu' aria-label='Main Menu'>
+  <div class='container'>
+    <a class='screen-reader-text' href='#content'>Skip to Content</a>
+
+<button id='sidebar-toggler' class='sidebar-toggler' aria-controls='sidebar'>
+  <span class='screen-reader-text'>Toggle Sidebar</span>
+  <span class='open'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="3" y1="12" x2="21" y2="12" />
+  <line x1="3" y1="6" x2="21" y2="6" />
+  <line x1="3" y1="18" x2="21" y2="18" />
+  
+</svg>
+</span>
+  <span class='close'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="18" y1="6" x2="6" y2="18" />
+  <line x1="6" y1="6" x2="18" y2="18" />
+  
+</svg>
+</span>
+</button>
+    <ul><li class='item'>
+        <a href='/cv'>CV</a>
+      </li><li class='item'>
+        <a href='https://github.com/codifice/'>Repo</a>
+      </li><li class='item'>
+        <a href='/posts/'>Posts</a>
+      </li></ul>
+  </div>
+</nav><div class='header-widgets'>
+        <div class='container'>
+    
+    <style>.widget-breadcrumbs li:after{content:'\2f '}</style>
+  <section class='widget widget-breadcrumbs sep-after'>
+    <nav id='breadcrumbs'>
+      <ol><li><a href='/'>Home</a></li><li><a href='/posts/'>Posts</a></li><li><span>N2CMS Meet VWT2OC: Day 3 – Grinding to a Halt!</span></li></ol>
+    </nav>
+  </section></div>
+      </div>
+
+      <header id='header' class='header site-header'>
+        <div class='container sep-after'>
+          <div class='header-info'><p class='site-title title'>Codifice</p><p class='desc site-desc'>Artisan Development and Architecture</p>
+          </div>
+        </div>
+      </header>
+
+      <main id='content'>
+
+
+<article lang='en' class='entry'>
+  <header class='header entry-header'>
+  <div class='container sep-after'>
+    <div class='header-info'>
+      <h1 class='title'>N2CMS Meet VWT2OC: Day 3 – Grinding to a Halt!</h1>
+      
+
+    </div>
+    <div class='entry-meta'>
+  <span class='posted-on'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+  <line x1="16" y1="2" x2="16" y2="6"/>
+  <line x1="8" y1="2" x2="8" y2="6"/>
+  <line x1="3" y1="10" x2="21" y2="10"/>
+  
+</svg>
+<span class='screen-reader-text'>Posted on </span>
+  <time class='entry-date' datetime='2010-06-08T00:00:00Z'>2010, Jun 08</time>
+</span>
+
+  <span class='byline'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M21,21V20c0-2.76-4-5-9-5s-9,2.24-9,5v1"/>
+  <path d="M16,6.37A4,4,0,1,1,12.63,3,4,4,0,0,1,16,6.37Z"/>
+  
+</svg>
+<span class='screen-reader-text'> by </span><a href='/authors/martincjarvis'>Martin Jarvis</a></span>
+  
+<span class='reading-time'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <circle cx="12" cy="12" r="10"/>
+  <polyline points="12 6 12 12 15 15"/>
+  
+</svg>
+5 mins read
+</span>
+
+
+</div>
+
+
+  </div>
+</header>
+
+  
+  
+
+  <div class='container entry-content'>
+  <p>Well, it was going way too well to last.&nbsp; It’s become apparent that the existing site is in some sort of half migrated mangled state after the hosting provider changed systems.&nbsp; This has been like a half-brick to the head as when they’ve tried to fix the issue, more and more keep getting uncovered.&nbsp; The sites been down for most of the day as a result (and is still down 24 hours later …. curse you WebHost4Life!)</p>  <h4>A Change of Plans</h4>  <p>Until the hosting issue resolved, I can’t really work on the Membership System, so I’m going to look at implementing <a title="N2 CMS" href="http://bit.ly/aco4m4" target="_blank">n2cms</a> editor addon’s and deploying what I’ve got for client approval.&nbsp; </p>  <p>My new overall plan of action is:</p>  <ul>   <li>Day 3 – Editor Addons and Deployment      <br>      <ul>       <li>Define Skeleton Feature Projects </li>        <li>Implement Skeleton Editor Addons </li>        <li>Deploy to temporary hosted location for client approval of WIP </li>     </ul>   </li>    <li>Day 4 – Membership Model (WebHost4Life willing)      <br>      <ul>       <li>Basic Admin Screens for Members </li>        <li>Restore Live Site after WebHost4Life have recovered it </li>     </ul>   </li>    <li>Day 5 - Import Data      <br>      <ul>       <li>Implement Club Member/Membership Data Model in n2cms </li>        <li>Initial member import routine from current site </li>     </ul>   </li>    <li>Day 6 - Memerships and Member Areas      <br>      <ul>       <li>Membership Reports/Maintenance from with N2CMS </li>        <li>Initial ‘My Account’ page for front end </li>     </ul>   </li>    <li>Day 7 – eCommerce      <br>      <ul>       <li>Import Membership Purchasing Mechanism for legacy app </li>        <li>Integrate NoChex/Paypal payment gateways </li>     </ul>   </li>    <li>Day 8 – Review of Progress and Bug Fixing      <br>      <ul>       <li>Review functionality and prioritise urgent issues with work so far </li>     </ul>   </li> </ul>  <h5>Define Skeleton Feature Projects</h5>  <p>The legacy VWT2OC website maintained quite a good seperation between the eCommerce part of paid memberships and the club members it self.&nbsp; I’d like to try and keep that separation in the new build by creating two new ‘features’ for n2cms: Store and Club.</p> <a href="http://lh5.ggpht.com/_Vz_CYzsjR7M/TA-BQ_764iI/AAAAAAAAAEc/PbU_RezIZ9g/s1600-h/image%5B11%5D.png"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; margin-left: 0px; border-left-width: 0px; margin-right: 0px" title="image" border="0" alt="image" align="right" src="images/image_thumb[7].png" width="82" height="244" class="img-responsive"></a>   <p>Each of these will need Editor components as there will be lots of data which isn’t really page related – as well AddOn still UI plugins.&nbsp; This means that each 'feature’ will need three projects:</p>  <ol>   <li>A Core Class Library defining the content items and details </li>    <li>A Editor Addon Web Application Project that can be deployed along side N2.Management (which doesn’t need to be deployed as the same application as the front end) </li>    <li>An Addon Project which will add new front end components </li> </ol>  <p>These will be deployed into the project using the standard n2cms xcopy-a-like mechanism, so that’s what the build procedure will support.&nbsp; I’ll develop these features within the VWT2OC Solution with a view of possibly submitting them to the n2cms project later.</p>  <p>The Web Application projects will have the following Post-Build Event defined:</p>  <div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper">   <div style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px" id="codeSnippet">     <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum1">   1:</span> $(SolutionDir)Tools\CodeBehindRemover\CodeBehindRemover /i:$(ProjectDir) /o:$(SolutionDir)Website\ /e:ascx,aspx,master,asmx,ashx</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum2">   2:</span>&nbsp; </pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum3">   3:</span> robocopy $(ProjectDir) $(SolutionDir)Website\ /XD .svn obj /XF *.cs *.ascx *.aspx *.master *.asmx *.ashx *.csproj *.sln *.suo *.user *.cache /S</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum4">   4:</span> <span style="color: #0000ff">if</span> errorlevel 1 set errorlevel=0</pre>
+<!--CRLF--></div>
+</div>
+
+<p>This will mean that there is no ‘hard’ reference between the two new features and the VWT2OC website project.&nbsp; They will be dropped in to the project and loaded dynamically like every other n2cms addon and extension.</p>
+
+<h5>Skeleton Editor Addons</h5>
+
+<p>Integration new administration screens to the n2cms editor site is quite simple as all you need to do it decorate a standard page class with the ToolbarPluginAttribute decorator:</p>
+
+<div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper">
+  <div style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px" id="codeSnippet">
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum1">   1:</span> <span style="color: #0000ff">namespace</span> N2.Edit.Club</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum2">   2:</span> {</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum3">   3:</span>     <span style="color: #008000">/// &lt;summary&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum4">   4:</span>     <span style="color: #008000">/// Lists the Available Club Management features</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum5">   5:</span>     <span style="color: #008000">/// &lt;/summary&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum6">   6:</span>     [ToolbarPluginAttribute(<span style="color: #006080">"CLUB"</span> <span style="color: #008000">// the text to appear next to the icon</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum7">   7:</span>         , <span style="color: #006080">"club"</span> <span style="color: #008000">// the name of the feature (used as a div id wrapping the button)</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum8">   8:</span>         , <span style="color: #006080">"Club/ClubManagement.aspx"</span> <span style="color: #008000">// the page to open</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum9">   9:</span>         , ToolbarArea.Navigation <span style="color: #008000">//appear in the top leve group of buttons</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum10">  10:</span>         , Targets.Navigation <span style="color: #008000">// this page is a new menu, so display in the navigation frame</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum11">  11:</span>         , <span style="color: #006080">"~/N2/Resources/icons/group.png"</span> <span style="color: #008000">//the icon to use</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum12">  12:</span>         , 110 <span style="color: #008000">// sort order - where to appear in the toolbar</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum13">  13:</span>         , ToolTip = <span style="color: #006080">"Administer Club"</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum14">  14:</span>         , AuthorizedRoles = <span style="color: #0000ff">new</span> <span style="color: #0000ff">string</span>[] { <span style="color: #006080">"Administrators"</span>, <span style="color: #006080">"Admin"</span> }</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum15">  15:</span>         , GlobalResourceClassName = <span style="color: #006080">"Toolbar"</span>)</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum16">  16:</span>     ]</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum17">  17:</span>     <span style="color: #0000ff">public</span> <span style="color: #0000ff">partial</span> <span style="color: #0000ff">class</span> ClubManagement : System.Web.UI.Page</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum18">  18:</span>     {</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum19">  19:</span>&nbsp; </pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum20">  20:</span>     }</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum21">  21:</span> }</pre>
+<!--CRLF--></div>
+</div>
+
+<p>This results in a ‘Club’ button in the toolbar which, when clicked, opens the target page in the navigation frame:</p>
+
+<p><a href="http://lh6.ggpht.com/_Vz_CYzsjR7M/TA-BSBieo0I/AAAAAAAAAEk/hgTQDUcKZfs/s1600-h/image%5B2%5D.png"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" src="images/image_thumb.png" width="244" height="183" class="img-responsive"></a> </p>
+
+<p>Buy giving the links within this page a target of ‘preview’ we can open actual administration screens within the preview frame:</p>
+
+<div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: 'Courier New', courier, monospace; direction: ltr; height: 29px; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper">
+  <div style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px" id="codeSnippet">
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum1">   1:</span> <span style="color: #0000ff">&lt;</span><span style="color: #800000">li</span><span style="color: #0000ff">&gt;&lt;</span><span style="color: #800000">a</span> <span style="color: #ff0000">href</span><span style="color: #0000ff">="Titles/Titles.aspx"</span> <span style="color: #ff0000">target</span><span style="color: #0000ff">="preview"</span><span style="color: #0000ff">&gt;</span>Titles<span style="color: #0000ff">&lt;/</span><span style="color: #800000">a</span><span style="color: #0000ff">&gt;&lt;/</span><span style="color: #800000">li</span><span style="color: #0000ff">&gt;</span></pre>
+<!--CRLF--></div>
+</div>
+
+<h4>Deployment</h4>
+
+<p></p>
+
+<p></p>
+
+<p>Before deploying to a preview location there are a few more tweaks that need to be done for the build process:</p>
+
+<ol>
+  <li>Remove any extraneous files/folders from project that may break pre-compilation from the project</li>
+
+  <ol>
+    <li>\Addons\Demo </li>
+
+    <li>\Addons\MyAddon </li>
+
+    <li>\Addons\UITests </li>
+
+    <li>\Templates\UI\Parts\Statistics.ascx</li>
+  </ol>
+
+  <li>Add a Web Deployment Project for the VWT2OC project</li>
+
+  <li>Configure Web Deployment:</li>
+
+  <ol>
+    <li>Precompile the UI components</li>
+
+    <li>Ensure that SourceWebVirtualPath is ‘/’</li>
+
+    <li>Update the connection strings to the preview database</li>
+
+    <li>Exclude installation folders and files</li>
+
+    <li>Deletion of Temporary files</li>
+  </ol>
+</ol>
+
+<p>For your entertainment - this is my modified Web Deployment project file:</p>
+
+<div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper">
+  <div style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px" id="codeSnippet">
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum1">   1:</span> <span style="color: #008000">&lt;!-- </span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum2">   2:</span> <span style="color: #008000">  Microsoft Visual Studio 2008 Web Deployment Project </span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum3">   3:</span> <span style="color: #008000">  http://go.microsoft.com/fwlink/?LinkID=104956</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum4">   4:</span> <span style="color: #008000"></span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum5">   5:</span> <span style="color: #008000">--&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum6">   6:</span> <span style="color: #0000ff">&lt;</span><span style="color: #800000">Project</span> <span style="color: #ff0000">ToolsVersion</span><span style="color: #0000ff">="3.5"</span> <span style="color: #ff0000">DefaultTargets</span><span style="color: #0000ff">="Build"</span> <span style="color: #ff0000">xmlns</span><span style="color: #0000ff">="http://schemas.microsoft.com/developer/msbuild/2003"</span><span style="color: #0000ff">&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum7">   7:</span>   <span style="color: #0000ff">&lt;</span><span style="color: #800000">PropertyGroup</span><span style="color: #0000ff">&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum8">   8:</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">Configuration</span> <span style="color: #ff0000">Condition</span><span style="color: #0000ff">=" '$(Configuration)' == '' "</span><span style="color: #0000ff">&gt;</span>Debug<span style="color: #0000ff">&lt;/</span><span style="color: #800000">Configuration</span><span style="color: #0000ff">&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum9">   9:</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">Platform</span> <span style="color: #ff0000">Condition</span><span style="color: #0000ff">=" '$(Platform)' == '' "</span><span style="color: #0000ff">&gt;</span>AnyCPU<span style="color: #0000ff">&lt;/</span><span style="color: #800000">Platform</span><span style="color: #0000ff">&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum10">  10:</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">ProductVersion</span><span style="color: #0000ff">&gt;</span>9.0.21022<span style="color: #0000ff">&lt;/</span><span style="color: #800000">ProductVersion</span><span style="color: #0000ff">&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum11">  11:</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">SchemaVersion</span><span style="color: #0000ff">&gt;</span>2.0<span style="color: #0000ff">&lt;/</span><span style="color: #800000">SchemaVersion</span><span style="color: #0000ff">&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum12">  12:</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">ProjectGuid</span><span style="color: #0000ff">&gt;</span>{990B76AF-AC0D-47D8-9D9A-485F4FDED792}<span style="color: #0000ff">&lt;/</span><span style="color: #800000">ProjectGuid</span><span style="color: #0000ff">&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum13">  13:</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">SourceWebPhysicalPath</span><span style="color: #0000ff">&gt;</span>..\Website<span style="color: #0000ff">&lt;/</span><span style="color: #800000">SourceWebPhysicalPath</span><span style="color: #0000ff">&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum14">  14:</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">SourceWebProject</span><span style="color: #0000ff">&gt;</span>{0943038B-9FE4-40C2-93DE-0F9908348EFF}|Website\Website.csproj<span style="color: #0000ff">&lt;/</span><span style="color: #800000">SourceWebProject</span><span style="color: #0000ff">&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum15">  15:</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">SourceWebVirtualPath</span><span style="color: #0000ff">&gt;</span>/<span style="color: #0000ff">&lt;/</span><span style="color: #800000">SourceWebVirtualPath</span><span style="color: #0000ff">&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum16">  16:</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">TargetFrameworkVersion</span><span style="color: #0000ff">&gt;</span>v3.5<span style="color: #0000ff">&lt;/</span><span style="color: #800000">TargetFrameworkVersion</span><span style="color: #0000ff">&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum17">  17:</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">DebugSymbols</span><span style="color: #0000ff">&gt;</span>true<span style="color: #0000ff">&lt;/</span><span style="color: #800000">DebugSymbols</span><span style="color: #0000ff">&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum18">  18:</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">EnableUpdateable</span><span style="color: #0000ff">&gt;</span>false<span style="color: #0000ff">&lt;/</span><span style="color: #800000">EnableUpdateable</span><span style="color: #0000ff">&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum19">  19:</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">UseMerge</span><span style="color: #0000ff">&gt;</span>true<span style="color: #0000ff">&lt;/</span><span style="color: #800000">UseMerge</span><span style="color: #0000ff">&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum20">  20:</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">SingleAssemblyName</span><span style="color: #0000ff">&gt;</span>VWT2OC.Website<span style="color: #0000ff">&lt;/</span><span style="color: #800000">SingleAssemblyName</span><span style="color: #0000ff">&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum21">  21:</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">DeleteAppCodeCompiledFiles</span><span style="color: #0000ff">&gt;</span>false<span style="color: #0000ff">&lt;/</span><span style="color: #800000">DeleteAppCodeCompiledFiles</span><span style="color: #0000ff">&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum22">  22:</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">DeleteAppDataFolder</span><span style="color: #0000ff">&gt;</span>false<span style="color: #0000ff">&lt;/</span><span style="color: #800000">DeleteAppDataFolder</span><span style="color: #0000ff">&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum23">  23:</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">UseWebConfigReplacement</span><span style="color: #0000ff">&gt;</span>true<span style="color: #0000ff">&lt;/</span><span style="color: #800000">UseWebConfigReplacement</span><span style="color: #0000ff">&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum24">  24:</span>   <span style="color: #0000ff">&lt;/</span><span style="color: #800000">PropertyGroup</span><span style="color: #0000ff">&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum25">  25:</span>   <span style="color: #0000ff">&lt;</span><span style="color: #800000">PropertyGroup</span> <span style="color: #ff0000">Condition</span><span style="color: #0000ff">=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' "</span><span style="color: #0000ff">&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum26">  26:</span>    </pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum27">  27:</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">OutputPath</span><span style="color: #0000ff">&gt;</span>.\Debug<span style="color: #0000ff">&lt;/</span><span style="color: #800000">OutputPath</span><span style="color: #0000ff">&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum28">  28:</span>   </pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum29">  29:</span>   <span style="color: #0000ff">&lt;/</span><span style="color: #800000">PropertyGroup</span><span style="color: #0000ff">&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum30">  30:</span>   <span style="color: #0000ff">&lt;</span><span style="color: #800000">PropertyGroup</span> <span style="color: #ff0000">Condition</span><span style="color: #0000ff">=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' "</span><span style="color: #0000ff">&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum31">  31:</span>   </pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum32">  32:</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">OutputPath</span><span style="color: #0000ff">&gt;</span>.\Release<span style="color: #0000ff">&lt;/</span><span style="color: #800000">OutputPath</span><span style="color: #0000ff">&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum33">  33:</span>   <span style="color: #0000ff">&lt;/</span><span style="color: #800000">PropertyGroup</span><span style="color: #0000ff">&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum34">  34:</span>   <span style="color: #0000ff">&lt;</span><span style="color: #800000">ItemGroup</span><span style="color: #0000ff">&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum35">  35:</span>   <span style="color: #0000ff">&lt;/</span><span style="color: #800000">ItemGroup</span><span style="color: #0000ff">&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum36">  36:</span>   <span style="color: #0000ff">&lt;</span><span style="color: #800000">ItemGroup</span><span style="color: #0000ff">&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum37">  37:</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">WebConfigReplacementFiles</span> <span style="color: #ff0000">Include</span><span style="color: #0000ff">="App_Data\connectionStrings.config.live"</span><span style="color: #0000ff">&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum38">  38:</span>       <span style="color: #0000ff">&lt;</span><span style="color: #800000">Section</span><span style="color: #0000ff">&gt;</span>connectionStrings<span style="color: #0000ff">&lt;/</span><span style="color: #800000">Section</span><span style="color: #0000ff">&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum39">  39:</span>     <span style="color: #0000ff">&lt;/</span><span style="color: #800000">WebConfigReplacementFiles</span><span style="color: #0000ff">&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum40">  40:</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">WebConfigReplacementFiles</span> <span style="color: #ff0000">Include</span><span style="color: #0000ff">="App_Data\yafnet.config.live"</span><span style="color: #0000ff">&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum41">  41:</span>       <span style="color: #0000ff">&lt;</span><span style="color: #800000">Section</span><span style="color: #0000ff">&gt;</span>yafnet<span style="color: #0000ff">&lt;/</span><span style="color: #800000">Section</span><span style="color: #0000ff">&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum42">  42:</span>     <span style="color: #0000ff">&lt;/</span><span style="color: #800000">WebConfigReplacementFiles</span><span style="color: #0000ff">&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum43">  43:</span>   <span style="color: #0000ff">&lt;/</span><span style="color: #800000">ItemGroup</span><span style="color: #0000ff">&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum44">  44:</span>   <span style="color: #0000ff">&lt;</span><span style="color: #800000">ItemGroup</span><span style="color: #0000ff">&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum45">  45:</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">ExcludeFromBuild</span> <span style="color: #ff0000">Include</span><span style="color: #0000ff">="$(SourceWebPhysicalPath)\**\.svn\**\*.*"</span> <span style="color: #0000ff">/&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum46">  46:</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">ExcludeFromBuild</span> <span style="color: #ff0000">Include</span><span style="color: #0000ff">="$(SourceWebPhysicalPath)\**\*.csproj*"</span> <span style="color: #0000ff">/&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum47">  47:</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">ExcludeFromBuild</span> <span style="color: #ff0000">Include</span><span style="color: #0000ff">="$(SourceWebPhysicalPath)\N2\Installation\**\*.*"</span> <span style="color: #0000ff">/&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum48">  48:</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">ExcludeFromBuild</span> <span style="color: #ff0000">Include</span><span style="color: #0000ff">="$(SourceWebPhysicalPath)\App_Data\**\*.*"</span> <span style="color: #ff0000">Exclude</span><span style="color: #0000ff">="$(SourceWebPhysicalPath)\App_Data\*.config*"</span> <span style="color: #0000ff">/&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum49">  49:</span>   <span style="color: #0000ff">&lt;/</span><span style="color: #800000">ItemGroup</span><span style="color: #0000ff">&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum50">  50:</span>   <span style="color: #0000ff">&lt;</span><span style="color: #800000">ItemGroup</span><span style="color: #0000ff">&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum51">  51:</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">DeleteAfterBuild</span> <span style="color: #ff0000">Include</span><span style="color: #0000ff">="$(OutputPath)\App_Data\yafnet.config.live"</span> <span style="color: #0000ff">/&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum52">  52:</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">DeleteAfterBuild</span> <span style="color: #ff0000">Include</span><span style="color: #0000ff">="$(OutputPath)\yafnet.config"</span> <span style="color: #0000ff">/&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum53">  53:</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">DeleteAfterBuild</span> <span style="color: #ff0000">Include</span><span style="color: #0000ff">="$(OutputPath)\App_Data\connectionStrings.config.live"</span> <span style="color: #0000ff">/&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum54">  54:</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">DeleteAfterBuild</span> <span style="color: #ff0000">Include</span><span style="color: #0000ff">="$(OutputPath)\obj\**\*.*"</span> <span style="color: #0000ff">/&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum55">  55:</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">DeleteAfterBuild</span> <span style="color: #ff0000">Include</span><span style="color: #0000ff">="$(OutputPath)\bin\*.tmp"</span> <span style="color: #0000ff">/&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum56">  56:</span>   <span style="color: #0000ff">&lt;/</span><span style="color: #800000">ItemGroup</span><span style="color: #0000ff">&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum57">  57:</span>   <span style="color: #0000ff">&lt;</span><span style="color: #800000">Import</span> <span style="color: #ff0000">Project</span><span style="color: #0000ff">="$(MSBuildExtensionsPath)\Microsoft\WebDeployment\v9.0\Microsoft.WebDeployment.targets"</span> <span style="color: #0000ff">/&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum58">  58:</span>   <span style="color: #0000ff">&lt;</span><span style="color: #800000">Target</span> <span style="color: #ff0000">Name</span><span style="color: #0000ff">="AfterBuild"</span><span style="color: #0000ff">&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum59">  59:</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">Delete</span> <span style="color: #ff0000">Files</span><span style="color: #0000ff">="@@(DeleteAfterBuild)"</span> <span style="color: #0000ff">/&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum60">  60:</span>   <span style="color: #0000ff">&lt;/</span><span style="color: #800000">Target</span><span style="color: #0000ff">&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum61">  61:</span> <span style="color: #0000ff">&lt;/</span><span style="color: #800000">Project</span><span style="color: #0000ff">&gt;</span></pre>
+<!--CRLF--></div>
+</div>
+
+<p>I then modified the build configuration so the deployment project was only built for ‘release’ builds.</p>  
+</div>
+
+  
+<footer class='entry-footer'>
+  <div class='container sep-before'><div class='last-updated'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34" />
+  <polygon points="18 2 22 6 12 16 8 16 8 12 18 2" />
+  
+</svg>
+<span class='screen-reader-text'>Last updated: </span>
+      <time class='entry-date' datetime='2010-06-09T00:00:00Z'>2010, Jun 09</time>
+    </div><div class='tags'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z"/>
+  <line x1="7" y1="7" x2="7" y2="7"/>
+  
+</svg>
+<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/addon/'>addon</a>, <a class='tag' href='/tags/vwt2oc/'>vwt2oc</a>, <a class='tag' href='/tags/n2cms/'>n2cms</a>, <a class='tag' href='/tags/web-deployment-project/'>web deployment project</a></div>
+
+  </div>
+</footer>
+
+
+</article>
+
+<nav class='entry-nav'>
+  <div class='container'><div class='prev-entry sep-before'>
+      <a href='/posts/2010-06-07-n2cms-meet-vwt2oc-day-2-n2cms/'>
+        <span aria-hidden='true'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="20" y1="12" x2="4" y2="12"/>
+  <polyline points="10 18 4 12 10 6"/>
+  
+</svg>
+ Previous</span>
+        <span class='screen-reader-text'>Previous post: </span>N2CMS Meet VWT2OC: Day 2 – N2CMS Configuration</a>
+    </div><div class='next-entry sep-before'>
+      <a href='/posts/2010-06-09-n2cms-meet-vwt2oc-day-4-wheel-spinning/'>
+        <span class='screen-reader-text'>Next post: </span>N2CMS Meet VWT2OC: Day 4 – Wheel Spinning<span aria-hidden='true'>Next <svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="4" y1="12" x2="20" y2="12"/>
+  <polyline points="14 6 20 12 14 18"/>
+  
+</svg>
+</span>
+      </a>
+    </div></div>
+</nav>
+
+
+
+
+      </main>
+
+      <footer id='footer' class='footer'>
+        <div class='container sep-before'><section class='widget widget-social_menu sep-after'><nav aria-label='Social Menu'>
+    <ul><li>
+        <a href='https://github.com/codifice' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Open Github account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='mailto:martin@codifice.uk' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Contact via Email</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+  <polyline points="22,6 12,13 2,6"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='https://linkedin.com/in/martincjarvis' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Open Linkedin account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+  <rect x="2" y="9" width="4" height="12"/>
+  <circle cx="4" cy="4" r="2"/>
+  
+</svg>
+</a>
+      </li></ul>
+  </nav>
+</section><div class='copyright'>
+  <p> &copy; 2020 Codifice Ltd </p>
+</div>
+
+        </div>
+      </footer>
+
+    </div>
+  </div><script>window.__assets_js_src="/assets/js/"</script>
+
+<script src='/assets/js/main.c3bcf2df.js'></script><script src='/js/custom.js'></script>
+
+</body>
+
+</html>
+
