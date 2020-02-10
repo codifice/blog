@@ -3,7 +3,8 @@ title: "Persisting the Page Title across Update Panel Post backs"
 date: 2011-08-16
 lastmod: 2011-08-16
 draft: false
-tags: ["js","update panel"]
+thumbnail: "/coding-gallery"
+series: ["troubleshooting"]
 authors: ["martincjarvis"]
 ---
 <p>There’s a fun bug with AsyncPostbacks blanking out the Page Title (<a title="http://stackoverflow.com/questions/627378/page-losing-title-after-updatepanel-asyncpostback" href="http://stackoverflow.com/questions/627378/page-losing-title-after-updatepanel-asyncpostback">http://stackoverflow.com/questions/627378/page-losing-title-after-updatepanel-asyncpostback)</a>, the recommended fix is to rebind the page title on each Async Postback or to use the declarative page title attribute in the aspx.&nbsp; My fix is to fix a JS bug in JS:</p>  
