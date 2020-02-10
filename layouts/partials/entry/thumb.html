@@ -1,30 +1,24 @@
 {{- $original := . }}
 
-{{- if (not ( $original.Scratch.Get "banner-image")) and (not (.Params.cover)) and (.Params.thumbnail) -}}
-  {{- if (not ( $original.Scratch.Get "image")) -}}
-    {{$page := .Site.GetPage (printf "%s" .Params.thumbnail) }}
+{{- if (not ( $original.Scratch.Get "image")) and (not (.Params.cover)) and (.Params.thumbnail) -}}
+  {{$page := .Site.GetPage (printf "%s" .Params.thumbnail) }}
 
-    {{- with $page.Resources -}}
-      {{- with .Match "{*.jpg,*.png,*.jpeg}" -}}
-        {{- with shuffle . -}}
-          {{- range first 1 . -}}
-            {{- $original.Scratch.Add "image" . -}}
+  {{- with $page.Resources -}}
+    {{- with .Match "{*.jpg,*.png,*.jpeg}" -}}
+      {{- with shuffle . -}}
+        {{- range first 1 . -}}
+          {{- with .Fill "200x100" -}}
+            {{- $original.Scratch.Add "image" ( printf "%s" .Permalink ) -}}
           {{- end -}}
         {{- end -}}
       {{- end -}}
     {{- end -}}
   {{- end -}}
-
-  {{- with $original.Scratch.Get "image" -}}
-    {{- with .Fill "800x200" -}}
-      {{- $original.Scratch.Add "banner-image" ( printf "%s" .Permalink ) -}}
-    {{- end -}}
-  {{- end -}}
 {{- else if .Params.cover }}
-  {{ $original.Scratch.Add "banner-image" .Params.cover }}
+  {{ $original.Scratch.Add "image" .Params.cover }}
 {{- end -}}
 
-{{- $coverimage := $original.Scratch.Get "banner-image" -}}
+{{- $coverimage := $original.Scratch.Get "image" -}}
 
 {{- with $coverimage -}}
 
