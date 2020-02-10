@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>batch on Codifice</title>
+    <link>https://codifice.uk/tags/batch/</link>
+    <description>Recent content in batch on Codifice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 09 Jun 2010 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://codifice.uk/tags/batch/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>N2CMS Meet VWT2OC: Day 4 – Wheel Spinning</title>
+      <link>https://codifice.uk/posts/2010-06-09-n2cms-meet-vwt2oc-day-4-wheel-spinning/</link>
+      <pubDate>Wed, 09 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-06-09-n2cms-meet-vwt2oc-day-4-wheel-spinning/</guid>
+      <description>Well, Webhost4Life have yet to restore the current site so I can’t work through the develop model/import data/rinse/repeat iterations which I’ll need to ensure a clean migration at the end of the project.&amp;nbsp; Still at least they’re keeping me updated…and not at all keeping me in the dark with vague promised that someone&#39;s working on it.&amp;nbsp; Bastards.
+I guess it’s my fault for trusting them to do all the database backups (like they’re paid to do)….</description>
+    </item>
+    
+  </channel>
+</rss>

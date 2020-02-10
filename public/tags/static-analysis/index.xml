@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>static analysis on Codifice</title>
+    <link>https://codifice.uk/tags/static-analysis/</link>
+    <description>Recent content in static analysis on Codifice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 10 Apr 2010 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://codifice.uk/tags/static-analysis/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>My Windows 7 Development VM Load Out</title>
+      <link>https://codifice.uk/posts/2010-04-10-my-windows-7-development-vm-load-out/</link>
+      <pubDate>Sat, 10 Apr 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-04-10-my-windows-7-development-vm-load-out/</guid>
+      <description>Well, it was bound to happen.&amp;nbsp; I rebuilt my PC and forgot to install my dev tools… oh well.&amp;nbsp; In an attempt to stop this from ever happening again, I’m creating a dev VM which will be backed up onto my NAS device.
+The applications I’m installing for (ASP.Net Development) are:
+ VMWare Player 3.0.1 (FileHippo)  2GB Memory  1 Processor  Bridged Network  40GB C: (System and Applications)  60GB D: (Data)    Windows 7 Professional x64  Firefox with Extensions:  Firebug  YSlow  Web Developer Toolbar  HTML Validator  Selenium IDE    Microsoft Web Platform Installer  Web Platform  Web Server – Recommended Products + SEO Toolkit  Framework – Recommended Products + ASP.</description>
+    </item>
+    
+    <item>
+      <title>Secure Your Website, Put Bouncers at the Door (Part 3)</title>
+      <link>https://codifice.uk/posts/2010-04-08-secure-your-website-put-bouncers-at_08/</link>
+      <pubDate>Thu, 08 Apr 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-04-08-secure-your-website-put-bouncers-at_08/</guid>
+      <description>In part 1, I gave an overview of the similarities in securing a good night club and a website and in part 2 I gave an overview of what we, as developers, can do to secure our websites.&amp;nbsp; In this final part, I give details on how we should be doing the most important (and mundane) part of securing our websites:
+ 1. Input Validation (Continued) One important fact that many web developers fail to take on board, is that everything you receive from the client is a string; Query strings, post back values and cookies.</description>
+    </item>
+    
+    <item>
+      <title>Secure Your Website, Put Bouncers at the Door (Part 2)</title>
+      <link>https://codifice.uk/posts/2010-04-06-secure-your-website-put-bouncers-at_06/</link>
+      <pubDate>Tue, 06 Apr 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-04-06-secure-your-website-put-bouncers-at_06/</guid>
+      <description>In part 1, I gave an overview of the similarities in securing a good night club and a website.&amp;nbsp;&amp;nbsp; In this part I’ll give an overview of what we as developers can do to implement these measures:
+ 4 and 5 Authentication and HTTPS The implementation of these is very much driven by the business requirements of the site, if the site’s free to access and there’s no personal information they’re a non-issue.</description>
+    </item>
+    
+    <item>
+      <title>Secure Your Website, Put Bouncers at the Door (Part 1)</title>
+      <link>https://codifice.uk/posts/2010-04-04-secure-your-website-put-bouncers-at/</link>
+      <pubDate>Sun, 04 Apr 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-04-04-secure-your-website-put-bouncers-at/</guid>
+      <description>A good website is much like a nightclub, we want the general population to be able to use the facilities freely (or for a nominal fee!) but we don’t want the trouble makers that will spoil it for everyone.&amp;nbsp;&amp;nbsp; Pushing the analogy further, nightclubs have a few different types of security in place:
+  Visibility Implementation Mitigates   High Profile Bouncers  Filter out trouble makers at point of entry    &amp;nbsp; Internal Security Eject people that become troublemakers   Low Profile Bars on Windows Alarmed Exits Prevent people sneaking in   &amp;nbsp; Metal Detectors Security Cameras Passively check for people about to cause trouble   As web developers we have a very similar set of tools that we can use to secure our website:</description>
+    </item>
+    
+    <item>
+      <title>Ektron and Web Application Projects (Part 1)</title>
+      <link>https://codifice.uk/posts/2010-03-22-working-with-ektron-using-web/</link>
+      <pubDate>Mon, 22 Mar 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-03-22-working-with-ektron-using-web/</guid>
+      <description>Like a lot of enterprise CMS production Ektron expects you to work in a particular way and provides lots of help for non-developers to quickly produce websites with minimal technical skills.&amp;nbsp; But what if you have more technical needs?
+One of the downsides (in my opinion) of developing websites against Ektron, is the expectation that you will be integrating your code into the existing workarea Web Site Project.&amp;nbsp; Now, there are pros and cons on Web Site over Web Application projects but the big disadvantage for me is the sheer size of the workarea brings Visual Studio to a crawl when your editing code.</description>
+    </item>
+    
+  </channel>
+</rss>

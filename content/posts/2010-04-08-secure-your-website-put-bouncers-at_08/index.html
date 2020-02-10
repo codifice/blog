@@ -1,0 +1,116 @@
+---
+title: "Secure Your Website, Put Bouncers at the Door (Part 3)"
+date: 2010-04-08
+lastmod: 2010-04-08
+draft: false
+tags: ["bouncers","best practise","security","static analysis","csharp","performance"]
+authors: ["martincjarvis"]
+---<h4>
+</h4>
+In part 1, I gave an overview of the similarities in securing a good night club and a website and in part 2 I gave an overview of what we, as developers, can do to secure our websites.&nbsp; In this final part, I give details on how we should be doing the most important (and mundane) part of securing our websites:<br>
+<h4>
+1. Input Validation (Continued)</h4>
+One important fact that many web developers fail to take on board, is that everything you receive from the client is a string; Query strings, post back values and cookies.&nbsp; It may look like something else, but it’s actually a little crack in the armour of your website.<br>
+For example, a query string of&nbsp; “?id=56” doesn’t mean that id is equal to the integer 56, only it’s string form.&nbsp; It can just as easily be manipulated to read “?id=Bob+The+Builder” or the more vicious “id=’);drop table Users;”.&nbsp;&nbsp; <i>If you’ve ever used string concatenation in a SQL statement, your blood should have just run cold!</i><br>
+An excellent habit to get into is to convert every parameter you need as early as possible in the request and use that value from that point on, if the value can’t be converted then throw an exception to stop processing the request.&nbsp; This is one of your websites bouncers, it’ll let through good values but prevent the troublemakers from ruining it for everyone.<br>
+This type of conversion is simple, but can be a little long winded to do in a best practice way.&nbsp; The two most common ways I see of doing this in .Net is by using the Convert class or the target types Parse method.&nbsp; These are nice quick one line commands to parse a string into an integer, such as:<br>
+<div id="codeSnippetWrapper" style="background-color: #f4f4f4; border: 1px solid silver; cursor: text; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 20px 0px 10px; max-height: 200px; overflow: auto; padding: 4px; text-align: left; width: 97.5%;">
+<div id="codeSnippet" style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; overflow: visible; padding: 0px; text-align: left; width: 100%;">
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum1" style="color: #606060;">   1:</span> <span style="color: blue;">int</span> id = Convert.ToInt32(Request.QueryString[<span style="color: #006080;">"id"</span>]);</pre>
+</div>
+</div>
+The above code will work fine as long as the string does actually represent that data type, otherwise you need some boiler plate code to correctly handle the ‘FormatException’ that gets thrown:<br>
+<div id="codeSnippetWrapper" style="background-color: #f4f4f4; border: 1px solid silver; cursor: text; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 20px 0px 10px; max-height: 200px; overflow: auto; padding: 4px; text-align: left; width: 97.5%;">
+<div id="codeSnippet" style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; overflow: visible; padding: 0px; text-align: left; width: 100%;">
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum1" style="color: #606060;">   1:</span> <span style="color: blue;">int</span> id=0;</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum2" style="color: #606060;">   2:</span> <span style="color: blue;">try</span></pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum3" style="color: #606060;">   3:</span> {</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum4" style="color: #606060;">   4:</span>     id = Convert.ToInt32(Request.QueryString[<span style="color: #006080;">"id"</span>]);</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum5" style="color: #606060;">   5:</span> }</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum6" style="color: #606060;">   6:</span> <span style="color: blue;">catch</span>(FormatException fex)</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum7" style="color: #606060;">   7:</span> {</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum8" style="color: #606060;">   8:</span>     <span style="color: blue;">throw</span> <span style="color: blue;">new</span> NotSupportedException(<span style="color: #006080;">"The querystring parameter 'id' must be an integer value"</span>);</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum9" style="color: #606060;">   9:</span> }</pre>
+</div>
+</div>
+Of course, you don’t need to wrap the FormatException but it will make debugging easier if there was a little more information than ‘something wasn’t an formatted correctly’.&nbsp; These methods also have a performance hit associated with them as they throw exceptions on failure (that’s fine for this example – but in others, you may have default values that should be used) and each thrown exception causes the ASP.Net to prioritise handling that exception over running code….<br>
+So to avoid the exception there’s now (in .Net 2.0) TryParse:<br>
+<div id="codeSnippetWrapper" style="background-color: #f4f4f4; border: 1px solid silver; cursor: text; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 20px 0px 10px; max-height: 200px; overflow: auto; padding: 4px; text-align: left; width: 97.5%;">
+<div id="codeSnippet" style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; overflow: visible; padding: 0px; text-align: left; width: 100%;">
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum1" style="color: #606060;">   1:</span> <span style="color: blue;">int</span> id = 0;</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum2" style="color: #606060;">   2:</span> <span style="color: blue;">if</span> (!Int32.TryParse(<span style="color: blue;">value</span>, <span style="color: blue;">out</span> id)) id = 0;</pre>
+</div>
+</div>
+That’s better but still two lines of boiler plate code (and a slightly strange pattern) that will need to be parroted out for each parameter on every request and more boiler plate code means it’s less likely developers will stick to doing it.<br>
+Of course, this is exactly why the <a href="http://www.amazon.co.uk/gp/product/020161622X?ie=UTF8&amp;tag=maronnet-21&amp;linkCode=as2&amp;camp=1634&amp;creative=6738&amp;creativeASIN=020161622X" target="_blank" title="Book: The Pragmatic Programmer">programming gods</a> gave us the concept of Refactoring and Separation of Concerns, you can easily write a reusable wrapper method around the TryParse functionality to make it easier to code with.&nbsp; Thanks to the good people of Microsoft it’s trivial to create an Extension method to provide the functionality to all strings:<br>
+<div id="codeSnippetWrapper" style="background-color: #f4f4f4; border: 1px solid silver; cursor: text; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 20px 0px 10px; max-height: 200px; overflow: auto; padding: 4px; text-align: left; width: 97.5%;">
+<div id="codeSnippet" style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; overflow: visible; padding: 0px; text-align: left; width: 100%;">
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum1" style="color: #606060;">   1:</span> <span style="color: green;">/// &lt;summary&gt;</span></pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum2" style="color: #606060;">   2:</span> <span style="color: green;">/// Gets the Int32 value stored in the string</span></pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum3" style="color: #606060;">   3:</span> <span style="color: green;">/// &lt;/summary&gt;</span></pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum4" style="color: #606060;">   4:</span> <span style="color: green;">/// &lt;param name="value"&gt;The string to parse&lt;/param&gt;</span></pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum5" style="color: #606060;">   5:</span> <span style="color: green;">/// &lt;param name="defaultValue"&gt;The default value if the the given value cannot be parsed&lt;/param&gt;</span></pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum6" style="color: #606060;">   6:</span> <span style="color: green;">/// &lt;returns&gt;</span></pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum7" style="color: #606060;">   7:</span> <span style="color: green;">/// The integer represented by the string, otherwise the default value</span></pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum8" style="color: #606060;">   8:</span> <span style="color: green;">/// &lt;/returns&gt;</span></pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum9" style="color: #606060;">   9:</span> <span style="color: blue;">public</span> <span style="color: blue;">static</span> Int32 ToInt32(<span style="color: blue;">this</span> <span style="color: blue;">string</span> <span style="color: blue;">value</span>, Int32 defaultValue)</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum10" style="color: #606060;">  10:</span> {</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum11" style="color: #606060;">  11:</span>    <span style="color: blue;">if</span> (<span style="color: blue;">string</span>.IsNullOrEmpty(<span style="color: blue;">value</span>)) <span style="color: blue;">return</span> defaultValue;</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum12" style="color: #606060;">  12:</span>    Int32? result = <span style="color: blue;">null</span>;</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum13" style="color: #606060;">  13:</span>    Int32 temp;</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum14" style="color: #606060;">  14:</span>    <span style="color: blue;">if</span> (Int32.TryParse(<span style="color: blue;">value</span>, <span style="color: blue;">out</span> temp)) result = temp;</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum15" style="color: #606060;">  15:</span>    <span style="color: blue;">return</span> result ?? defaultValue;</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum16" style="color: #606060;">  16:</span> }</pre>
+</div>
+</div>
+This makes our ‘id’ parsing example as easy as:<br>
+<div id="codeSnippetWrapper" style="background-color: #f4f4f4; border: 1px solid silver; cursor: text; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 20px 0px 10px; max-height: 200px; overflow: auto; padding: 4px; text-align: left; width: 97.5%;">
+<div id="codeSnippet" style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; overflow: visible; padding: 0px; text-align: left; width: 100%;">
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum1" style="color: #606060;">   1:</span> <span style="color: blue;">int</span> id = Request.QueryString[<span style="color: #006080;">"id"</span>].ToInt32(0);</pre>
+</div>
+</div>
+That’s a sweet, safe one line conversion that’s fewer keystrokes than the most basic Convert and Parse methods.&nbsp; <br>
+To save everyone and their dog from creating versions of these wrappers, I’ve created a small class that provides localization aware type conversion methods.<br>
+<b>Attachment</b>: <a href="http://bit.ly/9F7YDr" target="_blank" title="Type Converter Helper Library"><b>Type Converter Helper</b></a><br>
+<h5>
+Conversion Performance</h5>
+I know that some developers feel particularly attached to their ‘Convert’ and ‘Parse’ methods so I’ve created a little performance comparison app and gathered some performance statistics: <br>
+<table border="0" cellpadding="2" cellspacing="0" style="width: 550px;"><tbody>
+<tr>
+      <td valign="top" width="182"><b>Method</b></td>
+
+      <td valign="top" width="182"><b>5000 Successful Parses (“12345”)</b></td>
+
+      <td valign="top" width="184"><b>5000 Failed Conversions (“Not An Integer”)</b></td>
+    </tr>
+<tr>
+      <td valign="top" width="182">Convert</td>
+
+      <td valign="top" width="182">6ms</td>
+
+      <td valign="top" width="185">52s</td>
+    </tr>
+<tr>
+      <td valign="top" width="182">Parse</td>
+
+      <td valign="top" width="182">7ms</td>
+
+      <td valign="top" width="185">54s</td>
+    </tr>
+<tr>
+      <td valign="top" width="182">TryParse</td>
+
+      <td valign="top" width="182">6ms</td>
+
+      <td valign="top" width="185">6ms</td>
+    </tr>
+<tr>
+      <td valign="top" width="182">TryParse (Extension)</td>
+
+      <td valign="top" width="182">6ms</td>
+
+      <td valign="top" width="186">6ms</td>
+    </tr>
+</tbody></table>
+This shows that when everything runs as expected (the ‘Happy Path’) there’s not much difference, but&nbsp; when invalid data is given there’s a 10000x performance decrease.&nbsp; That should be enough to get even the most entrenched Convert/Parse only developer to change their ways!<br>
+The application I used to create these numbers is included in the helper library project.

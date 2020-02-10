@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>addon on Codifice</title>
+    <link>https://codifice.uk/tags/addon/</link>
+    <description>Recent content in addon on Codifice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 09 Jun 2010 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://codifice.uk/tags/addon/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>N2CMS Forum Addon: Fixing the Theme</title>
+      <link>https://codifice.uk/posts/2010-06-09-n2cms-forum-addon-fixing-theme/</link>
+      <pubDate>Wed, 09 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-06-09-n2cms-forum-addon-fixing-theme/</guid>
+      <description>My work on the VWT2OC site is on hiatus at the moment due to hosting issues so I thought I’d blog a useful fix that I’ve found.
+I’ve noticed a bug with the Forum Addon.&amp;nbsp; The first page would be correctly themed but any subsequent pages were not when running against a build of the latest N2CMS.
+On investigation it seems that the Forum Pages CurrentItem was resolving to null which prevented the ThemeConcern for assigning the correct theme:</description>
+    </item>
+    
+    <item>
+      <title>N2CMS Meet VWT2OC: Day 3 – Grinding to a Halt!</title>
+      <link>https://codifice.uk/posts/2010-06-08-n2cms-meet-vwt2oc-day-3-grinding-to/</link>
+      <pubDate>Tue, 08 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-06-08-n2cms-meet-vwt2oc-day-3-grinding-to/</guid>
+      <description>Well, it was going way too well to last.&amp;nbsp; It’s become apparent that the existing site is in some sort of half migrated mangled state after the hosting provider changed systems.&amp;nbsp; This has been like a half-brick to the head as when they’ve tried to fix the issue, more and more keep getting uncovered.&amp;nbsp; The sites been down for most of the day as a result (and is still down 24 hours later ….</description>
+    </item>
+    
+    <item>
+      <title>N2CMS Meet VWT2OC: Day 2 – N2CMS Configuration</title>
+      <link>https://codifice.uk/posts/2010-06-07-n2cms-meet-vwt2oc-day-2-n2cms/</link>
+      <pubDate>Mon, 07 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-06-07-n2cms-meet-vwt2oc-day-2-n2cms/</guid>
+      <description>Yesterday went well and I’ve now got the basic N2CMS install working and the Forum Addon has been installed, so my objectives for today are:
+ Day 2 – N2CMS Configuration  Integrate the Membership Provider from n2cms/forum/legacy vwt2oc  Construct basic site structure (homepage/articles/forum/gallery/events calendar/etc)  Create VWT2OC basic theme     Integrating the Membership Provider One of the first tasks I need to undertake is integrating the underlying security model.</description>
+    </item>
+    
+  </channel>
+</rss>

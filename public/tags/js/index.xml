@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>js on Codifice</title>
+    <link>https://codifice.uk/tags/js/</link>
+    <description>Recent content in js on Codifice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 16 Aug 2011 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://codifice.uk/tags/js/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Persisting the Page Title across Update Panel Post backs</title>
+      <link>https://codifice.uk/posts/2011-08-16-persisting-page-title-across-update/</link>
+      <pubDate>Tue, 16 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2011-08-16-persisting-page-title-across-update/</guid>
+      <description>There’s a fun bug with AsyncPostbacks blanking out the Page Title (http://stackoverflow.com/questions/627378/page-losing-title-after-updatepanel-asyncpostback), the recommended fix is to rebind the page title on each Async Postback or to use the declarative page title attribute in the aspx.&amp;nbsp; My fix is to fix a JS bug in JS:
+$(function(){ var prm = Sys.WebForms.PageRequestManager.getInstance(); if (!(prm)) return; document.orginalTitle=document.title; instance.add_endRequest(function(s, e){ if (document.title.replace(/\s/g,&amp;#34;&amp;#34;).length==0) document.title=document.orginalTitle; }); });  This JS code will ensure that the page title is persisted across ajax requests, with no changes to the server side code.</description>
+    </item>
+    
+    <item>
+      <title>Blogger Tweak:  Making Code Snippets More Usable</title>
+      <link>https://codifice.uk/posts/2010-06-10-blogger-tweak-making-code-snippets-more/</link>
+      <pubDate>Thu, 10 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-06-10-blogger-tweak-making-code-snippets-more/</guid>
+      <description>Now that I’m blogging more code snippet heavy content it’s becoming apparent that the excellent Code Snippet Plugin with Windows Live Writer isn’t the most usable for people trying to copy the snippet for their own use.&amp;nbsp; So I’ve created a Blogger Template tweak to automatically add a ‘plain text/formatted’ toggle.&amp;nbsp; To install simply copy the snippet below into your Blogger Template just above the &amp;lt;/body&amp;gt; tag.
+1: &amp;lt;script type=&#39;text/javascript&#39;&amp;gt;  2: var ChildText = function(nodeList) {  3: var text = &amp;amp;#39;&amp;amp;#39;;  4: for (var j = nodeList.</description>
+    </item>
+    
+  </channel>
+</rss>

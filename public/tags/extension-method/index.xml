@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>extension method on Codifice</title>
+    <link>https://codifice.uk/tags/extension-method/</link>
+    <description>Recent content in extension method on Codifice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 14 Jul 2011 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://codifice.uk/tags/extension-method/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Experiments with ADO.Net, Extension Methods and Anonymous Methods</title>
+      <link>https://codifice.uk/posts/2011-07-14-experiments-with-adonet-extension/</link>
+      <pubDate>Thu, 14 Jul 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2011-07-14-experiments-with-adonet-extension/</guid>
+      <description>As much as at pains me to admit it, an ORM Framework is not the answer to all data access problems.&amp;nbsp; Sometimes the quickest, easiest and most maintainable approach is back-to-basics flat ADO.Net.&amp;nbsp; For those developers whose (development) life began with Entity Framework, NHibernate or SubSonic.&amp;nbsp; This is a fairly typical example of an ADO.Net method (in a well structured code base):
+1: private static IEnumerable&amp;lt;ContentAwaitingApproval&amp;gt; GetPendingApprovals(long approvalGroupId)  2: {  3: List&amp;lt;ContentAwaitingApproval&amp;gt; approvals = new List&amp;lt;ContentAwaitingApproval&amp;gt;();  4: using (SqlConnection conn = new SqlConnection(ConfigurationManager.</description>
+    </item>
+    
+    <item>
+      <title>Base26 Number Encoding/Generate Excel Columns</title>
+      <link>https://codifice.uk/posts/2011-05-02-base26-number-encodinggenerate-excel/</link>
+      <pubDate>Mon, 02 May 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2011-05-02-base26-number-encodinggenerate-excel/</guid>
+      <description>Ever needed to convert an Excel Column Letter to a number or vice versa?&amp;nbsp; Here’s a couple of extension methods to do it:
+1: public static string ToLetterEncoded(this Int32 numberToEncode)  2: {  3: if (numberToEncode &amp;lt;= 0) throw new ArgumentOutOfRangeException(&#34;numberToEncode&#34;, numberToEncode, &#34;Value must be greater than zero&#34;);  4: numberToEncode--;  5: if (numberToEncode &amp;gt;= 0 &amp;amp;&amp;amp; numberToEncode &amp;lt; 26)  6: return ((char)(&#39;A&#39; + numberToEncode)).ToString();  7: else  8: return ToLetterEncoded(numberToEncode / 26) + ToLetterEncoded(numberToEncode % 26 + 1);  9: }   1: public static Int32 FromLetterEncodedInt32(this string letterEncodedNumber)  2: {  3: if (letterEncodedNumber.</description>
+    </item>
+    
+    <item>
+      <title>Performance: Applying Output Cache Policies to a User Controls</title>
+      <link>https://codifice.uk/posts/2010-11-03-performance-applying-output-cache/</link>
+      <pubDate>Wed, 03 Nov 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-11-03-performance-applying-output-cache/</guid>
+      <description>One of the great features in ASP.NET is the rich caching framework.&amp;nbsp; I particularly like being able to:
+ Define caching policies in the configuration file and then assigning those policies to groups of pages (via the @@OutputCache directive).  Cache User Control output for reuse on multiple pages (Partial Page Caching)   What I don’t like is the fact that you can’t combine the two!&amp;nbsp; You have to hard code your user control cache directives either in the mark-up (as @@OutputCache directive) or by applying an attribute (System.</description>
+    </item>
+    
+    <item>
+      <title>HowTo: Creating Strongly Typed Code Using Microsoft.VisualBasic.Collection</title>
+      <link>https://codifice.uk/posts/2010-08-18-howto-creating-strongly-typed-code/</link>
+      <pubDate>Wed, 18 Aug 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-08-18-howto-creating-strongly-typed-code/</guid>
+      <description>One of the 3rd Party CMS’s that I frequently work with (Ektron) has a lot of legacy API code that uses Microsoft.VisualBasic.Collections ( from hereon referred to as Collection) to pass data into the database.&amp;nbsp; These API’s methods are slowly being replaced with strongly typed entity style methods, but the most stable and reliable methods use Collections.
+There are many reasons to dislike Collections, but my top ones are:
+ You can’t see the key’s of the values inside – this often leads to Exception led logic  Weakly Typed   What’s in the Box?</description>
+    </item>
+    
+    <item>
+      <title>Building a Better FindControl</title>
+      <link>https://codifice.uk/posts/2010-08-03-building-better-findcontrol/</link>
+      <pubDate>Tue, 03 Aug 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-08-03-building-better-findcontrol/</guid>
+      <description>There are times in any semi-advanced ASP.NET developers life when they’re working with databound templated controls (such as the Repeater) and they need to find a control without knowing where it is, or even if its there.
+Normally, you’re reduced to using the standard FindControl method available on any control.&amp;nbsp; But this only finds controls with a given id within the same NamingContainer.&amp;nbsp; I’ve written some extension methods to try and get around the (many) issues that I’ve had with FindControl and hopefully people will find them useful.</description>
+    </item>
+    
+    <item>
+      <title>TIP: Improve Readability with Shorter String.Format Statements</title>
+      <link>https://codifice.uk/posts/2010-07-01-tip-improve-readability-with-shorter/</link>
+      <pubDate>Thu, 01 Jul 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-07-01-tip-improve-readability-with-shorter/</guid>
+      <description>String.Format is a wonderful method, a real life saver when it comes to producing (readable) formatted text from within code.&amp;nbsp; I use it everywhere, but it gets a bit tedious typing the same boilerplate code to use it properly:
+1: string formatted = string.Format(CultureInfo.InvariantCulture, &#34;Formatted text {0:-15} example generated on {1:d}&#34;, meaningfulString, DateTime.Now);   
+
+That “string.Format(CultureInfo.InvariantCulture,” over 40 characters before you get the meat of the statement.&amp;nbsp; Sure you can drop the invariant culture bit but then you can introduce weird formatting problems on different machines….</description>
+    </item>
+    
+  </channel>
+</rss>

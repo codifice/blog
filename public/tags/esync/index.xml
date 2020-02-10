@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>esync on Codifice</title>
+    <link>https://codifice.uk/tags/esync/</link>
+    <description>Recent content in esync on Codifice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 01 Nov 2011 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://codifice.uk/tags/esync/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ektron: Finding “Missing” Content in the Index on 64bit Windows</title>
+      <link>https://codifice.uk/posts/2011-11-01-ektron-finding-missing-content-in-index/</link>
+      <pubDate>Tue, 01 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2011-11-01-ektron-finding-missing-content-in-index/</guid>
+      <description>When content is created on an Ektron with a large content id (commonly on eSync enabled workareas) it may corrupt the content id.&amp;nbsp; For example if a new content item has an id of 6442451035 it will actually be indexed with a contentid of 2147483739.&amp;nbsp; This is because the original id is larger than an unsigned integer can hold. 1: long contentId = 6442451035;  2: Console.WriteLine((uint)contentId); //2147483739</description>
+    </item>
+    
+    <item>
+      <title>Ektron: High Indexing Service Processor Usage (Potential) Fix</title>
+      <link>https://codifice.uk/posts/2010-12-16-ektron-high-indexing-service-processor/</link>
+      <pubDate>Thu, 16 Dec 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-12-16-ektron-high-indexing-service-processor/</guid>
+      <description>One of our larger client Ektron sites has had a history of poor performance that always seemed to be related to Indexing immediately after publishing content or syncing content to the live environment.&amp;nbsp; The site heavily uses indexed smart form fields and indexed metadata fields for ordering/sorting lists of content.
+The symptoms were:
+ High CIDAEMON processor usage (95-100% of a processor core)  Total Documents to Index in Indexing Service Manager getting stuck  Indexing Service ‘Service Too Busy’ exceptions  Analysing Crash Dumps of the CIDAEMON process shows the ‘hot’ thread stuck in the QLXFilter.</description>
+    </item>
+    
+    <item>
+      <title>Diagnosing an Ektron eSync Relationship</title>
+      <link>https://codifice.uk/posts/2010-03-23-ektron-esync-error-servicechannel/</link>
+      <pubDate>Tue, 23 Mar 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-03-23-ektron-esync-error-servicechannel/</guid>
+      <description>Ektron’s eSync service is a great product when it’s working but getting the initial configuration right can be a bit fiddly.&amp;nbsp; I’ve compiled a quick diagnostic procedure to resolve the most common issues, as well as some of the more common issues.
+Note: The Ektron Windows Service is usually in: C:\Program Files\Ektron\EktronWindowsService30. After any configuration change restart the Ektron Windows Service on every node in the relationship.
+ Restart the Ektron Windows Service on every node within the relationship  Ensure that the Ektron license is valid for every database within the relationship  Ensure that you can access http://&amp;lt;DOMAINNAME&amp;gt;/workarea/ServerControlWS.</description>
+    </item>
+    
+  </channel>
+</rss>

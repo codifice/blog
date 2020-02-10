@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>web deployment project on Codifice</title>
+    <link>https://codifice.uk/tags/web-deployment-project/</link>
+    <description>Recent content in web deployment project on Codifice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 08 Jun 2010 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://codifice.uk/tags/web-deployment-project/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>N2CMS Meet VWT2OC: Day 3 – Grinding to a Halt!</title>
+      <link>https://codifice.uk/posts/2010-06-08-n2cms-meet-vwt2oc-day-3-grinding-to/</link>
+      <pubDate>Tue, 08 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-06-08-n2cms-meet-vwt2oc-day-3-grinding-to/</guid>
+      <description>Well, it was going way too well to last.&amp;nbsp; It’s become apparent that the existing site is in some sort of half migrated mangled state after the hosting provider changed systems.&amp;nbsp; This has been like a half-brick to the head as when they’ve tried to fix the issue, more and more keep getting uncovered.&amp;nbsp; The sites been down for most of the day as a result (and is still down 24 hours later ….</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang='en'><head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='Well, Webhost4Life have yet to restore the current site so I can’t work through the develop model/import data/rinse/repeat iterations which I’ll need to ensure a clean migration at the end of the project.&nbsp; Still at least they’re keeping me updated…and not at all keeping me in the dark with vague promised that someone&#39;s working on it.&nbsp; Bastards.
+I guess it’s my fault for trusting them to do all the database backups (like they’re paid to do)….'>
+<meta name='theme-color' content='#ffcd00'>
+
+<meta property='og:title' content='N2CMS Meet VWT2OC: Day 4 – Wheel Spinning • Martin Jarvis'>
+<meta property='og:description' content='Well, Webhost4Life have yet to restore the current site so I can’t work through the develop model/import data/rinse/repeat iterations which I’ll need to ensure a clean migration at the end of the project.&nbsp; Still at least they’re keeping me updated…and not at all keeping me in the dark with vague promised that someone&#39;s working on it.&nbsp; Bastards.
+I guess it’s my fault for trusting them to do all the database backups (like they’re paid to do)….'>
+<meta property='og:url' content='https://codifice.uk/posts/2010-06-09-n2cms-meet-vwt2oc-day-4-wheel-spinning/'>
+<meta property='og:site_name' content='Codifice'>
+<meta property='og:type' content='article'><meta property='og:image' content='https://www.gravatar.com/avatar/f3a1aad34bc567d039ed8504c741fc38?s=256'><meta property='article:section' content='posts'><meta property='article:tag' content='svn'><meta property='article:tag' content='batch'><meta property='article:tag' content='vwt2oc'><meta property='article:tag' content='n2cms'><meta property='article:published_time' content='2010-06-09T00:00:00Z'/><meta property='article:modified_time' content='2010-06-10T00:00:00Z'/><meta name='twitter:card' content='summary'><meta name='twitter:creator' content='@codificeuk'>
+
+<meta name="generator" content="Hugo 0.63.2" />
+
+  <title>N2CMS Meet VWT2OC: Day 4 – Wheel Spinning • Martin Jarvis</title>
+  <link rel='canonical' href='https://codifice.uk/posts/2010-06-09-n2cms-meet-vwt2oc-day-4-wheel-spinning/'>
+  
+  
+  <link rel='icon' href='/favicon.png'>
+<link rel='stylesheet' href='/assets/css/main.ab98e12b.css'><link rel='stylesheet' href='/css/custom.css'><style>
+:root{--color-accent:#ffcd00;}
+</style>
+
+  
+
+</head>
+<body class='page type-posts has-sidebar'>
+
+  <div class='site'><div id='sidebar' class='sidebar'>
+  <a class='screen-reader-text' href='#main-menu'>Skip to Main Menu</a>
+
+  <div class='container'><section class='widget widget-about sep-after'>
+  <header>
+    
+    <div class='logo'>
+      <a href='/'>
+        <img src='/images/logo.png'>
+      </a>
+    </div>
+    
+    <h2 class='title site-title '>
+      <a href='/'>
+      Codifice
+      </a>
+    </h2>
+    <div class='desc'>
+    Artisan Development and Architecture
+    </div>
+  </header>
+
+</section>
+<section class='widget widget-sidebar_menu sep-after'><nav id='sidebar-menu' class='menu sidebar-menu' aria-label='Sidebar Menu'>
+    <div class='container'>
+      <ul><li class='item'>
+  <a href='/'>Home</a></li><li class='item'>
+  <a href='/posts/'>Posts</a></li></ul>
+    </div>
+  </nav>
+
+</section><section class='widget widget-search sep-after'>
+  <header>
+    <h4 class='title widget-title'>Search</h4>
+  </header>
+
+  <form action='/search' id='search-form' class='search-form'>
+    <label>
+      <span class='screen-reader-text'>Search</span>
+      <input id='search-term' class='search-term' type='search' name='q' placeholder='Search&hellip;'>
+    </label></form>
+
+</section>
+<section class='widget widget-recent_posts sep-after'>
+  <header>
+    <h4 class='title widget-title'>Recent Posts</h4>
+  </header>
+
+  <ul class='list'>
+  
+    <li class='item'>
+  <div class='meta'>
+    <span>
+  <span class='screen-reader-text'>Posted on </span>
+  <time datetime='2012-11-22T00:00:00Z'>2012, Nov 22</time>
+</span>
+
+  </div>
+  <header class='item-header'>
+    <h3 class='item-title'>
+      <a href='/posts/2012-11-22-notes-on-configuring-new-episerver-6-r2/'>Notes on Configuring a New EPiServer 6 R2 Website for Continuous Integration</a>
+    </h3>
+  </header>
+</li>
+
+  
+    <li class='item'>
+  <div class='meta'>
+    <span>
+  <span class='screen-reader-text'>Posted on </span>
+  <time datetime='2012-01-15T00:00:00Z'>2012, Jan 15</time>
+</span>
+
+  </div>
+  <header class='item-header'>
+    <h3 class='item-title'>
+      <a href='/posts/2012-01-15-announcing-mvc3-validation-groups/'>Announcing MVC3 Validation Groups</a>
+    </h3>
+  </header>
+</li>
+
+  
+    <li class='item'>
+  <div class='meta'>
+    <span>
+  <span class='screen-reader-text'>Posted on </span>
+  <time datetime='2011-11-01T00:00:00Z'>2011, Nov 01</time>
+</span>
+
+  </div>
+  <header class='item-header'>
+    <h3 class='item-title'>
+      <a href='/posts/2011-11-01-ektron-finding-missing-content-in-index/'>Ektron: Finding “Missing” Content in the Index on 64bit Windows</a>
+    </h3>
+  </header>
+</li>
+
+  
+    <li class='item'>
+  <div class='meta'>
+    <span>
+  <span class='screen-reader-text'>Posted on </span>
+  <time datetime='2011-08-16T00:00:00Z'>2011, Aug 16</time>
+</span>
+
+  </div>
+  <header class='item-header'>
+    <h3 class='item-title'>
+      <a href='/posts/2011-08-16-persisting-page-title-across-update/'>Persisting the Page Title across Update Panel Post backs</a>
+    </h3>
+  </header>
+</li>
+
+  
+    <li class='item'>
+  <div class='meta'>
+    <span>
+  <span class='screen-reader-text'>Posted on </span>
+  <time datetime='2011-08-04T00:00:00Z'>2011, Aug 04</time>
+</span>
+
+  </div>
+  <header class='item-header'>
+    <h3 class='item-title'>
+      <a href='/posts/2011-08-04-ektron-treating-office-files-as-normal/'>Ektron: Treating Office Files as Normal DMS Assets</a>
+    </h3>
+  </header>
+</li>
+
+  
+  </ul>
+</section>
+<section class='widget widget-taxonomy_cloud sep-after'>
+  <header>
+    <h4 class='title widget-title'>Tags</h4>
+  </header>
+
+  <div class='container list-container'>
+  <ul class='list taxonomy-cloud'><li>
+        <a href='/tags/.net-4.0/' style='font-size:1em'>.net 4.0</a>
+      </li><li>
+        <a href='/tags/addon/' style='font-size:1.0666666666666667em'>addon</a>
+      </li><li>
+        <a href='/tags/ado.net/' style='font-size:1em'>ado.net</a>
+      </li><li>
+        <a href='/tags/arvixe/' style='font-size:1.0333333333333334em'>arvixe</a>
+      </li><li>
+        <a href='/tags/batch/' style='font-size:1em'>batch</a>
+      </li><li>
+        <a href='/tags/best-practise/' style='font-size:1.3333333333333333em'>best practise</a>
+      </li><li>
+        <a href='/tags/blogger/' style='font-size:1em'>blogger</a>
+      </li><li>
+        <a href='/tags/bouncers/' style='font-size:1.0666666666666667em'>bouncers</a>
+      </li><li>
+        <a href='/tags/branding/' style='font-size:1em'>branding</a>
+      </li><li>
+        <a href='/tags/build/' style='font-size:1em'>build</a>
+      </li><li>
+        <a href='/tags/caching/' style='font-size:1.0333333333333334em'>caching</a>
+      </li><li>
+        <a href='/tags/client-relationship/' style='font-size:1em'>client relationship</a>
+      </li><li>
+        <a href='/tags/clientbase/' style='font-size:1em'>clientbase</a>
+      </li><li>
+        <a href='/tags/codeplex/' style='font-size:1em'>codeplex</a>
+      </li><li>
+        <a href='/tags/content/' style='font-size:1em'>content</a>
+      </li><li>
+        <a href='/tags/control-adapters/' style='font-size:1em'>control adapters</a>
+      </li><li>
+        <a href='/tags/csharp/' style='font-size:2em'>csharp</a>
+      </li><li>
+        <a href='/tags/css/' style='font-size:1em'>css</a>
+      </li><li>
+        <a href='/tags/cte/' style='font-size:1em'>cte</a>
+      </li><li>
+        <a href='/tags/database/' style='font-size:1.0333333333333334em'>database</a>
+      </li><li>
+        <a href='/tags/databound/' style='font-size:1em'>databound</a>
+      </li><li>
+        <a href='/tags/debugdiag/' style='font-size:1em'>debugdiag</a>
+      </li><li>
+        <a href='/tags/design/' style='font-size:1em'>design</a>
+      </li><li>
+        <a href='/tags/dont-try-this-at-home/' style='font-size:1em'>dont try this at home</a>
+      </li><li>
+        <a href='/tags/e053534f/' style='font-size:1em'>e053534f</a>
+      </li><li>
+        <a href='/tags/ektron/' style='font-size:1.6333333333333333em'>ektron</a>
+      </li><li>
+        <a href='/tags/ektron-wap/' style='font-size:1.0666666666666667em'>ektron wap</a>
+      </li><li>
+        <a href='/tags/elevatedpermissionscope/' style='font-size:1em'>elevatedpermissionscope</a>
+      </li><li>
+        <a href='/tags/episerver/' style='font-size:1em'>episerver</a>
+      </li><li>
+        <a href='/tags/esync/' style='font-size:1.0666666666666667em'>esync</a>
+      </li><li>
+        <a href='/tags/example/' style='font-size:1em'>example</a>
+      </li><li>
+        <a href='/tags/exception-handling/' style='font-size:1.1em'>exception handling</a>
+      </li><li>
+        <a href='/tags/extension-method/' style='font-size:1.1666666666666667em'>extension method</a>
+      </li><li>
+        <a href='/tags/faulted/' style='font-size:1em'>faulted</a>
+      </li><li>
+        <a href='/tags/fluffy-stuff/' style='font-size:1em'>fluffy stuff</a>
+      </li><li>
+        <a href='/tags/forum/' style='font-size:1.0333333333333334em'>forum</a>
+      </li><li>
+        <a href='/tags/generics/' style='font-size:1.1em'>generics</a>
+      </li><li>
+        <a href='/tags/globalization/' style='font-size:1.1em'>globalization</a>
+      </li><li>
+        <a href='/tags/hack/' style='font-size:1em'>hack</a>
+      </li><li>
+        <a href='/tags/iis/' style='font-size:1.1666666666666667em'>iis</a>
+      </li><li>
+        <a href='/tags/indexing-service/' style='font-size:1.0333333333333334em'>indexing service</a>
+      </li><li>
+        <a href='/tags/infrastructure/' style='font-size:1em'>infrastructure</a>
+      </li><li>
+        <a href='/tags/js/' style='font-size:1.0333333333333334em'>js</a>
+      </li><li>
+        <a href='/tags/linux/' style='font-size:1em'>linux</a>
+      </li><li>
+        <a href='/tags/localization/' style='font-size:1.1em'>localization</a>
+      </li><li>
+        <a href='/tags/masterpage/' style='font-size:1em'>masterpage</a>
+      </li><li>
+        <a href='/tags/mbunit/' style='font-size:1em'>mbunit</a>
+      </li><li>
+        <a href='/tags/msbuild/' style='font-size:1em'>msbuild</a>
+      </li><li>
+        <a href='/tags/mvc/' style='font-size:1em'>mvc</a>
+      </li><li>
+        <a href='/tags/n2cms/' style='font-size:1.2333333333333334em'>n2cms</a>
+      </li><li>
+        <a href='/tags/nuget/' style='font-size:1em'>nuget</a>
+      </li><li>
+        <a href='/tags/off-topic/' style='font-size:1em'>off topic</a>
+      </li><li>
+        <a href='/tags/opinion/' style='font-size:1em'>opinion</a>
+      </li><li>
+        <a href='/tags/performance/' style='font-size:1.1666666666666667em'>performance</a>
+      </li><li>
+        <a href='/tags/personal-project/' style='font-size:1.0333333333333334em'>personal project</a>
+      </li><li>
+        <a href='/tags/poet/' style='font-size:1em'>poet</a>
+      </li><li>
+        <a href='/tags/qnap/' style='font-size:1em'>qnap</a>
+      </li><li>
+        <a href='/tags/raid/' style='font-size:1em'>raid</a>
+      </li><li>
+        <a href='/tags/readability/' style='font-size:1em'>readability</a>
+      </li><li>
+        <a href='/tags/refactor/' style='font-size:1.0333333333333334em'>refactor</a>
+      </li><li>
+        <a href='/tags/regex/' style='font-size:1em'>regex</a>
+      </li><li>
+        <a href='/tags/security/' style='font-size:1.2em'>security</a>
+      </li><li>
+        <a href='/tags/seo/' style='font-size:1.0333333333333334em'>seo</a>
+      </li><li>
+        <a href='/tags/servicechannel/' style='font-size:1em'>servicechannel</a>
+      </li><li>
+        <a href='/tags/sql/' style='font-size:1.1333333333333333em'>sql</a>
+      </li><li>
+        <a href='/tags/stackoverflowexception/' style='font-size:1em'>stackoverflowexception</a>
+      </li><li>
+        <a href='/tags/static-analysis/' style='font-size:1.1333333333333333em'>static analysis</a>
+      </li><li>
+        <a href='/tags/statictestfactory/' style='font-size:1em'>statictestfactory</a>
+      </li><li>
+        <a href='/tags/svn/' style='font-size:1.0666666666666667em'>svn</a>
+      </li><li>
+        <a href='/tags/templated/' style='font-size:1em'>templated</a>
+      </li><li>
+        <a href='/tags/tidyproxy/' style='font-size:1.0333333333333334em'>tidyproxy</a>
+      </li><li>
+        <a href='/tags/tip/' style='font-size:1.1333333333333333em'>tip</a>
+      </li><li>
+        <a href='/tags/troubleshooting/' style='font-size:1.5em'>troubleshooting</a>
+      </li><li>
+        <a href='/tags/tuning/' style='font-size:1.0333333333333334em'>tuning</a>
+      </li><li>
+        <a href='/tags/unit-testing/' style='font-size:1em'>unit testing</a>
+      </li><li>
+        <a href='/tags/update-panel/' style='font-size:1em'>update panel</a>
+      </li><li>
+        <a href='/tags/usability/' style='font-size:1.1333333333333333em'>usability</a>
+      </li><li>
+        <a href='/tags/user-interface/' style='font-size:1.0333333333333334em'>user interface</a>
+      </li><li>
+        <a href='/tags/validation-groups/' style='font-size:1em'>validation groups</a>
+      </li><li>
+        <a href='/tags/version-control/' style='font-size:1.0666666666666667em'>version control</a>
+      </li><li>
+        <a href='/tags/vwt2oc/' style='font-size:1.2666666666666666em'>vwt2oc</a>
+      </li><li>
+        <a href='/tags/wcf/' style='font-size:1.0666666666666667em'>wcf</a>
+      </li><li>
+        <a href='/tags/web-application-project/' style='font-size:1.1333333333333333em'>web application project</a>
+      </li><li>
+        <a href='/tags/web-deployment-project/' style='font-size:1em'>web deployment project</a>
+      </li><li>
+        <a href='/tags/web-site-project/' style='font-size:1.1em'>web site project</a>
+      </li><li>
+        <a href='/tags/webhost4life/' style='font-size:1.0333333333333334em'>webhost4life</a>
+      </li><li>
+        <a href='/tags/white-label/' style='font-size:1em'>white label</a>
+      </li><li>
+        <a href='/tags/windbg/' style='font-size:1em'>windbg</a>
+      </li><li>
+        <a href='/tags/yaf/' style='font-size:1.0333333333333334em'>yaf</a>
+      </li></ul>
+</div>
+
+
+</section>
+</div>
+
+  <div class='sidebar-overlay'></div>
+</div><div class='main'><nav id='main-menu' class='menu main-menu' aria-label='Main Menu'>
+  <div class='container'>
+    <a class='screen-reader-text' href='#content'>Skip to Content</a>
+
+<button id='sidebar-toggler' class='sidebar-toggler' aria-controls='sidebar'>
+  <span class='screen-reader-text'>Toggle Sidebar</span>
+  <span class='open'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="3" y1="12" x2="21" y2="12" />
+  <line x1="3" y1="6" x2="21" y2="6" />
+  <line x1="3" y1="18" x2="21" y2="18" />
+  
+</svg>
+</span>
+  <span class='close'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="18" y1="6" x2="6" y2="18" />
+  <line x1="6" y1="6" x2="18" y2="18" />
+  
+</svg>
+</span>
+</button>
+    <ul><li class='item'>
+        <a href='/cv'>CV</a>
+      </li><li class='item'>
+        <a href='https://github.com/codifice/'>Repo</a>
+      </li><li class='item'>
+        <a href='/posts/'>Posts</a>
+      </li></ul>
+  </div>
+</nav><div class='header-widgets'>
+        <div class='container'>
+    
+    <style>.widget-breadcrumbs li:after{content:'\2f '}</style>
+  <section class='widget widget-breadcrumbs sep-after'>
+    <nav id='breadcrumbs'>
+      <ol><li><a href='/'>Home</a></li><li><a href='/posts/'>Posts</a></li><li><span>N2CMS Meet VWT2OC: Day 4 – Wheel Spinning</span></li></ol>
+    </nav>
+  </section></div>
+      </div>
+
+      <header id='header' class='header site-header'>
+        <div class='container sep-after'>
+          <div class='header-info'><p class='site-title title'>Codifice</p><p class='desc site-desc'>Artisan Development and Architecture</p>
+          </div>
+        </div>
+      </header>
+
+      <main id='content'>
+
+
+<article lang='en' class='entry'>
+  <header class='header entry-header'>
+  <div class='container sep-after'>
+    <div class='header-info'>
+      <h1 class='title'>N2CMS Meet VWT2OC: Day 4 – Wheel Spinning</h1>
+      
+
+    </div>
+    <div class='entry-meta'>
+  <span class='posted-on'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+  <line x1="16" y1="2" x2="16" y2="6"/>
+  <line x1="8" y1="2" x2="8" y2="6"/>
+  <line x1="3" y1="10" x2="21" y2="10"/>
+  
+</svg>
+<span class='screen-reader-text'>Posted on </span>
+  <time class='entry-date' datetime='2010-06-09T00:00:00Z'>2010, Jun 09</time>
+</span>
+
+  <span class='byline'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M21,21V20c0-2.76-4-5-9-5s-9,2.24-9,5v1"/>
+  <path d="M16,6.37A4,4,0,1,1,12.63,3,4,4,0,0,1,16,6.37Z"/>
+  
+</svg>
+<span class='screen-reader-text'> by </span><a href='/authors/martincjarvis'>Martin Jarvis</a></span>
+  
+<span class='reading-time'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <circle cx="12" cy="12" r="10"/>
+  <polyline points="12 6 12 12 15 15"/>
+  
+</svg>
+5 mins read
+</span>
+
+
+</div>
+
+
+  </div>
+</header>
+
+  
+  
+
+  <div class='container entry-content'>
+  Well, Webhost4Life have yet to restore the current site so I can’t work through the develop model/import data/rinse/repeat iterations which I’ll need to ensure a clean migration at the end of the project.&nbsp; Still at least they’re keeping me updated…and not at all keeping me in the dark with vague promised that someone's working on it.&nbsp; Bastards.<br>
+I guess it’s my fault for trusting them to do all the database backups (like they’re paid to do)…..I should have been doing them myself.<br>
+<h4>
+Still On The Brightside – <a href="http://bit.ly/aco4m4" target="_blank" title="N2 CMS">n2cms</a> 2.0 has been released!</h4>
+Ok, so it’s only 7 revisions from my current version so it’s unlikely to have any game changing fixes of features but it does give me an opportunity to test my N2CMS upgrade and deployment mechanism that I devised on <a href="http://martinondotnet.blogspot.com/2010/06/n2cms-meet-vwt2oc-day-1-project-setup.html" target="_blank">Day 1</a>.<br>
+In fact, given how mechanical the process is…I’ll script it out.&nbsp; First step is to merge in the latest changes and merge them into my customised branch (UpdateN2.bat):<br>
+<div id="codeSnippetWrapper" style="background-color: #f4f4f4; border: 1px solid silver; cursor: text; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 20px 0px 10px; max-height: 200px; overflow: auto; padding: 4px; text-align: left; width: 97.5%;">
+<div id="codeSnippet" style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; overflow: visible; padding: 0px; text-align: left; width: 100%;">
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum1" style="color: #606060;">   1:</span> :UpdateN2.bat</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum2" style="color: #606060;">   2:</span> @@echo off</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum3" style="color: #606060;">   3:</span> setlocal</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum4" style="color: #606060;">   4:</span> cmd /c <span style="color: #006080;">"%programfiles(x86)%\Microsoft Visual Studio 9.0\VC\vcvarsall.bat"</span> &amp;</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum5" style="color: #606060;">   5:</span> cls</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum6" style="color: #606060;">   6:</span> echo WARNING - this script will automatically commit changes <span style="color: blue;">to</span> the repository</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum7" style="color: #606060;">   7:</span> echo Are you sure you want to continue?</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum8" style="color: #606060;">   8:</span> pause</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum9" style="color: #606060;">   9:</span> echo You were warned!</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum10" style="color: #606060;">  10:</span> svn cleanup</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum11" style="color: #606060;">  11:</span> svn update</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum12" style="color: #606060;">  12:</span> svn commit -m <span style="color: #006080;">"Automatic Checkin Prior to Update"</span></pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum13" style="color: #606060;">  13:</span>&nbsp; </pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum14" style="color: #606060;">  14:</span> cd <span style="color: #006080;">"3rd Party"</span></pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum15" style="color: #606060;">  15:</span> svn propget svn:externals &gt; svntemp.tmp</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum16" style="color: #606060;">  16:</span>&nbsp; </pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum17" style="color: #606060;">  17:</span> <span style="color: blue;">FOR</span> /F <span style="color: #006080;">"tokens=1,2,3 delims= "</span> %%i <span style="color: blue;">IN</span> (svntemp.tmp) <span style="color: blue;">DO</span> (</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum18" style="color: #606060;">  18:</span>     svn info %%k &gt; svntemp.tmp</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum19" style="color: #606060;">  19:</span>     <span style="color: blue;">FOR</span> /F <span style="color: #006080;">"tokens=1,2 delims=: "</span> %%s <span style="color: blue;">IN</span> (svntemp.tmp) <span style="color: blue;">DO</span> (</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum20" style="color: #606060;">  20:</span>         <span style="color: blue;">if</span> <span style="color: #006080;">"%%s"</span>==<span style="color: #006080;">"Revision"</span> (</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum21" style="color: #606060;">  21:</span>             <span style="color: blue;">if</span> <span style="color: blue;">NOT</span> <span style="color: #006080;">"-r%%t"</span>==<span style="color: #006080;">"%%j"</span> (</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum22" style="color: #606060;">  22:</span>                  svn propset svn:externals <span style="color: #006080;">"%%i -r%%t %%k"</span> .</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum23" style="color: #606060;">  23:</span>                 svn commit -m <span style="color: #006080;">"Upated %%i revision to %%t"</span></pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum24" style="color: #606060;">  24:</span>                 echo Updating workarea</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum25" style="color: #606060;">  25:</span>                 svn update</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum26" style="color: #606060;">  26:</span>                 svn export n2cms local\n2cms --force</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum27" style="color: #606060;">  27:</span>&nbsp; </pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum28" style="color: #606060;">  28:</span>                 svn status local\n2cms &gt; svntemp.tmp</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum29" style="color: #606060;">  29:</span>&nbsp; </pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum30" style="color: #606060;">  30:</span>                 <span style="color: blue;">FOR</span> /F <span style="color: #006080;">"tokens=1,2 delims= "</span> %%i <span style="color: blue;">IN</span> (svntemp.tmp) <span style="color: blue;">DO</span> (</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum31" style="color: #606060;">  31:</span>                     <span style="color: blue;">if</span> <span style="color: #006080;">"%%i"</span>==<span style="color: #006080;">"?"</span> (</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum32" style="color: #606060;">  32:</span>                         svn add %%j</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum33" style="color: #606060;">  33:</span>                     )</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum34" style="color: #606060;">  34:</span>&nbsp; </pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum35" style="color: #606060;">  35:</span>                 )</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum36" style="color: #606060;">  36:</span>&nbsp; </pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum37" style="color: #606060;">  37:</span>                 svn commit -m <span style="color: #006080;">"Committed latest changes from %%i -r%%t"</span></pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum38" style="color: #606060;">  38:</span>                 svn info custom\n2cms &gt; svntemp.tmp</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum39" style="color: #606060;">  39:</span>                 <span style="color: blue;">FOR</span> /F <span style="color: #006080;">"tokens=1,2 delims=:"</span> %%a <span style="color: blue;">IN</span> (svntemp.tmp) <span style="color: blue;">DO</span> (</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum40" style="color: #606060;">  40:</span>                     <span style="color: blue;">if</span> <span style="color: #006080;">"%%a"</span>==<span style="color: #006080;">"Last Changed Rev"</span> (</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum41" style="color: #606060;">  41:</span>                         svn merge -r%%b:HEAD local\n2cms custom\n2cms &gt; svntemp.tmp    </pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum42" style="color: #606060;">  42:</span>                         <span style="color: blue;">SET</span> conflict=0</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum43" style="color: #606060;">  43:</span>                         <span style="color: blue;">FOR</span> /F <span style="color: #006080;">"tokens=1,2 delims= "</span> %%i <span style="color: blue;">IN</span> (svntemp.tmp) <span style="color: blue;">DO</span> (</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum44" style="color: #606060;">  44:</span>                             <span style="color: blue;">if</span> <span style="color: #006080;">"%%i"</span>==<span style="color: #006080;">"C"</span> (</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum45" style="color: #606060;">  45:</span>                                 echo conflicted file found %%j</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum46" style="color: #606060;">  46:</span>                                 <span style="color: blue;">SET</span> conflict=1</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum47" style="color: #606060;">  47:</span>                             )</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum48" style="color: #606060;">  48:</span>&nbsp; </pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum49" style="color: #606060;">  49:</span>                         )</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum50" style="color: #606060;">  50:</span>                         <span style="color: blue;">IF</span> <span style="color: #006080;">"%conflict%"</span>==<span style="color: #006080;">"1"</span> <span style="color: blue;">EXIT</span></pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum51" style="color: #606060;">  51:</span>                         svn commit -m <span style="color: #006080;">"Merged latest changes into custom"</span></pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum52" style="color: #606060;">  52:</span>                     </pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum53" style="color: #606060;">  53:</span>                     )</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum54" style="color: #606060;">  54:</span>                 )</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum55" style="color: #606060;">  55:</span>                 cd ..</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum56" style="color: #606060;">  56:</span>                 svn cleanup</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum57" style="color: #606060;">  57:</span>                 svn update</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum58" style="color: #606060;">  58:</span>                 cd <span style="color: #006080;">"3rd Party"</span></pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum59" style="color: #606060;">  59:</span>&nbsp; </pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum60" style="color: #606060;">  60:</span>             )</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum61" style="color: #606060;">  61:</span>             <span style="color: blue;">if</span> <span style="color: #006080;">"-r%%t"</span>==<span style="color: #006080;">"%%j"</span> (</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum62" style="color: #606060;">  62:</span>                 echo External Reference %%i Revision <span style="color: blue;">is</span> Already -r%%t</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum63" style="color: #606060;">  63:</span>             )</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum64" style="color: #606060;">  64:</span>&nbsp; </pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum65" style="color: #606060;">  65:</span>&nbsp; </pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum66" style="color: #606060;">  66:</span>         )</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum67" style="color: #606060;">  67:</span>     )</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum68" style="color: #606060;">  68:</span>     </pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum69" style="color: #606060;">  69:</span> )</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum70" style="color: #606060;">  70:</span> del svntemp.tmp</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum71" style="color: #606060;">  71:</span> cd ..</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum72" style="color: #606060;">  72:</span>&nbsp; </pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum73" style="color: #606060;">  73:</span>&nbsp; </pre>
+</div>
+</div>
+Apologies for the batching…but sometimes it’s just easier!<br>
+Now we need to build the custom version, rebuild the Forum addon and prepare the compiled version ready for deployment (into the VWT2OC project) (BuildN2.bat):<br>
+<div id="codeSnippetWrapper" style="background-color: #f4f4f4; border: 1px solid silver; cursor: text; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 20px 0px 10px; max-height: 200px; overflow: auto; padding: 4px; text-align: left; width: 97.5%;">
+<div id="codeSnippet" style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; overflow: visible; padding: 0px; text-align: left; width: 100%;">
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum1" style="color: #606060;">   1:</span> @@echo off</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum2" style="color: #606060;">   2:</span> cmd /c <span style="color: #006080;">"%programfiles(x86)%\Microsoft Visual Studio 9.0\VC\vcvarsall.bat"</span> &amp;</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum3" style="color: #606060;">   3:</span> Echo Updateing Compiled N2CMS</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum4" style="color: #606060;">   4:</span> cd <span style="color: #006080;">"3rd Party\custom\n2cms\build"</span></pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum5" style="color: #606060;">   5:</span> cmd /c <span style="color: #006080;">"build.bat /target:Clean;PrepareDependencies;Build;Templates-Build /property:Configuration=Debug"</span> &amp; </pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum6" style="color: #606060;">   6:</span> cmd /c <span style="color: #006080;">"..\..\..\..\Tools\CodeBehindRemover\CodeBehindRemover /i:..\src\\wwwroot  /o:..\..\N2.Templates.Compiled /e:ascx,aspx,master,asmx,ashx"</span> &amp;</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum7" style="color: #606060;">   7:</span> cmd /c <span style="color: #006080;">"robocopy ..\src\wwwroot ..\..\N2.Templates.Compiled /XD .svn obj /XF *.cs *.ascx *.aspx *.master *.asmx *.ashx *.csproj *.sln *.suo *.user *.cache /S"</span> &amp;</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum8" style="color: #606060;">   8:</span>&nbsp; </pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum9" style="color: #606060;">   9:</span> ECHO Deploying Forum <span style="color: blue;">to</span> Compiled Template</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum10" style="color: #606060;">  10:</span> cmd /c <span style="color: #006080;">"robocopy ..\src\wwwroot\bin  ..\..\Forum\lib N2.dll N2.pdb N2.xml N2.Templates.*"</span> &amp;</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum11" style="color: #606060;">  11:</span> cd ..\..\Forum\src</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum12" style="color: #606060;">  12:</span> cmd /c <span style="color: #006080;">"msbuild Forum.sln /target:clean;rebuild /property:Configuration=Debug"</span> &amp;</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum13" style="color: #606060;">  13:</span> cmd /c <span style="color: #006080;">"..\..\..\..\Tools\CodeBehindRemover\CodeBehindRemover /i:Forum /o:..\..\N2.Templates.Compiled /e:ascx,aspx,master,asmx,ashx"</span> &amp;</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum14" style="color: #606060;">  14:</span> cmd /c <span style="color: #006080;">"robocopy Forum ..\..\N2.Templates.Compiled /XD .svn obj /XF *.cs *.ascx *.aspx *.master *.asmx *.ashx *.csproj *.sln *.suo *.user *.cache /S"</span> &amp;</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum15" style="color: #606060;">  15:</span>&nbsp; </pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum16" style="color: #606060;">  16:</span> cmd /c <span style="color: #006080;">"robocopy ..\..\N2.Templates.Compiled\bin ..\..\N2.Templates.Compiled.bin /XD .svn /MOVE"</span> &amp;</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum17" style="color: #606060;">  17:</span>&nbsp; </pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum18" style="color: #606060;">  18:</span> cd ..\..\..\..\</pre>
+</div>
+</div>
+And finally deploy the compiled version into the VWT2OC project (DeployN2.bat):<br>
+<div id="codeSnippetWrapper" style="background-color: #f4f4f4; border: 1px solid silver; cursor: text; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 20px 0px 10px; max-height: 200px; overflow: auto; padding: 4px; text-align: left; width: 97.5%;">
+<div id="codeSnippet" style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; overflow: visible; padding: 0px; text-align: left; width: 100%;">
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum1" style="color: #606060;">   1:</span> :DeployN2.bat</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum2" style="color: #606060;">   2:</span> @@echo off</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum3" style="color: #606060;">   3:</span> setlocal</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum4" style="color: #606060;">   4:</span> cmd /c <span style="color: #006080;">"%programfiles(x86)%\Microsoft Visual Studio 9.0\VC\vcvarsall.bat"</span> &amp;</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum5" style="color: #606060;">   5:</span> <span style="color: blue;">IF</span> <span style="color: #006080;">"%1"</span>==<span style="color: #006080;">""</span> (</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum6" style="color: #606060;">   6:</span>     cls</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum7" style="color: #606060;">   7:</span>     echo WARNING - this script will automatically commit changes <span style="color: blue;">to</span> the repository</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum8" style="color: #606060;">   8:</span>     echo Are you sure you want ot continue?</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum9" style="color: #606060;">   9:</span>     pause</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum10" style="color: #606060;">  10:</span>     echo You were warned!</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum11" style="color: #606060;">  11:</span>     svn cleanup</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum12" style="color: #606060;">  12:</span>     svn update</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum13" style="color: #606060;">  13:</span>     svn commit -m <span style="color: #006080;">"Automatic Checkin Prior to Update"</span></pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum14" style="color: #606060;">  14:</span> )</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum15" style="color: #606060;">  15:</span>&nbsp; </pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum16" style="color: #606060;">  16:</span> cd <span style="color: #006080;">"3rd Party"</span></pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum17" style="color: #606060;">  17:</span>&nbsp; </pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum18" style="color: #606060;">  18:</span>                 svn info custom\n2cms &gt; svntemp.tmp</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum19" style="color: #606060;">  19:</span>                 <span style="color: blue;">FOR</span> /F <span style="color: #006080;">"tokens=1,2 delims=:"</span> %%a <span style="color: blue;">IN</span> (svntemp.tmp) <span style="color: blue;">DO</span> (</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum20" style="color: #606060;">  20:</span>                     <span style="color: blue;">if</span> <span style="color: #006080;">"%%a"</span>==<span style="color: #006080;">"Last Changed Rev"</span> (</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum21" style="color: #606060;">  21:</span>                         svn merge -r%%b:HEAD custom\n2cms ..\Website &gt; svntemp.tmp    </pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum22" style="color: #606060;">  22:</span>                         <span style="color: blue;">SET</span> conflict=0</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum23" style="color: #606060;">  23:</span>                         <span style="color: blue;">FOR</span> /F <span style="color: #006080;">"tokens=1,2 delims= "</span> %%i <span style="color: blue;">IN</span> (svntemp.tmp) <span style="color: blue;">DO</span> (</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum24" style="color: #606060;">  24:</span>                             <span style="color: blue;">if</span> <span style="color: #006080;">"%%i"</span>==<span style="color: #006080;">"C"</span> (</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum25" style="color: #606060;">  25:</span>                                 echo conflicted file found %%j</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum26" style="color: #606060;">  26:</span>                                 <span style="color: blue;">SET</span> conflict=1</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum27" style="color: #606060;">  27:</span>                             )</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum28" style="color: #606060;">  28:</span>&nbsp; </pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum29" style="color: #606060;">  29:</span>                         )</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum30" style="color: #606060;">  30:</span>                         <span style="color: blue;">IF</span> <span style="color: #006080;">"%conflict%"</span>==<span style="color: #006080;">"1"</span> <span style="color: blue;">EXIT</span></pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum31" style="color: #606060;">  31:</span>                         svn commit -m <span style="color: #006080;">"Merged latest changes into custom"</span></pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum32" style="color: #606060;">  32:</span>                     </pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum33" style="color: #606060;">  33:</span>                     )</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum34" style="color: #606060;">  34:</span>                 )</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum35" style="color: #606060;">  35:</span>                 </pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum36" style="color: #606060;">  36:</span>     </pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum37" style="color: #606060;">  37:</span> )</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum38" style="color: #606060;">  38:</span> del svntemp.tmp</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum39" style="color: #606060;">  39:</span> cd ..</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum40" style="color: #606060;">  40:</span>&nbsp; </pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum41" style="color: #606060;">  41:</span>&nbsp; </pre>
+</div>
+</div>
+And finally one to make it one swift command (Update AndDeployN2.bat):<br>
+<div id="codeSnippetWrapper" style="background-color: #f4f4f4; border: 1px solid silver; cursor: text; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 20px 0px 10px; max-height: 200px; overflow: auto; padding: 4px; text-align: left; width: 97.5%;">
+<div id="codeSnippet" style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; overflow: visible; padding: 0px; text-align: left; width: 100%;">
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum1" style="color: #606060;">   1:</span> :UpdateAndDeployN2.bat</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum2" style="color: #606060;">   2:</span> @@echo off</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum3" style="color: #606060;">   3:</span> setlocal</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum4" style="color: #606060;">   4:</span> cmd /c <span style="color: #006080;">"UpdateN2.bat"</span> &amp;</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum5" style="color: #606060;">   5:</span> cmd /c <span style="color: #006080;">"BuildN2.bat"</span> &amp;</pre>
+<pre style="background-color: #f4f4f4; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum6" style="color: #606060;">   6:</span> cmd /c <span style="color: #006080;">"DeployN2.bat NoWarning"</span> &amp;</pre>
+<pre style="background-color: white; border-style: none; color: black; direction: ltr; font-family: 'Courier New',courier,monospace; font-size: 8pt; line-height: 12pt; margin: 0em; overflow: visible; padding: 0px; text-align: left; width: 100%;"><span id="lnum7" style="color: #606060;">   7:</span> echo Update <span style="color: blue;">and</span> Deployment Complete</pre>
+</div>
+</div>
+</div>
+
+  
+<footer class='entry-footer'>
+  <div class='container sep-before'><div class='last-updated'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34" />
+  <polygon points="18 2 22 6 12 16 8 16 8 12 18 2" />
+  
+</svg>
+<span class='screen-reader-text'>Last updated: </span>
+      <time class='entry-date' datetime='2010-06-10T00:00:00Z'>2010, Jun 10</time>
+    </div><div class='tags'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z"/>
+  <line x1="7" y1="7" x2="7" y2="7"/>
+  
+</svg>
+<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/svn/'>svn</a>, <a class='tag' href='/tags/batch/'>batch</a>, <a class='tag' href='/tags/vwt2oc/'>vwt2oc</a>, <a class='tag' href='/tags/n2cms/'>n2cms</a></div>
+
+  </div>
+</footer>
+
+
+</article>
+
+<nav class='entry-nav'>
+  <div class='container'><div class='prev-entry sep-before'>
+      <a href='/posts/2010-06-08-n2cms-meet-vwt2oc-day-3-grinding-to/'>
+        <span aria-hidden='true'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="20" y1="12" x2="4" y2="12"/>
+  <polyline points="10 18 4 12 10 6"/>
+  
+</svg>
+ Previous</span>
+        <span class='screen-reader-text'>Previous post: </span>N2CMS Meet VWT2OC: Day 3 – Grinding to a Halt!</a>
+    </div><div class='next-entry sep-before'>
+      <a href='/posts/2010-06-09-n2cms-forum-addon-fixing-theme/'>
+        <span class='screen-reader-text'>Next post: </span>N2CMS Forum Addon: Fixing the Theme<span aria-hidden='true'>Next <svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="4" y1="12" x2="20" y2="12"/>
+  <polyline points="14 6 20 12 14 18"/>
+  
+</svg>
+</span>
+      </a>
+    </div></div>
+</nav>
+
+
+
+
+      </main>
+
+      <footer id='footer' class='footer'>
+        <div class='container sep-before'><section class='widget widget-social_menu sep-after'><nav aria-label='Social Menu'>
+    <ul><li>
+        <a href='https://github.com/codifice' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Open Github account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='mailto:martin@codifice.uk' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Contact via Email</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+  <polyline points="22,6 12,13 2,6"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='https://linkedin.com/in/martincjarvis' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Open Linkedin account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+  <rect x="2" y="9" width="4" height="12"/>
+  <circle cx="4" cy="4" r="2"/>
+  
+</svg>
+</a>
+      </li></ul>
+  </nav>
+</section><div class='copyright'>
+  <p> &copy; 2020 Codifice Ltd </p>
+</div>
+
+        </div>
+      </footer>
+
+    </div>
+  </div><script>window.__assets_js_src="/assets/js/"</script>
+
+<script src='/assets/js/main.c3bcf2df.js'></script><script src='/js/custom.js'></script>
+
+</body>
+
+</html>
+

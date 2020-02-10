@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang='en'><head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='One of the features of Ektron is tight office integration allowing the editing of office files directly from the workarea.&nbsp; However, in some circumstances you may want to treat these as normal DMS assets (like PDF files) as their the end results of an offline publishing process.
+The Ektron support fix for this is to modify the workarea files (detailed below), which would then need to be re-applyed with every upgrade.'>
+<meta name='theme-color' content='#ffcd00'>
+
+<meta property='og:title' content='Ektron: Treating Office Files as Normal DMS Assets • Martin Jarvis'>
+<meta property='og:description' content='One of the features of Ektron is tight office integration allowing the editing of office files directly from the workarea.&nbsp; However, in some circumstances you may want to treat these as normal DMS assets (like PDF files) as their the end results of an offline publishing process.
+The Ektron support fix for this is to modify the workarea files (detailed below), which would then need to be re-applyed with every upgrade.'>
+<meta property='og:url' content='https://codifice.uk/posts/2011-08-04-ektron-treating-office-files-as-normal/'>
+<meta property='og:site_name' content='Codifice'>
+<meta property='og:type' content='article'><meta property='og:image' content='https://www.gravatar.com/avatar/f3a1aad34bc567d039ed8504c741fc38?s=256'><meta property='article:section' content='posts'><meta property='article:tag' content='ektron'><meta property='article:tag' content='csharp'><meta property='article:published_time' content='2011-08-04T00:00:00Z'/><meta property='article:modified_time' content='2011-08-04T00:00:00Z'/><meta name='twitter:card' content='summary'><meta name='twitter:creator' content='@codificeuk'>
+
+<meta name="generator" content="Hugo 0.63.2" />
+
+  <title>Ektron: Treating Office Files as Normal DMS Assets • Martin Jarvis</title>
+  <link rel='canonical' href='https://codifice.uk/posts/2011-08-04-ektron-treating-office-files-as-normal/'>
+  
+  
+  <link rel='icon' href='/favicon.png'>
+<link rel='stylesheet' href='/assets/css/main.ab98e12b.css'><link rel='stylesheet' href='/css/custom.css'><style>
+:root{--color-accent:#ffcd00;}
+</style>
+
+  
+
+</head>
+<body class='page type-posts has-sidebar'>
+
+  <div class='site'><div id='sidebar' class='sidebar'>
+  <a class='screen-reader-text' href='#main-menu'>Skip to Main Menu</a>
+
+  <div class='container'><section class='widget widget-about sep-after'>
+  <header>
+    
+    <div class='logo'>
+      <a href='/'>
+        <img src='/images/logo.png'>
+      </a>
+    </div>
+    
+    <h2 class='title site-title '>
+      <a href='/'>
+      Codifice
+      </a>
+    </h2>
+    <div class='desc'>
+    Artisan Development and Architecture
+    </div>
+  </header>
+
+</section>
+<section class='widget widget-sidebar_menu sep-after'><nav id='sidebar-menu' class='menu sidebar-menu' aria-label='Sidebar Menu'>
+    <div class='container'>
+      <ul><li class='item'>
+  <a href='/'>Home</a></li><li class='item'>
+  <a href='/posts/'>Posts</a></li></ul>
+    </div>
+  </nav>
+
+</section><section class='widget widget-search sep-after'>
+  <header>
+    <h4 class='title widget-title'>Search</h4>
+  </header>
+
+  <form action='/search' id='search-form' class='search-form'>
+    <label>
+      <span class='screen-reader-text'>Search</span>
+      <input id='search-term' class='search-term' type='search' name='q' placeholder='Search&hellip;'>
+    </label></form>
+
+</section>
+<section class='widget widget-recent_posts sep-after'>
+  <header>
+    <h4 class='title widget-title'>Recent Posts</h4>
+  </header>
+
+  <ul class='list'>
+  
+    <li class='item'>
+  <div class='meta'>
+    <span>
+  <span class='screen-reader-text'>Posted on </span>
+  <time datetime='2012-11-22T00:00:00Z'>2012, Nov 22</time>
+</span>
+
+  </div>
+  <header class='item-header'>
+    <h3 class='item-title'>
+      <a href='/posts/2012-11-22-notes-on-configuring-new-episerver-6-r2/'>Notes on Configuring a New EPiServer 6 R2 Website for Continuous Integration</a>
+    </h3>
+  </header>
+</li>
+
+  
+    <li class='item'>
+  <div class='meta'>
+    <span>
+  <span class='screen-reader-text'>Posted on </span>
+  <time datetime='2012-01-15T00:00:00Z'>2012, Jan 15</time>
+</span>
+
+  </div>
+  <header class='item-header'>
+    <h3 class='item-title'>
+      <a href='/posts/2012-01-15-announcing-mvc3-validation-groups/'>Announcing MVC3 Validation Groups</a>
+    </h3>
+  </header>
+</li>
+
+  
+    <li class='item'>
+  <div class='meta'>
+    <span>
+  <span class='screen-reader-text'>Posted on </span>
+  <time datetime='2011-11-01T00:00:00Z'>2011, Nov 01</time>
+</span>
+
+  </div>
+  <header class='item-header'>
+    <h3 class='item-title'>
+      <a href='/posts/2011-11-01-ektron-finding-missing-content-in-index/'>Ektron: Finding “Missing” Content in the Index on 64bit Windows</a>
+    </h3>
+  </header>
+</li>
+
+  
+    <li class='item'>
+  <div class='meta'>
+    <span>
+  <span class='screen-reader-text'>Posted on </span>
+  <time datetime='2011-08-16T00:00:00Z'>2011, Aug 16</time>
+</span>
+
+  </div>
+  <header class='item-header'>
+    <h3 class='item-title'>
+      <a href='/posts/2011-08-16-persisting-page-title-across-update/'>Persisting the Page Title across Update Panel Post backs</a>
+    </h3>
+  </header>
+</li>
+
+  
+    <li class='item'>
+  <div class='meta'>
+    <span>
+  <span class='screen-reader-text'>Posted on </span>
+  <time datetime='2011-08-04T00:00:00Z'>2011, Aug 04</time>
+</span>
+
+  </div>
+  <header class='item-header'>
+    <h3 class='item-title'>
+      <a href='/posts/2011-08-04-ektron-treating-office-files-as-normal/'>Ektron: Treating Office Files as Normal DMS Assets</a>
+    </h3>
+  </header>
+</li>
+
+  
+  </ul>
+</section>
+<section class='widget widget-taxonomy_cloud sep-after'>
+  <header>
+    <h4 class='title widget-title'>Tags</h4>
+  </header>
+
+  <div class='container list-container'>
+  <ul class='list taxonomy-cloud'><li>
+        <a href='/tags/.net-4.0/' style='font-size:1em'>.net 4.0</a>
+      </li><li>
+        <a href='/tags/addon/' style='font-size:1.0666666666666667em'>addon</a>
+      </li><li>
+        <a href='/tags/ado.net/' style='font-size:1em'>ado.net</a>
+      </li><li>
+        <a href='/tags/arvixe/' style='font-size:1.0333333333333334em'>arvixe</a>
+      </li><li>
+        <a href='/tags/batch/' style='font-size:1em'>batch</a>
+      </li><li>
+        <a href='/tags/best-practise/' style='font-size:1.3333333333333333em'>best practise</a>
+      </li><li>
+        <a href='/tags/blogger/' style='font-size:1em'>blogger</a>
+      </li><li>
+        <a href='/tags/bouncers/' style='font-size:1.0666666666666667em'>bouncers</a>
+      </li><li>
+        <a href='/tags/branding/' style='font-size:1em'>branding</a>
+      </li><li>
+        <a href='/tags/build/' style='font-size:1em'>build</a>
+      </li><li>
+        <a href='/tags/caching/' style='font-size:1.0333333333333334em'>caching</a>
+      </li><li>
+        <a href='/tags/client-relationship/' style='font-size:1em'>client relationship</a>
+      </li><li>
+        <a href='/tags/clientbase/' style='font-size:1em'>clientbase</a>
+      </li><li>
+        <a href='/tags/codeplex/' style='font-size:1em'>codeplex</a>
+      </li><li>
+        <a href='/tags/content/' style='font-size:1em'>content</a>
+      </li><li>
+        <a href='/tags/control-adapters/' style='font-size:1em'>control adapters</a>
+      </li><li>
+        <a href='/tags/csharp/' style='font-size:2em'>csharp</a>
+      </li><li>
+        <a href='/tags/css/' style='font-size:1em'>css</a>
+      </li><li>
+        <a href='/tags/cte/' style='font-size:1em'>cte</a>
+      </li><li>
+        <a href='/tags/database/' style='font-size:1.0333333333333334em'>database</a>
+      </li><li>
+        <a href='/tags/databound/' style='font-size:1em'>databound</a>
+      </li><li>
+        <a href='/tags/debugdiag/' style='font-size:1em'>debugdiag</a>
+      </li><li>
+        <a href='/tags/design/' style='font-size:1em'>design</a>
+      </li><li>
+        <a href='/tags/dont-try-this-at-home/' style='font-size:1em'>dont try this at home</a>
+      </li><li>
+        <a href='/tags/e053534f/' style='font-size:1em'>e053534f</a>
+      </li><li>
+        <a href='/tags/ektron/' style='font-size:1.6333333333333333em'>ektron</a>
+      </li><li>
+        <a href='/tags/ektron-wap/' style='font-size:1.0666666666666667em'>ektron wap</a>
+      </li><li>
+        <a href='/tags/elevatedpermissionscope/' style='font-size:1em'>elevatedpermissionscope</a>
+      </li><li>
+        <a href='/tags/episerver/' style='font-size:1em'>episerver</a>
+      </li><li>
+        <a href='/tags/esync/' style='font-size:1.0666666666666667em'>esync</a>
+      </li><li>
+        <a href='/tags/example/' style='font-size:1em'>example</a>
+      </li><li>
+        <a href='/tags/exception-handling/' style='font-size:1.1em'>exception handling</a>
+      </li><li>
+        <a href='/tags/extension-method/' style='font-size:1.1666666666666667em'>extension method</a>
+      </li><li>
+        <a href='/tags/faulted/' style='font-size:1em'>faulted</a>
+      </li><li>
+        <a href='/tags/fluffy-stuff/' style='font-size:1em'>fluffy stuff</a>
+      </li><li>
+        <a href='/tags/forum/' style='font-size:1.0333333333333334em'>forum</a>
+      </li><li>
+        <a href='/tags/generics/' style='font-size:1.1em'>generics</a>
+      </li><li>
+        <a href='/tags/globalization/' style='font-size:1.1em'>globalization</a>
+      </li><li>
+        <a href='/tags/hack/' style='font-size:1em'>hack</a>
+      </li><li>
+        <a href='/tags/iis/' style='font-size:1.1666666666666667em'>iis</a>
+      </li><li>
+        <a href='/tags/indexing-service/' style='font-size:1.0333333333333334em'>indexing service</a>
+      </li><li>
+        <a href='/tags/infrastructure/' style='font-size:1em'>infrastructure</a>
+      </li><li>
+        <a href='/tags/js/' style='font-size:1.0333333333333334em'>js</a>
+      </li><li>
+        <a href='/tags/linux/' style='font-size:1em'>linux</a>
+      </li><li>
+        <a href='/tags/localization/' style='font-size:1.1em'>localization</a>
+      </li><li>
+        <a href='/tags/masterpage/' style='font-size:1em'>masterpage</a>
+      </li><li>
+        <a href='/tags/mbunit/' style='font-size:1em'>mbunit</a>
+      </li><li>
+        <a href='/tags/msbuild/' style='font-size:1em'>msbuild</a>
+      </li><li>
+        <a href='/tags/mvc/' style='font-size:1em'>mvc</a>
+      </li><li>
+        <a href='/tags/n2cms/' style='font-size:1.2333333333333334em'>n2cms</a>
+      </li><li>
+        <a href='/tags/nuget/' style='font-size:1em'>nuget</a>
+      </li><li>
+        <a href='/tags/off-topic/' style='font-size:1em'>off topic</a>
+      </li><li>
+        <a href='/tags/opinion/' style='font-size:1em'>opinion</a>
+      </li><li>
+        <a href='/tags/performance/' style='font-size:1.1666666666666667em'>performance</a>
+      </li><li>
+        <a href='/tags/personal-project/' style='font-size:1.0333333333333334em'>personal project</a>
+      </li><li>
+        <a href='/tags/poet/' style='font-size:1em'>poet</a>
+      </li><li>
+        <a href='/tags/qnap/' style='font-size:1em'>qnap</a>
+      </li><li>
+        <a href='/tags/raid/' style='font-size:1em'>raid</a>
+      </li><li>
+        <a href='/tags/readability/' style='font-size:1em'>readability</a>
+      </li><li>
+        <a href='/tags/refactor/' style='font-size:1.0333333333333334em'>refactor</a>
+      </li><li>
+        <a href='/tags/regex/' style='font-size:1em'>regex</a>
+      </li><li>
+        <a href='/tags/security/' style='font-size:1.2em'>security</a>
+      </li><li>
+        <a href='/tags/seo/' style='font-size:1.0333333333333334em'>seo</a>
+      </li><li>
+        <a href='/tags/servicechannel/' style='font-size:1em'>servicechannel</a>
+      </li><li>
+        <a href='/tags/sql/' style='font-size:1.1333333333333333em'>sql</a>
+      </li><li>
+        <a href='/tags/stackoverflowexception/' style='font-size:1em'>stackoverflowexception</a>
+      </li><li>
+        <a href='/tags/static-analysis/' style='font-size:1.1333333333333333em'>static analysis</a>
+      </li><li>
+        <a href='/tags/statictestfactory/' style='font-size:1em'>statictestfactory</a>
+      </li><li>
+        <a href='/tags/svn/' style='font-size:1.0666666666666667em'>svn</a>
+      </li><li>
+        <a href='/tags/templated/' style='font-size:1em'>templated</a>
+      </li><li>
+        <a href='/tags/tidyproxy/' style='font-size:1.0333333333333334em'>tidyproxy</a>
+      </li><li>
+        <a href='/tags/tip/' style='font-size:1.1333333333333333em'>tip</a>
+      </li><li>
+        <a href='/tags/troubleshooting/' style='font-size:1.5em'>troubleshooting</a>
+      </li><li>
+        <a href='/tags/tuning/' style='font-size:1.0333333333333334em'>tuning</a>
+      </li><li>
+        <a href='/tags/unit-testing/' style='font-size:1em'>unit testing</a>
+      </li><li>
+        <a href='/tags/update-panel/' style='font-size:1em'>update panel</a>
+      </li><li>
+        <a href='/tags/usability/' style='font-size:1.1333333333333333em'>usability</a>
+      </li><li>
+        <a href='/tags/user-interface/' style='font-size:1.0333333333333334em'>user interface</a>
+      </li><li>
+        <a href='/tags/validation-groups/' style='font-size:1em'>validation groups</a>
+      </li><li>
+        <a href='/tags/version-control/' style='font-size:1.0666666666666667em'>version control</a>
+      </li><li>
+        <a href='/tags/vwt2oc/' style='font-size:1.2666666666666666em'>vwt2oc</a>
+      </li><li>
+        <a href='/tags/wcf/' style='font-size:1.0666666666666667em'>wcf</a>
+      </li><li>
+        <a href='/tags/web-application-project/' style='font-size:1.1333333333333333em'>web application project</a>
+      </li><li>
+        <a href='/tags/web-deployment-project/' style='font-size:1em'>web deployment project</a>
+      </li><li>
+        <a href='/tags/web-site-project/' style='font-size:1.1em'>web site project</a>
+      </li><li>
+        <a href='/tags/webhost4life/' style='font-size:1.0333333333333334em'>webhost4life</a>
+      </li><li>
+        <a href='/tags/white-label/' style='font-size:1em'>white label</a>
+      </li><li>
+        <a href='/tags/windbg/' style='font-size:1em'>windbg</a>
+      </li><li>
+        <a href='/tags/yaf/' style='font-size:1.0333333333333334em'>yaf</a>
+      </li></ul>
+</div>
+
+
+</section>
+</div>
+
+  <div class='sidebar-overlay'></div>
+</div><div class='main'><nav id='main-menu' class='menu main-menu' aria-label='Main Menu'>
+  <div class='container'>
+    <a class='screen-reader-text' href='#content'>Skip to Content</a>
+
+<button id='sidebar-toggler' class='sidebar-toggler' aria-controls='sidebar'>
+  <span class='screen-reader-text'>Toggle Sidebar</span>
+  <span class='open'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="3" y1="12" x2="21" y2="12" />
+  <line x1="3" y1="6" x2="21" y2="6" />
+  <line x1="3" y1="18" x2="21" y2="18" />
+  
+</svg>
+</span>
+  <span class='close'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="18" y1="6" x2="6" y2="18" />
+  <line x1="6" y1="6" x2="18" y2="18" />
+  
+</svg>
+</span>
+</button>
+    <ul><li class='item'>
+        <a href='/cv'>CV</a>
+      </li><li class='item'>
+        <a href='https://github.com/codifice/'>Repo</a>
+      </li><li class='item'>
+        <a href='/posts/'>Posts</a>
+      </li></ul>
+  </div>
+</nav><div class='header-widgets'>
+        <div class='container'>
+    
+    <style>.widget-breadcrumbs li:after{content:'\2f '}</style>
+  <section class='widget widget-breadcrumbs sep-after'>
+    <nav id='breadcrumbs'>
+      <ol><li><a href='/'>Home</a></li><li><a href='/posts/'>Posts</a></li><li><span>Ektron: Treating Office Files as Normal DMS Assets</span></li></ol>
+    </nav>
+  </section></div>
+      </div>
+
+      <header id='header' class='header site-header'>
+        <div class='container sep-after'>
+          <div class='header-info'><p class='site-title title'>Codifice</p><p class='desc site-desc'>Artisan Development and Architecture</p>
+          </div>
+        </div>
+      </header>
+
+      <main id='content'>
+
+
+<article lang='en' class='entry'>
+  <header class='header entry-header'>
+  <div class='container sep-after'>
+    <div class='header-info'>
+      <h1 class='title'>Ektron: Treating Office Files as Normal DMS Assets</h1>
+      
+
+    </div>
+    <div class='entry-meta'>
+  <span class='posted-on'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+  <line x1="16" y1="2" x2="16" y2="6"/>
+  <line x1="8" y1="2" x2="8" y2="6"/>
+  <line x1="3" y1="10" x2="21" y2="10"/>
+  
+</svg>
+<span class='screen-reader-text'>Posted on </span>
+  <time class='entry-date' datetime='2011-08-04T00:00:00Z'>2011, Aug 04</time>
+</span>
+
+  <span class='byline'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M21,21V20c0-2.76-4-5-9-5s-9,2.24-9,5v1"/>
+  <path d="M16,6.37A4,4,0,1,1,12.63,3,4,4,0,0,1,16,6.37Z"/>
+  
+</svg>
+<span class='screen-reader-text'> by </span><a href='/authors/martincjarvis'>Martin Jarvis</a></span>
+  
+<span class='reading-time'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <circle cx="12" cy="12" r="10"/>
+  <polyline points="12 6 12 12 15 15"/>
+  
+</svg>
+4 mins read
+</span>
+
+
+</div>
+
+
+  </div>
+</header>
+
+  
+  
+
+  <div class='container entry-content'>
+  <p>One of the features of <a title="The ektron homepage" href="http://bit.ly/d0YHh7" target="_blank">Ektron</a> is tight office integration allowing the editing of office files directly from the workarea.&nbsp; However, in some circumstances you may want to treat these as normal DMS assets (like PDF files) as their the end results of an offline publishing process.</p>  <p>The Ektron support fix for this is to modify the workarea files (detailed below), which would then need to be re-applyed with every upgrade.&nbsp; This is easy enough to do (if you remember to do it with each upgrade), but I would prefer a more unobtrusive fix which is applied via configuration.</p>  <h4>The Manual Fix (Ektron Supported)</h4>  <p>Edit /workarea/edit.aspx and comment out the following lines (~line 2110):</p>  <div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper">   <div style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px" id="codeSnippet">     <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum1">   1:</span> <span style="color: #0000ff">var</span> isOffice = document.getElementById(<span style="color: #006080">"isOfficeDoc"</span>);</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum2">   2:</span>&nbsp; </pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum3">   3:</span> <span style="color: #0000ff">if</span> ((isOffice != <span style="color: #0000ff">null</span>) &amp;&amp; (isOffice.value == <span style="color: #006080">"true"</span>) &amp;&amp; (ShowMultipleUpload() || !IsBrowserIE()))</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum4">   4:</span> {</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum5">   5:</span>     g_initialPaneToShow = <span style="color: #006080">'dvSummary'</span>;</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum6">   6:</span>     <span style="color: #0000ff">var</span> contentTabHeader = document.getElementById(<span style="color: #006080">"dvContent"</span>);</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum7">   7:</span>     <span style="color: #0000ff">var</span> contentTabContent = document.getElementById(<span style="color: #006080">"_dvContent"</span>);</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum8">   8:</span>     <span style="color: #0000ff">if</span> (contentTabHeader != <span style="color: #0000ff">null</span>)</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum9">   9:</span>        contentTabHeader.style.display=<span style="color: #006080">"none"</span>;</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum10">  10:</span>     <span style="color: #0000ff">if</span> (contentTabContent != <span style="color: #0000ff">null</span>)</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum11">  11:</span>        contentTabContent.style.display=<span style="color: #006080">"none"</span>;</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum12">  12:</span> }</pre>
+<!--CRLF--></div>
+</div>
+
+<p>Also, comment out the following lines of /workarea/edit.aspx.vb&nbsp; (~line 1945)</p>
+
+<div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper">
+  <div style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px" id="codeSnippet">
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum1">   1:</span> <span style="color: #0000ff">If</span> (isOfficeDoc.Value = <span style="color: #006080">"true"</span>) <span style="color: #0000ff">Then</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum2">   2:</span>     phContent.Visible = <span style="color: #0000ff">False</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum3">   3:</span>     phEditContent.Visible = <span style="color: #0000ff">False</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum4">   4:</span> <span style="color: #0000ff">End</span> <span style="color: #0000ff">If</span></pre>
+<!--CRLF--></div>
+</div>
+
+<p>The workarea will now treat office files in the same manner as PDF DMS Assets.</p>
+
+<h4>The Unobtrusive Fix (Unsupported)</h4>
+
+<p>Looking at what the official fix achieves does, it all hangs on the value of the “isOffice” hidden field being ‘true’.&nbsp; Realising this it’s an (almost) trivial task to create an HttpModule to manipulate the control tree of the edit page to get the same effect.&nbsp; The major advantage of this is that it won’t require modification of Ektron files and can be disabled by simply unregistering the module within the web.config.</p>
+
+<div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper">
+  <div style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px" id="codeSnippet">
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum1">   1:</span> <span style="color: #0000ff">using</span> System;</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum2">   2:</span> <span style="color: #0000ff">using</span> System.Reflection;</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum3">   3:</span> <span style="color: #0000ff">using</span> System.Web;</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum4">   4:</span> <span style="color: #0000ff">using</span> System.Web.UI;</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum5">   5:</span> <span style="color: #0000ff">using</span> System.Web.UI.HtmlControls;</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum6">   6:</span>&nbsp; </pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum7">   7:</span> <span style="color: #0000ff">namespace</span> MartinOnDotNet.Support</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum8">   8:</span> {</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum9">   9:</span>     <span style="color: #008000">/// &lt;summary&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum10">  10:</span>     <span style="color: #008000">/// Force OfficeDocuments to be treated as normal DMS Assets</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum11">  11:</span>     <span style="color: #008000">/// &lt;/summary&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum12">  12:</span>     <span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> OfficeDocumentFixModule : IHttpModule</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum13">  13:</span>     {</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum14">  14:</span>&nbsp; </pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum15">  15:</span>         <span style="color: #008000">/// &lt;summary&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum16">  16:</span>         <span style="color: #008000">/// Initializes a module and prepares it to handle requests.</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum17">  17:</span>         <span style="color: #008000">/// &lt;/summary&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum18">  18:</span>         <span style="color: #008000">/// &lt;param name="context"&gt;An &lt;see cref="T:System.Web.HttpApplication"/&gt; that provides access to the methods, properties, and events common to all application objects within an ASP.NET application&lt;/param&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum19">  19:</span>         <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Init(HttpApplication context)</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum20">  20:</span>         {</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum21">  21:</span>             <span style="color: #0000ff">if</span> (context == <span style="color: #0000ff">null</span>) <span style="color: #0000ff">throw</span> <span style="color: #0000ff">new</span> ArgumentNullException(<span style="color: #006080">"context"</span>);</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum22">  22:</span>             context.PreRequestHandlerExecute += <span style="color: #0000ff">new</span> EventHandler(OnPreRequestHandlerExecute);</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum23">  23:</span>         }</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum24">  24:</span>&nbsp; </pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum25">  25:</span>         <span style="color: #0000ff">private</span> <span style="color: #0000ff">void</span> OnPreRequestHandlerExecute(<span style="color: #0000ff">object</span> sender, EventArgs e)</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum26">  26:</span>         {</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum27">  27:</span>             HttpContext current = HttpContext.Current;</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum28">  28:</span>             <span style="color: #0000ff">if</span> (current == <span style="color: #0000ff">null</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum29">  29:</span>                 || current.Handler == <span style="color: #0000ff">null</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum30">  30:</span>                 || current.Request == <span style="color: #0000ff">null</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum31">  31:</span>                 || !current.Request.Url.AbsolutePath.EndsWith(<span style="color: #006080">"/workarea/edit.aspx"</span>, StringComparison.OrdinalIgnoreCase)) <span style="color: #0000ff">return</span>;</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum32">  32:</span>&nbsp; </pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum33">  33:</span>             Page page = current.Handler <span style="color: #0000ff">as</span> Page;</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum34">  34:</span>             page.PreInit += <span style="color: #0000ff">new</span> EventHandler(OnPreInit);</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum35">  35:</span>&nbsp; </pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum36">  36:</span>         }</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum37">  37:</span>&nbsp; </pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum38">  38:</span>         <span style="color: #008000">/// &lt;summary&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum39">  39:</span>         <span style="color: #008000">/// Always return false regardless of actual value</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum40">  40:</span>         <span style="color: #008000">/// &lt;/summary&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum41">  41:</span>         <span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> AlwaysFalseHiddenField : System.Web.UI.HtmlControls.HtmlInputHidden</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum42">  42:</span>         {</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum43">  43:</span>             <span style="color: #008000">/// &lt;summary&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum44">  44:</span>             <span style="color: #008000">/// Gets or sets the value associated with the &lt;see cref="T:System.Web.UI.HtmlControls.HtmlInputControl"/&gt; control.</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum45">  45:</span>             <span style="color: #008000">/// &lt;/summary&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum46">  46:</span>             <span style="color: #008000">/// &lt;value&gt;&lt;/value&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum47">  47:</span>             <span style="color: #008000">/// &lt;returns&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum48">  48:</span>             <span style="color: #008000">/// The value associated with the &lt;see cref="T:System.Web.UI.HtmlControls.HtmlInputControl"/&gt;.</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum49">  49:</span>             <span style="color: #008000">/// &lt;/returns&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum50">  50:</span>             <span style="color: #0000ff">public</span> <span style="color: #0000ff">override</span> <span style="color: #0000ff">string</span> Value</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum51">  51:</span>             {</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum52">  52:</span>                 get</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum53">  53:</span>                 {</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum54">  54:</span>                     <span style="color: #0000ff">return</span> <span style="color: #006080">"false"</span>;</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum55">  55:</span>                 }</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum56">  56:</span>                 set</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum57">  57:</span>                 {</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum58">  58:</span>                     <span style="color: #0000ff">base</span>.Value = <span style="color: #0000ff">value</span>;</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum59">  59:</span>                 }</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum60">  60:</span>             }</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum61">  61:</span>         }</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum62">  62:</span>&nbsp; </pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum63">  63:</span>&nbsp; </pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum64">  64:</span>&nbsp; </pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum65">  65:</span>         <span style="color: #008000">/// &lt;summary&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum66">  66:</span>         <span style="color: #008000">/// Called when the Page load event fires</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum67">  67:</span>         <span style="color: #008000">/// &lt;/summary&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum68">  68:</span>         <span style="color: #008000">/// &lt;param name="sender"&gt;The sender.&lt;/param&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum69">  69:</span>         <span style="color: #008000">/// &lt;param name="e"&gt;The &lt;see cref="System.EventArgs"/&gt; instance containing the event data.&lt;/param&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum70">  70:</span>         <span style="color: #0000ff">private</span> <span style="color: #0000ff">void</span> OnPreInit(<span style="color: #0000ff">object</span> sender, EventArgs e)</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum71">  71:</span>         {</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum72">  72:</span>             Page page = sender <span style="color: #0000ff">as</span> Page;</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum73">  73:</span>             <span style="color: #0000ff">if</span> (page == <span style="color: #0000ff">null</span>) <span style="color: #0000ff">return</span>;</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum74">  74:</span>             PropertyInfo officeDocProperty = page.GetType().GetProperty(<span style="color: #006080">"isOfficeDoc"</span>, BindingFlags.Instance | BindingFlags.NonPublic);</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum75">  75:</span>             <span style="color: #0000ff">if</span> (officeDocProperty == <span style="color: #0000ff">null</span>) <span style="color: #0000ff">return</span>;</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum76">  76:</span>&nbsp; </pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum77">  77:</span>             HtmlInputHidden hil = officeDocProperty.GetValue(page, <span style="color: #0000ff">null</span>) <span style="color: #0000ff">as</span> HtmlInputHidden;</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum78">  78:</span>             AlwaysFalseHiddenField fhil = <span style="color: #0000ff">new</span> AlwaysFalseHiddenField();</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum79">  79:</span>             fhil.ID = hil.ID;</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum80">  80:</span>             fhil.Name = hil.Name;</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum81">  81:</span>             fhil.Value=<span style="color: #006080">"false"</span>;</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum82">  82:</span>             page.PreRenderComplete += (s, ea) =&gt;</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum83">  83:</span>                 {</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum84">  84:</span>                     hil.Value = <span style="color: #006080">"false"</span>;</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum85">  85:</span>                 };</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum86">  86:</span>             officeDocProperty.SetValue(page, fhil, <span style="color: #0000ff">null</span>);</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum87">  87:</span>&nbsp; </pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum88">  88:</span>         }</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum89">  89:</span>&nbsp; </pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum90">  90:</span>&nbsp; </pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum91">  91:</span>         <span style="color: #008000">/// &lt;summary&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum92">  92:</span>         <span style="color: #008000">/// Disposes of the resources (other than memory) used by the module that implements &lt;see cref="T:System.Web.IHttpModule"/&gt;.</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum93">  93:</span>         <span style="color: #008000">/// &lt;/summary&gt;</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum94">  94:</span>         <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Dispose()</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum95">  95:</span>         {</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum96">  96:</span>             <span style="color: #008000">//throw new NotImplementedException();</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum97">  97:</span>         }</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum98">  98:</span>&nbsp; </pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum99">  99:</span>&nbsp; </pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum100"> 100:</span>     }</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum101"> 101:</span> }</pre>
+<!--CRLF--></div>
+</div>
+
+<p>Simply wire up the module in web.config and job’s a good ‘un.</p>  
+</div>
+
+  
+<footer class='entry-footer'>
+  <div class='container sep-before'><div class='tags'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z"/>
+  <line x1="7" y1="7" x2="7" y2="7"/>
+  
+</svg>
+<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/ektron/'>ektron</a>, <a class='tag' href='/tags/csharp/'>csharp</a></div>
+
+  </div>
+</footer>
+
+
+</article>
+
+<nav class='entry-nav'>
+  <div class='container'><div class='prev-entry sep-before'>
+      <a href='/posts/2011-07-14-experiments-with-adonet-extension/'>
+        <span aria-hidden='true'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="20" y1="12" x2="4" y2="12"/>
+  <polyline points="10 18 4 12 10 6"/>
+  
+</svg>
+ Previous</span>
+        <span class='screen-reader-text'>Previous post: </span>Experiments with ADO.Net, Extension Methods and Anonymous Methods</a>
+    </div><div class='next-entry sep-before'>
+      <a href='/posts/2011-08-16-persisting-page-title-across-update/'>
+        <span class='screen-reader-text'>Next post: </span>Persisting the Page Title across Update Panel Post backs<span aria-hidden='true'>Next <svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="4" y1="12" x2="20" y2="12"/>
+  <polyline points="14 6 20 12 14 18"/>
+  
+</svg>
+</span>
+      </a>
+    </div></div>
+</nav>
+
+
+
+
+      </main>
+
+      <footer id='footer' class='footer'>
+        <div class='container sep-before'><section class='widget widget-social_menu sep-after'><nav aria-label='Social Menu'>
+    <ul><li>
+        <a href='https://github.com/codifice' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Open Github account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='mailto:martin@codifice.uk' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Contact via Email</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+  <polyline points="22,6 12,13 2,6"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='https://linkedin.com/in/martincjarvis' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Open Linkedin account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+  <rect x="2" y="9" width="4" height="12"/>
+  <circle cx="4" cy="4" r="2"/>
+  
+</svg>
+</a>
+      </li></ul>
+  </nav>
+</section><div class='copyright'>
+  <p> &copy; 2020 Codifice Ltd </p>
+</div>
+
+        </div>
+      </footer>
+
+    </div>
+  </div><script>window.__assets_js_src="/assets/js/"</script>
+
+<script src='/assets/js/main.c3bcf2df.js'></script><script src='/js/custom.js'></script>
+
+</body>
+
+</html>
+

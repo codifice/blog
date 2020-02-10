@@ -1,0 +1,192 @@
+---
+title: "Diagnosing an Ektron eSync Relationship"
+date: 2010-03-23
+lastmod: 2013-02-15
+draft: false
+tags: ["esync","ektron","servicechannel","wcf","troubleshooting","faulted"]
+authors: ["martincjarvis"]
+---Ektron’s eSync service is a great product when it’s working but getting the initial configuration right can be a bit fiddly.&nbsp; I’ve compiled a quick diagnostic procedure to resolve the most common issues, as well as some of the more common issues.<br>
+<b>Note: </b>The Ektron Windows Service is usually in: <i>C:\Program Files\Ektron\EktronWindowsService30.</i> After any configuration change restart the Ektron Windows Service on every node in the relationship.<br>
+<ol>
+<li>Restart the Ektron Windows Service on every node within the relationship </li>
+<li>Ensure that the Ektron license is valid for every database within the relationship </li>
+<li>Ensure that you can access <b><i>http://&lt;DOMAINNAME&gt;/workarea/ServerControlWS.asmx</i></b> on each node of the relationship.&nbsp; <i>In load balanced environments ensure that you test each node explicitly</i>.       <ol>
+<li>Check that this is the same as the WSPath in the AppSettings </li>
+<li>Check that this is the same in the sitedb.config file in the Ektron Windows Service folder </li>
+</ol>
+</li>
+<li>Ensure that each node is accessible on port 8732 from the next nodes in the chain      <ol>
+<li>From the command line enter ‘<span style="font-family: Courier New;">telnet <i>servername</i> 8732</span>’ (in Server 2008/Windows 7 you will need to install the telnet client) </li>
+<li>If a connection is successful, you fill see a blank screen press ctrl+c to exit and restart the service you just connected to </li>
+</ol>
+</li>
+<li>Ensure that the SearchConfigUI tool can properly iterate through all of the IIS websites (it will group results by unique connectionstrings).      <ol>
+<li>If the SearchConfigUI fails on an IIS 7 box ensure that IIS 6 Management Tools and Metabase compatability have been installed </li>
+</ol>
+</li>
+<li>Ensure that all servers are using the same version of Ektron      <ol>
+<li>Compare the filesize (and versions) of the following files within the Windows Service folder          <ul>
+<li>Ektron.ASM.EktronServices30.exe </li>
+<li>Ektron.ASM.AssetConfig.dll </li>
+<li>Ektron.FileSync.Common.dll </li>
+<li>Ektron.FileSync.Framework.dll </li>
+<li>Ektron.Sync.Communication.dll </li>
+<li>Ektron.Sync.SyncServices.dll </li>
+</ul>
+</li>
+</ol>
+</li>
+<li>Ensure that the website is built against the same version of ektron as installed on each of the nodes      <ol>
+<li>Check that the common libraries within the website bin folder and windows service folders match </li>
+</ol>
+</li>
+<li>Check that the website bin directories are the same size on all nodes within the relationship </li>
+<li>Check the Windows Service Error Log for indications of a Transport Layer Error (log files are within the /logs folder)      <ol>
+<li>The following errors can indicate a DNS or Proxy issue:          <ul>
+<li>The remote server returned an unexpected response: (407) Proxy Authentication Required. </li>
+<li>The request failed with HTTP status 403: Forbidden </li>
+<li>The HTTP request was forbidden with client authentication scheme 'Anonymous' </li>
+</ul>
+</li>
+</ol>
+</li>
+<li>Ensure all nodes of the eSync relationship got all counterpart certificates installed (using <i>Security Configurator</i>)?       <ol>
+<li>The Ektron Windows Service directory will contain all of the *_SyncClient.* files for each node and the *_SyncServer.* files for the local machine </li>
+<li>The website root direction should contain the local machines *_SyncClient.* files and the timestamps should match the equivalent certificates in the Windows Service directory </li>
+<li>Check that local machines certificates are referenced within the <b>ektron.serviceModel</b> section of the web.config </li>
+<li>The Ektron.ASM.EktronServices30.exe.config file within the Windows Service folder should contain an element called <b>publicCertKeys </b>the has a reference to a client certificate for each server in the eSync relationship.&nbsp; These should be present on every machine in the relationship (they may be in a different order). </li>
+<li>The website on each machine should have an <b>AppSetting</b> setting called <b>EncodedValue </b>this should be identical to the value stored within the Service Config file for the same machine.&nbsp; <i>If not, copy from the Windows Service config into the AppSetting not vice-versa.</i> </li>
+</ol>
+</li>
+</ol>
+<h4>
+Common eSync Errors</h4>
+<b></b>(as seen on Synchronisation Progress screen)<br>
+<h5>
+Object Reference Not Set To An Instance of An Object</h5>
+<ol>
+<li>Check that the client certificate is present in the root of the website </li>
+<li>Check that local machines certificates are referenced within the <b>ektron.serviceModel</b> section of the web.config </li>
+<li>Check the WSPath is correct and acccessble </li>
+<li>Ensure the <b>AppPool </b>is runnning under the <b>Network Service</b> identity </li>
+</ol>
+<h5>
+The communication object, System.ServiceModel.Channels.ServiceChannel, cannot be used for communication because it is in the Faulted state</h5>
+<ol>
+<li>Restart all services </li>
+<li>Check that licenses are installed and valid </li>
+<li>Check that certificates are installed </li>
+<li>Check the WSPath is correct and acccessble</li>
+<li>Compare the EncodedValue setting in the web.config with the value stored in the Ektron Service config</li>
+</ol>
+<h5>
+SyncDatabaseFailed failed with message: Max index do not match. Local index:<i>X</i>, Remote index:<i>Y</i></h5>
+<ol>
+<li>Decide which server has the correct index (ie if one server has other eSync profiles that are working ok) </li>
+<li>On the server that has the wrong index open the ServerInfo.xml (within the x:\sync folder) </li>
+<li>Change all of the MaxId="X" values to the correct value </li>
+<li>Open the Ektron database for the website with the incorrect index and modify the 'share_index' field of the settings table to the correct value </li>
+<li>Restart all Ektron Windows Services within the relationship </li>
+</ol>
+<h5>
+Invalid method invocation. Remote position is NOT staged.</h5>
+<ol>
+<li>Stop all <a href="http://bit.ly/d0YHh7" target="_blank" title="The ektron homepage">Ektron</a> Windows Services within the relationship </li>
+<li>Create a copy of the<i> x</i>:\sync folder (where <i>x</i> is the drive letter for your workarea website) </li>
+<li>Delete all of the contents of the <i>x</i>:\sync folder </li>
+<li>Restart all of the Ektron Windows Services within the relationship </li>
+<li>Rerun synchronisation to rebuild relationship </li>
+</ol>
+<h5>
+SyncAssetLibraryFailed failed with message: Object reference not set to an instance of an object.</h5>
+<ol>
+<li>Ensure that the ‘StorageLocation’ attribute of ‘DocumentManagerData’ is set to a unique location for each environment (this is within the AssetManagement.config) (if hosted on the same server) </li>
+</ol>
+<h5>
+No CMS400.NET sites were found at this location <i>(when configuring a new relationship)</i></h5>
+<ol>
+<li>Ensure that the certificates have been correctly installed on each node of the relationship. </li>
+</ol>
+<h5>
+The Remote Position is NOT Staged (<i>when performaning an intitial sync</i>)</h5>
+<ol>
+<li>If a previous relationship existed between the two servers, ensure that the records relating to them have been removed from the [dbo].[scheduler] database table. </li>
+<li>Remove all folders relating to the previous relationship from the x:\sync folder (and in all child folders)&nbsp;</li>
+<li>Try running the sync from the target website </li>
+<li>If problem persists, recreate the target min database – a previous initial sync attempt has semi-populated the target database beyond economical repair. </li>
+</ol>
+<h5>
+eSync Status is ‘Running’ Even When There Is No Sync In Progress</h5>
+<ol>
+<li>Ensure that all Ektron services related to the website (development machines, build servers, etc, etc) have <b><i>exactly</i></b> the same version. </li>
+<li>Manually set the status to ‘completed’ in the [dbo].[scheduler] table and restart the services. </li>
+<li>If the problem recurs using SQL Profiler to find which server is updating the status (using the additional&nbsp; HostName column).&nbsp; The problem&nbsp; command starts with ‘<b>exec cms_updateschedulerun</b>’ </li>
+</ol>
+<h5>
+Service Not Listening on port 8732 and EktronL2 Event Log contains ‘Service initialized successfully’ and ‘Service stopped successfully’</h5>
+<ol>
+<li>Ensure that the workarea can be opened without an error (cmslogin.aspx and /workarea/servercontrolws.asmx) </li>
+<li>Restart service </li>
+<li>Ensure ‘Service started successfully’ message is recorded </li>
+</ol>
+<h5>
+SyncDatabaseFailed failed with message: The message with Action '<a href="http://tempuri.org/ISyncService/InitSession%27">http://tempuri.org/ISyncService/InitSession'</a> cannot be processed at the receiver, due to a ContractFilter mismatch at the EndpointDispatcher</h5>
+<ol>
+<li>Ensure that the same esync service version is installed on all nodes of the relationship </li>
+</ol>
+<h5>
+Failed to execute the command 'DeleteCommand' for table 'content_folder_tbl' (or similar)</h5>
+<ol>
+<li>There’s been an irresolvable conflict, try reversing the conflict policy temporarily and resyncing after a successful sync, the original policy can be restored. </li>
+</ol>
+<h5>
+Initial Sync Fails with a Database Constraint Error</h5>
+The initial sync fails with a constraint error similar to:<br>
+<ul>
+<li>Violation of PRIMARY KEY constraint 'PK_history_meta_tbl' </li>
+<li>The ALTER TABLE statement conflicted with the FOREIGN KEY constraint "folder_taxonomy_tbl_fk2" </li>
+<li>Violation of PRIMARY KEY constraint 'PK_content_meta_tbl' </li>
+</ul>
+<ol>
+<li>Remove the damaged sync profile (<a href="http://www.blogger.com/blogger.g?blogID=7125820631218721012#removesync">see below</a>) </li>
+<li>Stop users from editing content whilst the <i>initial</i> sync is run </li>
+</ol>
+<h5>
+Initial Sync Fails with:&nbsp; Could not find file ‘….\uploadedFiles\\metaconfig.doc'</h5>
+<ol>
+<li>Copy ‘metaconfig.doc’ from /assets into the uploadedFiles and uploadedImages </li>
+<li>Run SearchConfigUI and rebuild catalogs </li>
+<li>Re-run the intitial sync (it should pick up where it left off!).&nbsp; You shouldn’t need to remove the relationship and rebuild. </li>
+</ol>
+<h5>
+Out of Memory Exceptions</h5>
+<ol>
+<li>Ensure that all servers have adequate memory </li>
+<li>Reduce the batch size of the Ektron Windows Service by adding <i><b>batchsize=100</b> </i>to the 'DatabaseRuntime’ element within DbSync.config in the Ektron Windows Service folder. </li>
+<li>Ensure that all servers in the relationship have the same batchsize configured. </li>
+<li>Restart Ektron Service </li>
+<li>Rerun sync </li>
+</ol>
+<h4>
+The system can not find the file specified</h4>
+<ol>
+<li>Ensure that the three *_SyncClient.* files the the local machine</li>
+<li>Ensure that local machines certificates are referenced within the <b>ektron.serviceModel</b> section of the web.config </li>
+<li>If the certificates have been accidently deleted, you can copy them from the Ektron Windows Service folder into the root folder. </li>
+</ol>
+<h4>
+Removing a Damaged eSync Relationship<a href="http://www.blogger.com/blogger.g?blogID=7125820631218721012" id="removesync" name="removesync"></a></h4>
+If an initial sync has failed it can leave a partially populated sync relationship that will need to be removed.&nbsp; Each time this is run the Max Server index will be incremented.<br>
+The procedure to do this is:<br>
+<ol>
+<li>Stop Ektron Service </li>
+<li>Deleting the target database </li>
+<li>Remove the corresponding entries from 'scheduler' table in the sending database </li>
+<li>Remove entries from 'X:\sync\ServerInfo.xml' on both servers </li>
+<li>Remove any folders (for the target environment) in X:\sync folder </li>
+<li>Remote entries from sitedb.conf for connections on both servers </li>
+<li>Remove contents of 'assets' and 'privateAssets' on target server </li>
+<li>Reinstall min database (using Site Setup) </li>
+<li>Recreate indexies using SearchConfigUI on target server </li>
+<li>Configure and run initial sync </li>
+</ol>

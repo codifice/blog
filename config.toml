@@ -1,0 +1,159 @@
+baseURL = "https://codifice.uk/"
+title = "Codifice"
+# for smart copyright line, leave this blank and check [params.copyright]
+copyright = ""
+
+theme = "minimo"
+
+disqusShortname = ""
+googleAnalytics = ""
+
+Paginate = 5
+preserveTaxonomyNames = true
+
+enableRobotsTXT = true # generate robots.txt
+
+# Syntax Highlighting ( https://gohugo.io/content-management/syntax-highlighting/ )
+pygmentsCodefences = true
+
+enableEmoji = true
+
+# Missing translations will default to this content language
+defaultContentLanguage = "en"
+
+[about]
+title = ""                            # default: .Site.Title
+description = ""                      # default: .Site.Params.info.description
+logo = "/images/logo.png"  
+
+[params.info]
+description = "Artisan Development and Architecture"
+title404 = "Nothing's here!"
+
+[params.assets]
+favicon = "favicon.png"
+customCSS = ["css/custom.css"]
+customJS = ["js/custom.js"]
+gopher = "" # used in 404 template ( Generator: https://gopherize.me )
+
+[params.copyright]
+prefix = ""
+holder = "Codifice Ltd"
+startYear = "2020"
+suffix = ""
+
+[params.settings]
+# date & time format: https://golang.org/pkg/time/
+dateFormat = "2006, Jan 02"
+listDateFormat = "2006, Jan 02"
+archiveDateFormat = "Jan 02"
+hideEntryNavigation = ["page"] # boolean / array of sections
+hideEntryMeta = ["page"] # boolean / array of sections
+showReadingTime = true
+showLastmod = true
+taxonomyCloudShuffle = true
+accentColor = "#ffcd00"
+hideMainMenu = false
+rtl = false
+
+[params.sidebar]
+enable = true
+
+[params.widgets]
+header = ["breadcrumbs"]
+homepage = []
+sidebar = ["about","sidebar_menu","search","recent_posts","taxonomy_cloud"]
+footer = ["social_menu"]
+
+[params.opengraph.facebook]
+admins = [] # array of Facebook IDs
+appID = ""
+pageID = ""
+
+[params.opengraph.twitter]
+page = "" # Twitter page username
+
+[params.seo]
+# Title Separator: - – — · • * ⋆ | ~ « » < >
+titleSeparator = "•"
+
+[params.social]
+# codepen = "MunifTanjim"
+email = "martin@codifice.uk"
+#facebook = "MunifTanjim"
+github = "codifice"
+#gitlab = "MunifTanjim"
+#instagram = "MunifTanjim"
+linkedin = "martincjarvis"
+#twitter = "MunifTanjim"
+#telegram = "MunifTanjim"
+#google_scholar = "qc6CJjYAAAAJ"
+#youtube = "UCT-U0rNerYxItGcuoPX-WYA"
+
+[params.comments]
+enable = false
+
+# Isso: https://posativ.org/isso/
+[params.comments.isso]
+enable = false
+scriptSrc = "" # "https://isso.example.com/js/embed.min.js"
+dataAttrs = "" # "data-isso='https://isso.example.com' data-isso-require-author='true'"
+
+[params.comments.staticman]
+enable = false
+apiEndpoint = "https://api.staticman.net/v2/entry"
+maxDepth = 2
+username = "MunifTanjim"
+repository = "minimo"
+
+# Utterances: https://utteranc.es
+[params.comments.utterances]
+enable = true
+issueTerm = "pathname" # pathname / url / title
+
+[params.comments.utterances.github]
+username = "codifice"
+repository = "blog"
+
+[params.search]
+client = "fuse" # algolia / fuse / lunr
+
+[params.search.algolia]
+appId = ""
+indexName = ""
+searchApiKey = ""
+
+[taxonomies]
+author = "authors"
+category = "categories"
+series = "series"
+tag = "tags"
+
+[permalinks]
+page = "/:slug/"
+
+[[menu.main]]
+name = "Repo"
+weight = 10
+identifier = "repository"
+url = "https://github.com/codifice/"
+hrefTargetBlank = true
+
+[[menu.main]]
+name = "CV"
+weight = 5
+identifier = "cv"
+url = "/cv"
+
+[blackfriday]
+hrefTargetBlank = true
+
+[languages]
+# edit this block for your own language
+[languages.en]
+lang = "en"
+languageName = "English"
+weight = 1
+
+[markup.goldmark.renderer]
+unsafe= true

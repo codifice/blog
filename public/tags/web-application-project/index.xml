@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>web application project on Codifice</title>
+    <link>https://codifice.uk/tags/web-application-project/</link>
+    <description>Recent content in web application project on Codifice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 06 Jun 2010 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://codifice.uk/tags/web-application-project/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>N2CMS Meet VWT2OC: Day 1 – Project Setup</title>
+      <link>https://codifice.uk/posts/2010-06-06-n2cms-meet-vwt2oc-day-1-project-setup/</link>
+      <pubDate>Sun, 06 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-06-06-n2cms-meet-vwt2oc-day-1-project-setup/</guid>
+      <description>It’s on!&amp;nbsp; I’ve got 8 days to overhaul the Volkswagen Type 2 Owners Club (www.vwt2oc.com) before work beckons again….&amp;nbsp; A month ago I decided to rebuild the existing website using n2cms.&amp;nbsp; Unfortunately, in that time when I was going to research best practise and get some test sites working….I’ve done nothing.&amp;nbsp; So, I’ve decided to incentivise myself by blogging my progress….
+My Basic Plan of Action is:
+ Day 1 – Project Setup  SVN Configuration  Create Build Script to compile N2CMS for project  Integrate Forum Add On with n2cms    Day 2 – N2CMS Configuration  Integrate the Membership Provider from n2cms/forum/legacy vwt2oc  Construct basic site structure (homepage/articles/forum/gallery/events calendar/etc)  Create VWT2OC basic theme    Day 3 – VWT2OC Membership Model  Implement Club Member/Membership Data Model in n2cms  Basic Admin Screens for Members  Initial member import routine from current site    Day 4 – My Account and Personalization  Improve member import routine  Membership Reports/Maintenance from with N2CMS  Initial ‘My Account’ page for front end    Day 5 – End User Approval/eCommerce  Deploy to temporary hosted location for client approval of WIP  Import Membership Purchasing Mechanism for legacy app  Integrate NoChex/Paypal payment gateways    Day 6 – Review of Progress  Review functionality and prioritise urgent issues with work so far    Day 7 + 8 – Getting a functional site   Ha!</description>
+    </item>
+    
+    <item>
+      <title>Basic Example of On-The-Fly Config Section Encryption</title>
+      <link>https://codifice.uk/posts/2010-05-13-basic-example-of-on-fly-config-section/</link>
+      <pubDate>Thu, 13 May 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-05-13-basic-example-of-on-fly-config-section/</guid>
+      <description>I recently answered a question about how you could securely modify a value within an encrypted configuration website without having to create a duplicate config file.&amp;nbsp; Well, the answer’s pretty simple and straightforward – just use the API!
+A quick example page could be:
+1: &amp;lt;%@@ Page Language=&#34;C#&#34; AutoEventWireup=&#34;true&#34; CodeFile=&#34;Default.aspx.cs&#34; Inherits=&#34;_Default&#34; %&amp;gt;  2:&amp;nbsp;   3: &amp;lt;!DOCTYPE html PUBLIC &#34;-//W3C//DTD XHTML 1.0 Transitional//EN&#34; &#34;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&#34;&amp;gt;  4: &amp;lt;html xmlns=&#34;http://www.w3.org/1999/xhtml&#34;&amp;gt;  5: &amp;lt;head runat=&#34;</description>
+    </item>
+    
+    <item>
+      <title>Ektron and Web Application Projects (Part 3)</title>
+      <link>https://codifice.uk/posts/2010-03-27-ektron-compiled-workarea-workaround/</link>
+      <pubDate>Sat, 27 Mar 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-03-27-ektron-compiled-workarea-workaround/</guid>
+      <description>In this series of posts I’ve described a method of keeping your code and the required Ektron workarea separated.&amp;nbsp; This method essentially turns the ‘drop-in compiled workarea’ feature request on it’s head, by dropping your compiled code into the work area.&amp;nbsp; It’s the same result, just a slightly difference process (that you can do right now!):
+ In Part 1, I discussed why you might want to develop your website outside of the default Ektron workarea and gave a brief overview of your options.</description>
+    </item>
+    
+    <item>
+      <title>Ektron and Web Application Projects (Part 2)</title>
+      <link>https://codifice.uk/posts/2010-03-24-ektron-and-web-application-projects/</link>
+      <pubDate>Wed, 24 Mar 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-03-24-ektron-and-web-application-projects/</guid>
+      <description>In Part 1, I discussed why you might want to develop your website outside of the default Ektron workarea and gave a brief overview of your options.
+This time around, I’m going to show how to configure your Visual Studio Solution and projects and IIS to get you started.
+You will need:
+ A standard Ektron cms400min workarea website (I usually just call mine /Web – and copy directly from a fresh cms400min install!</description>
+    </item>
+    
+    <item>
+      <title>Ektron and Web Application Projects (Part 1)</title>
+      <link>https://codifice.uk/posts/2010-03-22-working-with-ektron-using-web/</link>
+      <pubDate>Mon, 22 Mar 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-03-22-working-with-ektron-using-web/</guid>
+      <description>Like a lot of enterprise CMS production Ektron expects you to work in a particular way and provides lots of help for non-developers to quickly produce websites with minimal technical skills.&amp;nbsp; But what if you have more technical needs?
+One of the downsides (in my opinion) of developing websites against Ektron, is the expectation that you will be integrating your code into the existing workarea Web Site Project.&amp;nbsp; Now, there are pros and cons on Web Site over Web Application projects but the big disadvantage for me is the sheer size of the workarea brings Visual Studio to a crawl when your editing code.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,797 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://codifice.uk/</loc>
+    <lastmod>2013-02-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/</loc>
+    <lastmod>2020-02-05T14:47:53+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/cv/martincjarvis/</loc>
+    <lastmod>2020-02-05T14:37:44+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/authors/</loc>
+    <lastmod>2013-02-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/episerver/</loc>
+    <lastmod>2012-11-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/authors/martincjarvis/</loc>
+    <lastmod>2013-02-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2012-11-22-notes-on-configuring-new-episerver-6-r2/</loc>
+    <lastmod>2012-11-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/nuget/</loc>
+    <lastmod>2012-11-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/</loc>
+    <lastmod>2013-02-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/.net-4.0/</loc>
+    <lastmod>2012-01-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2012-01-15-announcing-mvc3-validation-groups/</loc>
+    <lastmod>2012-01-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/codeplex/</loc>
+    <lastmod>2012-01-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/mvc/</loc>
+    <lastmod>2012-01-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/validation-groups/</loc>
+    <lastmod>2012-01-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/ektron/</loc>
+    <lastmod>2013-02-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2011-11-01-ektron-finding-missing-content-in-index/</loc>
+    <lastmod>2012-02-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/esync/</loc>
+    <lastmod>2013-02-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/indexing-service/</loc>
+    <lastmod>2012-02-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/troubleshooting/</loc>
+    <lastmod>2013-02-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/js/</loc>
+    <lastmod>2011-08-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2011-08-16-persisting-page-title-across-update/</loc>
+    <lastmod>2011-08-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/update-panel/</loc>
+    <lastmod>2011-08-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/csharp/</loc>
+    <lastmod>2011-08-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2011-08-04-ektron-treating-office-files-as-normal/</loc>
+    <lastmod>2011-08-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/ado.net/</loc>
+    <lastmod>2011-07-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2011-07-14-experiments-with-adonet-extension/</loc>
+    <lastmod>2011-07-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/extension-method/</loc>
+    <lastmod>2011-07-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/refactor/</loc>
+    <lastmod>2011-07-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/arvixe/</loc>
+    <lastmod>2011-07-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2011-07-08-preventing-spamming-from-mail/</loc>
+    <lastmod>2011-07-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2011-05-10-migrating-from-tfs-2008-to-svn-16-with/</loc>
+    <lastmod>2011-05-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/svn/</loc>
+    <lastmod>2011-05-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/version-control/</loc>
+    <lastmod>2011-05-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/best-practise/</loc>
+    <lastmod>2011-05-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/exception-handling/</loc>
+    <lastmod>2011-05-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2011-05-03-logging-is-new-exception-swallowing/</loc>
+    <lastmod>2011-05-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2011-05-02-base26-number-encodinggenerate-excel/</loc>
+    <lastmod>2011-05-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/tip/</loc>
+    <lastmod>2011-05-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-12-16-ektron-high-indexing-service-processor/</loc>
+    <lastmod>2010-12-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/performance/</loc>
+    <lastmod>2010-12-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/tuning/</loc>
+    <lastmod>2010-12-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-11-18-ektron-diagnosing-80-extension-strategy/</loc>
+    <lastmod>2010-11-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/caching/</loc>
+    <lastmod>2010-11-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-11-03-performance-applying-output-cache/</loc>
+    <lastmod>2010-11-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/database/</loc>
+    <lastmod>2010-11-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/sql/</loc>
+    <lastmod>2010-11-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-11-01-sql-cleaning-up-after-database-tuning/</loc>
+    <lastmod>2010-11-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/infrastructure/</loc>
+    <lastmod>2010-10-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-10-30-infrastructure-replacing-dead-raid-5/</loc>
+    <lastmod>2010-10-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/linux/</loc>
+    <lastmod>2010-10-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/off-topic/</loc>
+    <lastmod>2010-10-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/qnap/</loc>
+    <lastmod>2010-10-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/raid/</loc>
+    <lastmod>2010-10-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/poet/</loc>
+    <lastmod>2010-09-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/security/</loc>
+    <lastmod>2010-09-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-09-20-security-protect-against-poet-attacks/</loc>
+    <lastmod>2010-09-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/generics/</loc>
+    <lastmod>2010-09-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/tidyproxy/</loc>
+    <lastmod>2010-09-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/wcf/</loc>
+    <lastmod>2013-02-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-09-05-yummy-cleaner-sweeter-wcf-proxy-usage/</loc>
+    <lastmod>2010-09-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-08-18-howto-creating-strongly-typed-code/</loc>
+    <lastmod>2010-08-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-08-03-building-better-findcontrol/</loc>
+    <lastmod>2010-08-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/databound/</loc>
+    <lastmod>2010-08-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/templated/</loc>
+    <lastmod>2010-08-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/cte/</loc>
+    <lastmod>2010-07-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/dont-try-this-at-home/</loc>
+    <lastmod>2010-07-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-07-27-ektron-sql-script-to-clone-menu-into/</loc>
+    <lastmod>2010-07-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/hack/</loc>
+    <lastmod>2010-07-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/localization/</loc>
+    <lastmod>2010-07-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-07-21-ektron-safely-impersonating-users/</loc>
+    <lastmod>2010-07-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/elevatedpermissionscope/</loc>
+    <lastmod>2010-07-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-07-20-changing-master-page-body-tags-css/</loc>
+    <lastmod>2010-07-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/css/</loc>
+    <lastmod>2010-07-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/masterpage/</loc>
+    <lastmod>2010-07-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/usability/</loc>
+    <lastmod>2010-07-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-07-15-tip-how-to-handle-form-postbacks-when/</loc>
+    <lastmod>2010-07-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/debugdiag/</loc>
+    <lastmod>2010-07-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-07-10-diagnosing-tricky-aspnet-production/</loc>
+    <lastmod>2010-07-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/e053534f/</loc>
+    <lastmod>2010-07-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/iis/</loc>
+    <lastmod>2010-07-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/stackoverflowexception/</loc>
+    <lastmod>2010-07-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/windbg/</loc>
+    <lastmod>2010-07-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/readability/</loc>
+    <lastmod>2010-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/regex/</loc>
+    <lastmod>2010-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-07-01-tip-improve-readability-with-shorter/</loc>
+    <lastmod>2010-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-06-28-convert-accented-characters-to-simple/</loc>
+    <lastmod>2010-07-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/globalization/</loc>
+    <lastmod>2010-07-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/build/</loc>
+    <lastmod>2010-06-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/msbuild/</loc>
+    <lastmod>2010-06-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-06-24-msbuild-reliably-retrieving-assembly/</loc>
+    <lastmod>2010-06-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-06-23-tip-how-to-debug-windows-services-and/</loc>
+    <lastmod>2010-06-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-06-22-ektron-fix-for-primary-key-constraint/</loc>
+    <lastmod>2010-06-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-06-16-tip-constructing-private-types/</loc>
+    <lastmod>2010-06-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/vwt2oc/</loc>
+    <lastmod>2010-06-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-06-16-vwt2oc-host-is-dead-long-live-host/</loc>
+    <lastmod>2010-06-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/webhost4life/</loc>
+    <lastmod>2010-06-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-06-15-ektron-801-platformnotsupportedexceptio/</loc>
+    <lastmod>2010-06-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-06-14-ektron-801-fixing-new-handlers/</loc>
+    <lastmod>2010-06-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/n2cms/</loc>
+    <lastmod>2010-06-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-06-12-n2cms-meet-vwt2oc-day-7-soldiering-on/</loc>
+    <lastmod>2010-06-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/blogger/</loc>
+    <lastmod>2010-06-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-06-10-blogger-tweak-making-code-snippets-more/</loc>
+    <lastmod>2010-06-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-06-10-n2cms-templates-rss-feed-fix/</loc>
+    <lastmod>2010-06-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/user-interface/</loc>
+    <lastmod>2010-06-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/addon/</loc>
+    <lastmod>2010-06-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/batch/</loc>
+    <lastmod>2010-06-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/forum/</loc>
+    <lastmod>2010-06-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-06-09-n2cms-forum-addon-fixing-theme/</loc>
+    <lastmod>2010-06-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-06-09-n2cms-meet-vwt2oc-day-4-wheel-spinning/</loc>
+    <lastmod>2010-06-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/yaf/</loc>
+    <lastmod>2010-06-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-06-08-n2cms-meet-vwt2oc-day-3-grinding-to/</loc>
+    <lastmod>2010-06-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/web-deployment-project/</loc>
+    <lastmod>2010-06-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-06-07-n2cms-meet-vwt2oc-day-2-n2cms/</loc>
+    <lastmod>2010-06-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-06-06-n2cms-meet-vwt2oc-day-1-project-setup/</loc>
+    <lastmod>2010-06-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/personal-project/</loc>
+    <lastmod>2010-06-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/web-application-project/</loc>
+    <lastmod>2010-06-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/control-adapters/</loc>
+    <lastmod>2010-05-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-05-23-taking-control-of-your-control-adapters/</loc>
+    <lastmod>2010-05-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-05-13-basic-example-of-on-fly-config-section/</loc>
+    <lastmod>2010-05-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/example/</loc>
+    <lastmod>2010-05-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/web-site-project/</loc>
+    <lastmod>2010-05-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-05-10-n2cms-meet-vwt2oc-project-history/</loc>
+    <lastmod>2010-05-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/mbunit/</loc>
+    <lastmod>2010-05-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/seo/</loc>
+    <lastmod>2010-05-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/statictestfactory/</loc>
+    <lastmod>2010-05-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/unit-testing/</loc>
+    <lastmod>2010-05-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-05-05-using-mbunit-statictestfactory-to/</loc>
+    <lastmod>2010-05-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-04-22-fixing-precompilation-marker-file/</loc>
+    <lastmod>2010-04-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-04-19-elevating-ektron-user-permissions/</loc>
+    <lastmod>2010-04-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-04-16-enabling-concurrent-logins-in-ektron/</loc>
+    <lastmod>2010-04-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-04-13-iis-7-gotcha-40413-not-found-uploading/</loc>
+    <lastmod>2010-04-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-04-10-my-windows-7-development-vm-load-out/</loc>
+    <lastmod>2010-04-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/static-analysis/</loc>
+    <lastmod>2010-04-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/bouncers/</loc>
+    <lastmod>2010-04-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-04-08-ektron-fix-for-uploading-assets-into/</loc>
+    <lastmod>2010-04-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-04-08-secure-your-website-put-bouncers-at_08/</loc>
+    <lastmod>2010-04-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-04-06-secure-your-website-put-bouncers-at_06/</loc>
+    <lastmod>2010-04-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/branding/</loc>
+    <lastmod>2010-04-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/client-relationship/</loc>
+    <lastmod>2010-04-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/content/</loc>
+    <lastmod>2010-04-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/design/</loc>
+    <lastmod>2010-04-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-04-05-educating-clients-about-way-web-works/</loc>
+    <lastmod>2010-04-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/fluffy-stuff/</loc>
+    <lastmod>2010-04-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/opinion/</loc>
+    <lastmod>2010-04-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/white-label/</loc>
+    <lastmod>2010-04-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-04-04-secure-your-website-put-bouncers-at/</loc>
+    <lastmod>2010-04-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-03-27-ektron-compiled-workarea-workaround/</loc>
+    <lastmod>2010-03-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/ektron-wap/</loc>
+    <lastmod>2010-03-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-03-24-ektron-and-web-application-projects/</loc>
+    <lastmod>2010-03-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-03-23-ektron-esync-error-servicechannel/</loc>
+    <lastmod>2013-02-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/faulted/</loc>
+    <lastmod>2013-02-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/servicechannel/</loc>
+    <lastmod>2013-02-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-03-22-working-with-ektron-using-web/</loc>
+    <lastmod>2010-03-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-03-20-aspnet-and-custom-error-pages-seo/</loc>
+    <lastmod>2010-03-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/tags/clientbase/</loc>
+    <lastmod>2010-03-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/posts/2010-03-20-mmmmm-clean-sweet-wcf-proxy-usage/</loc>
+    <lastmod>2010-03-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/cv/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codifice.uk/series/</loc>
+  </url>
+  
+</urlset>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>faulted on Codifice</title>
+    <link>https://codifice.uk/tags/faulted/</link>
+    <description>Recent content in faulted on Codifice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 23 Mar 2010 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://codifice.uk/tags/faulted/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Diagnosing an Ektron eSync Relationship</title>
+      <link>https://codifice.uk/posts/2010-03-23-ektron-esync-error-servicechannel/</link>
+      <pubDate>Tue, 23 Mar 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://codifice.uk/posts/2010-03-23-ektron-esync-error-servicechannel/</guid>
+      <description>Ektron’s eSync service is a great product when it’s working but getting the initial configuration right can be a bit fiddly.&amp;nbsp; I’ve compiled a quick diagnostic procedure to resolve the most common issues, as well as some of the more common issues.
+Note: The Ektron Windows Service is usually in: C:\Program Files\Ektron\EktronWindowsService30. After any configuration change restart the Ektron Windows Service on every node in the relationship.
+ Restart the Ektron Windows Service on every node within the relationship  Ensure that the Ektron license is valid for every database within the relationship  Ensure that you can access http://&amp;lt;DOMAINNAME&amp;gt;/workarea/ServerControlWS.</description>
+    </item>
+    
+  </channel>
+</rss>

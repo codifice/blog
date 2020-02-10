@@ -1,0 +1,116 @@
+---
+title: "Notes on Configuring a New EPiServer 6 R2 Website for Continuous Integration"
+date: 2012-11-22
+lastmod: 2012-11-22
+draft: false
+tags: ["nuget","episerver"]
+authors: ["martincjarvis"]
+---
+<p>I’m assuming that you’ve read the installation instructions:</p>
+<p><a title="http://world.episerver.com/Documentation/Items/Installation-Instructions/EPiServer-CMS/Version-6/EPiServer-CMS-6-R2/Installation-Instructions---EPiServer-CMS-6-R2/"
+        href="http://world.episerver.com/Documentation/Items/Installation-Instructions/EPiServer-CMS/Version-6/EPiServer-CMS-6-R2/Installation-Instructions---EPiServer-CMS-6-R2/">http://world.episerver.com/Documentation/Items/Installation-Instructions/EPiServer-CMS/Version-6/EPiServer-CMS-6-R2/Installation-Instructions---EPiServer-CMS-6-R2/</a>
+</p>
+<p>Creating a new blank EPiServer Site Project and Solution</p>
+<ol>
+    <li>Prepare Repository </li>
+    <li>Check out trunk/main branch to working copy </li>
+    <li>Create an Empty VS Solution root of the working copy </li>
+    <li>Download the&nbsp; 6R2 installer from EPiServer World (you’ll need to register): </li>
+    <li><a title="http://world.episerver.com/Download/Categories/Products/EPiServer-CMS/"
+            href="http://world.episerver.com/Download/Categories/Products/EPiServer-CMS/">http://world.episerver.com/Download/Categories/Products/EPiServer-CMS/</a>
+    </li>
+    <li>Run installer and deploy a Core deployment to the Working Copy, creating a project folder </li>
+    <li>Open VS solution </li>
+    <li>Add New Empty Website Project (use a temporary name)<a
+            href="http://lh3.ggpht.com/-2sRBCg8EYc4/UK477a6TVGI/AAAAAAAAAPs/4IY36RrV7Ew/s1600-h/image3.png"><br><img
+                style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px"
+                title="image" border="0" alt="image" src="images/image_thumb1.png" width="523" height="112"
+                class="img-responsive"></a> </li>
+    <li>Configure project properties as required: <ul>
+            <li>Assembly Name (&lt;client&gt;.WebSite) </li>
+            <li>Assembly Info (Version, Name, Copyright, etc) </li>
+            <li>Namespace (&lt;client&gt;.WebSite) </li>
+            <li>Target Framework (.Net 3.5) </li>
+            <li>Treat Warnings as Errors (All Configurations) </li>
+            <li>Strong Naming Key </li>
+            <li>Code Analysis Rules</li>
+        </ul>
+    </li>
+    <li>Save and Remove the Temporary Website Project from the Solution </li>
+    <li>Move project file into EPiServer Website folder and rename to match <ol>
+            <li>Edit the file in notepad to replace all instances of the Temporary Project Name with the real one </li>
+            <li>Also copy <ol>
+                    <li>web.*.config (not web.config) </li>
+                    <li>the Properties folder </li>
+                    <li>Any supporting files you added (Strong naming key, Code Analysis rules, etc)</li>
+                </ol>
+            </li>
+        </ol>
+    </li>
+    <li>Add the moved Project file to the solution as an Existing Project </li>
+    <li>Enable ‘Show All Files’ and include all </li>
+    <li>Edit <em><strong>episerver.config</strong></em> to configure:</li>
+    <ol>
+        <li>Start Page Id – set startPageId attribute to ‘1’ (from ‘0’) (/sites/site/siteSettings[startPageId]) </li>
+        <li>Site Description attribute </li>
+        <li>Site Url - the siteUrl attribute (/sites/site/siteSettings[siteUrl])</li>
+    </ol>
+    <li>Edit <em><strong>EPiServerFramework.config</strong></em> to ensure that the correct siteHosts are set </li>
+    <li>Test the project builds as expected and website is working (place holder page is displayed) </li>
+    <ol>
+        <li>place holder page is displayed </li>
+    </ol>
+    <li>Commit the solution to version control, ensuring that only code and configuration files are committed not build
+        outputs or per user settings (/bin, /obj, *.user files etc).</li>
+</ol>
+<h2>Managing Dependencies for CI</h2>
+<p>The project builds successfully as all of the required dependencies exist within the bin folder of the website.&nbsp;
+    This means the the build server will not be able to successfully build the project.&nbsp; We can manage this in two
+    ways:</p>
+<ol>
+    <li>(<strong>Recommended</strong>) Move all of the DLL’s from the bin folder into a ‘3rd Party’ or ‘libs’ folder and
+        create references to all of the top level assemblies from there, ensuring the ‘Copy Local’ is enabled. </li>
+    <ul>
+        <li>For each additional EPiServer installed to the website this procedure will need to be repeated</li>
+    </ul>
+    <li>Manage the dependencies via the EPiServer NuGet service (required NuGet VS extension) (<em>not recommended as
+            the feed is outdated compared to the download from EPiServer World</em>) <em>
+            <font color="#ff0000">Admission: I couldn’t get this to work, so I might be a bitter!</font>
+        </em></li>
+</ol>
+<p><em>
+        <font color="#000000"><strong>From here it should be build scripts as usual!</strong></font>
+    </em></p>
+<hr>
+<h3><em>
+        <font color="#ff0000">Here Be Dragons – </font>
+    </em>Configuring EPiServer Dependencies using NuGet</h3>
+<p><em><strong>
+            <font color="#ff0000">I couldn’t get this to work as intended – in the hope that I’ve done something stupid
+                and easiliy correctable….</font>
+        </strong></em></p>
+<p>Managing dependencies via NuGet is the new standard for managing dependencies and has many advantages over manually
+    maintaining references.&nbsp; For CI builds, not storing binary files within version control is a big win.</p>
+<p>Unfortunately, the EPiServer NuGet feed doesn’t take advantage of all NuGet offers and is already a little out of
+    date.&nbsp; However, if you want to attempt to get a core EPiServer site running using NuGet dependencies:</p>
+<ol>
+    <li>Enable NuGet Package Restore on the Solution (from Project Menu, or Right Click on Solution) </li>
+    <li>Add the EPiServer NuGet feed (<a
+            href="http://nuget.episerver.com/feed/packages.svc/">http://nuget.episerver.com/feed/packages.svc/</a>) to
+        the Package Manager Sources&nbsp; <a
+            href="http://lh4.ggpht.com/-aSqZ9W7KmQ8/UK479ZR0t7I/AAAAAAAAAP4/yWTO8GZq_CY/s1600-h/image7.png"><br><img
+                style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px"
+                title="image" border="0" alt="image" src="images/image_thumb3.png" width="472" height="295"
+                class="img-responsive"></a> </li>
+    <li>Install the required packages as references to the EPiServer Website project via the Package Manager Console
+        (Ensuring the EPiServer package source is selected)</li>
+    <ul>
+        <li>Install-Package EPiServer.CMS.Core -Version 6.1.379.0 </li>
+        <li>Install-Package EPiServer.Framework -Version 6.2.267.1</li>
+    </ul>
+    <li>The balance of the dependencies will need to be references from the 3rd Party folder. </li>
+    <li>
+        <font color="#ff0000"><em>At this point the project wouldn’t display as a website will a null reference
+                exception (no stack trace)</em></font>
+    </li>
+</ol>
