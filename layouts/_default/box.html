@@ -24,7 +24,7 @@
 {{- end -}}
 
 {{- $thumbimage := $original.Scratch.Get "thumb-image" -}}
-<div class='item' style='width:200px; height:200px;background-image: url({{ $thumbimage }});'>
+<div class='item' style='background-image: url({{ $thumbimage }});'>
     <header class='item-header'>
     <h4 class='item-title'>
         <a href='{{ .Permalink | relURL }}'>

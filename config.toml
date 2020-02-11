@@ -135,11 +135,11 @@ identifier = "repository"
 url = "https://github.com/codifice/"
 hrefTargetBlank = true
 
-#[[menu.main]]
-#name = "CV"
-#weight = 15
-#identifier = "cv"
-#url = "/cv"
+[[menu.main]]
+name = "CV"
+weight = 15
+identifier = "cv"
+url = "/20200205_martin_jarvis_tech_lead.pdf"
 
 [blackfriday]
 hrefTargetBlank = true
