@@ -3,7 +3,9 @@ title: "Ektron 8.01: PlatformNotSupportedException – Tracking Down and Fixing 
 date: 2010-06-15
 lastmod: 2010-06-15
 draft: false
-tags: ["ektron","localization","globalization","troubleshooting"]
+thumbnail: "/coding-gallery"
+tags: ["i18n"]
+series: ["ektron", "troubleshooting"]
 authors: ["martincjarvis"]
 ---
 <p>I’m still tracing though issues after upgrading to 8.01, this time looking at why requests for static files are return 500 - Internal Server Errors when French is selected, but not English. Hmm.</p>  <p>Looking at the Event Logs shows lots of errors like this:</p>  <div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper">   <div style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px" id="codeSnippet">     <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum1">   1:</span> Exception type: PlatformNotSupportedException </pre>

@@ -1,0 +1,35 @@
+{{- $original := . }}
+{{- if (not ( $original.Scratch.Get "thumb-image")) and (not (.Params.cover)) and (.Params.thumbnail) -}}
+  {{- if (not ( $original.Scratch.Get "image")) -}}
+    {{$page := .Site.GetPage (printf "%s" .Params.thumbnail) }}
+
+    {{- with $page.Resources -}}
+      {{- with .Match "{*.jpg,*.png,*.jpeg}" -}}
+        {{- with shuffle . -}}
+          {{- range first 1 . -}}
+            {{- $original.Scratch.Add "image" . -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- with $original.Scratch.Get "image" -}}
+    {{- with .Fill "200x200" -}}
+      {{- $original.Scratch.Add "thumb-image" ( printf "%s" .Permalink ) -}}
+    {{- end -}}
+  {{- end -}}
+{{- else if .Params.cover }}
+  {{ $original.Scratch.Add "thumb-image" .Params.cover }}
+{{- end -}}
+
+{{- $thumbimage := $original.Scratch.Get "thumb-image" -}}
+<div class='item' style='background-image: url({{ $thumbimage }});'>
+    <header class='item-header'>
+    <h4 class='item-title'>
+        <a href='{{ .Permalink | relURL }}'>
+        {{- .Title -}}
+        </a>
+    </h4>
+    </header>
+</div>

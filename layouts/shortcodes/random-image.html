@@ -1,0 +1,14 @@
+{{- $original := .Page }}  
+  {{- if (not ( $original.Scratch.Get "image")) -}}
+    {{$page := .Site.GetPage (printf "%s" .Page.Params.thumbnail) }}
+
+    {{- with $page.Resources -}}
+      {{- with .Match "{*.jpg,*.png,*.jpeg}" -}}
+        {{- with shuffle . -}}
+          {{- range first 1 . -}}
+            {{- $original.Scratch.Add "image" . -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}

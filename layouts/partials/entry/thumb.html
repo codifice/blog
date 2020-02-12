@@ -1,0 +1,47 @@
+{{- $original := . }}
+
+{{- if (not ( $original.Scratch.Get "image")) and (not (.Params.cover)) and (.Params.thumbnail) -}}
+  {{$page := .Site.GetPage (printf "%s" .Params.thumbnail) }}
+
+  {{- with $page.Resources -}}
+    {{- with .Match "{*.jpg,*.png,*.jpeg}" -}}
+      {{- with shuffle . -}}
+        {{- range first 1 . -}}
+          {{- with .Fill "200x100" -}}
+            {{- $original.Scratch.Add "image" ( printf "%s" .Permalink ) -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- else if .Params.cover }}
+  {{ $original.Scratch.Add "image" .Params.cover }}
+{{- end -}}
+
+{{- $coverimage := $original.Scratch.Get "image" -}}
+
+{{- with $coverimage -}}
+
+{{- $type := ( printf "%T" . ) -}}
+{{- $isMap := ( not ( eq $type "string" ) ) -}}
+
+<div class='entry-cover'>
+  <figure class='container cover-{{- if $isMap -}}
+    {{- with .style -}} {{ . }} {{- else -}} normal {{- end -}}
+    {{- else -}} normal {{- end -}}
+  '>
+    <img src='{{ if $isMap }}{{ $coverimage }}{{ else }}{{ . }}{{ end }}'
+      {{- if $isMap }}
+        {{- with ( .alternate | default .caption ) }} alt='{{ . | markdownify }}'{{ end -}}
+      {{ end -}} />
+    {{ if $isMap }}
+      <figcaption class='container'>
+        <span>
+          {{- . | markdownify -}}
+        </span>
+      </figcaption>
+    {{ end }}
+  </figure>
+</div>
+
+{{- end -}}
