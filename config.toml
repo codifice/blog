@@ -29,7 +29,7 @@ title404 = "Nothing's here!"
 [params.assets]
 favicon = "favicon.png"
 customCSS = ["css/custom.css"]
-customJS = ["js/custom.js"]
+#customJS = ["js/custom.js"]
 gopher = "" # used in 404 template ( Generator: https://gopherize.me )
 
 [params.copyright]
