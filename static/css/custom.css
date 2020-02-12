@@ -1,76 +1,103 @@
 .widget-recent_posts_home:after {
     content: "";
     clear: both;
-    display:block;
+    display: block;
 }
 
-.widget-recent_posts_home .container{
-    margin: 0 -2px;
+.widget-recent_posts_home .container {
+    margin: 0 -5px 0 0;
     padding: 0;
-    width:100%;
+    width: 100%;
 }
 
 .widget-recent_posts_home .container:after {
     content: "";
     clear: both;
-    display:block;
-}
-
-.widget-recent_posts_home .item{
     display: block;
-    margin:0;
-    width: 25%;
-    height: 200px;
-    max-height:200px;
-    max-width: 200px;
-    position:relative;
-    float:left;
 }
 
-.widget-recent_posts_home .item h4{
-    font-size:0.9em;
+.widget-recent_posts_home .item {
+    border-radius: 3px 3px 3px 3px;
+    display: block;
+    margin: 5px 5px 0 0;
+    width: 50%;
+    height: 200px;
+    max-height: 200px;
+    max-width: 345px;
+    position: relative;
+    float: left;
+}
+
+.widget-recent_posts_home .item h4 {
+    font-size: 0.9em;
     background-color: #fff;
     opacity: 0.8;
     position: absolute;
     left: 2px;
     right: 2px;
-    bottom:0px; 
-    margin:0 5px;
-    padding:2px;
-    max-height:63px;
+    bottom: 0px;
+    margin: 0 5px;
+    padding: 2px;
+    max-height: 63px;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-body.home img.profile{
+body.home img.profile {
+    margin: 0 30px;
     border-radius: 50%;
     width: 150px;
     height: 150px;
     float: left;
-    margin-right:50px;
+    margin-right: 50px;
 }
 
-body.home section.summary{
-    float:left;
+body.home section.summary {
+    float: left;
 }
 
 body.home #header,
-body.home .header-widgets{
-    display:none;
+body.home .header-widgets {
+    display: none;
 }
 
-br.clear{
-    clear:both;
+br.clear {
+    clear: both;
 }
 
-@media screen and (max-width: 600px) {
+body.home blockquote {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 3px 3px 3px 3px;
+    border-left: 0;
+    font-size: 0.9em;
+    color: #059;
+    background-color: #BEF;
+}
+
+body.home blockquote {
+    font-style: normal;
+    font-weight: 0.9em;
+}
+
+@media screen and (max-width: 1087px) {
     .widget-recent_posts_home .item {
-      width: 100%;
+        width: 100%;
+        max-width: 600px;
+        margin: 0px;
     }
+}
 
-    body.home .profile{
-        display:none;
+@media screen and (max-width: 656px) {
+    .widget-recent_posts_home .item {
+        width: 100%;
+        max-width: 600px;
+        margin: 0px;
     }
-  }
+}
 
-
+@media screen and (max-width: 656px) {
+    body.home .profile {
+        display: none;
+    }
+}

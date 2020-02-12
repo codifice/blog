@@ -1,25 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>nuget on Codifice</title>
-    <link>https://codifice.uk/tags/nuget/</link>
-    <description>Recent content in nuget on Codifice</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 22 Nov 2012 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://codifice.uk/tags/nuget/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Notes on Configuring a New EPiServer 6 R2 Website for Continuous Integration</title>
-      <link>https://codifice.uk/posts/2012-11-22-notes-on-configuring-new-episerver-6-r2/</link>
-      <pubDate>Thu, 22 Nov 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://codifice.uk/posts/2012-11-22-notes-on-configuring-new-episerver-6-r2/</guid>
-      <description>I’m assuming that you’ve read the installation instructions:
-http://world.episerver.com/Documentation/Items/Installation-Instructions/EPiServer-CMS/Version-6/EPiServer-CMS-6-R2/Installation-Instructions---EPiServer-CMS-6-R2/Creating a new blank EPiServer Site Project and Solution
-Prepare Repository Check out trunk/main branch to working copy Create an Empty VS Solution root of the working copy Download the&amp;nbsp; 6R2 installer from EPiServer World (you’ll need to register): http://world.episerver.com/Download/Categories/Products/EPiServer-CMS/Run installer and deploy a Core deployment to the Working Copy, creating a project folder Open VS solution Add New Empty Website Project (use a temporary name) Configure project properties as required: Assembly Name (&amp;lt;client&amp;gt;.</description>
-    </item>
-    
-  </channel>
-</rss>

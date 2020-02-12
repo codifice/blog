@@ -15,7 +15,7 @@
   {{- end -}}
 
   {{- with $original.Scratch.Get "image" -}}
-    {{- with .Fill "200x200" -}}
+    {{- with .Fill "600x200" -}}
       {{- $original.Scratch.Add "thumb-image" ( printf "%s" .Permalink ) -}}
     {{- end -}}
   {{- end -}}
