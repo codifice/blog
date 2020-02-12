@@ -36,13 +36,41 @@
     right: 2px;
     bottom:0px; 
     margin:0 5px;
-    max-height:75px;
+    padding:2px;
+    max-height:63px;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+body.home img.profile{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    float: left;
+    margin-right:50px;
+}
+
+body.home section.summary{
+    float:left;
+}
+
+body.home #header,
+body.home .header-widgets{
+    display:none;
+}
+
+br.clear{
+    clear:both;
 }
 
 @media screen and (max-width: 600px) {
     .widget-recent_posts_home .item {
       width: 100%;
     }
+
+    body.home .profile{
+        display:none;
+    }
   }
+
+

@@ -1,8 +1,8 @@
 baseURL = "https://codifice.uk/"
-title = "Codifice Ltd"
+title = "Codifice"
 # for smart copyright line, leave this blank and check [params.copyright]
 copyright = ""
-description = ""
+description = "Martin Jarvis - Team Lead, Architect, .Net Developer"
 
 theme = "minimo"
 
@@ -36,7 +36,7 @@ gopher = "" # used in 404 template ( Generator: https://gopherize.me )
 prefix = ""
 holder = "Codifice Ltd"
 startYear = "2020"
-suffix = ""
+suffix = "All rights reserved"
 
 [params.settings]
 # date & time format: https://golang.org/pkg/time/
@@ -49,7 +49,7 @@ showReadingTime = true
 showLastmod = true
 taxonomyCloudShuffle = true
 accentColor = "#007FFF"
-hideMainMenu = false
+hideMainMenu = true
 rtl = false
 
 [params.sidebar]
@@ -58,7 +58,7 @@ enable = true
 [params.widgets]
 header = ["breadcrumbs"]
 homepage = ["recent_posts_home"]
-sidebar = ["about","sidebar_menu","search","recent_posts","taxonomy_cloud"]
+sidebar = ["about","sidebar_menu","search","taxonomy_cloud"]
 footer = ["social_menu"]
 
 [params.opengraph.facebook]

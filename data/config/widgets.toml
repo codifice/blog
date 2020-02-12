@@ -1,6 +1,6 @@
 # About Widget config
 [about]
-title = "Codifice Ltd"                            # default: .Site.Title
+title = "Codifice"                            # default: .Site.Title
 description = "Artisan Development and Architecture"              # default: .Site.Params.info.description
 logo = "/images/logo.png"  
 
