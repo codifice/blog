@@ -58,7 +58,7 @@ enable = true
 [params.widgets]
 header = ["breadcrumbs"]
 homepage = ["recent_posts_home"]
-sidebar = ["about","sidebar_menu","search","taxonomy_cloud"]
+sidebar = ["about", "social_menu", "sidebar_menu","search","taxonomy_cloud"]
 footer = ["social_menu"]
 
 [params.opengraph.facebook]
@@ -139,7 +139,7 @@ hrefTargetBlank = true
 name = "CV"
 weight = 15
 identifier = "cv"
-url = "/20200205_martin_jarvis_tech_lead.pdf"
+url = "/20200214_martin_jarvis_tech_lead.pdf"
 
 [blackfriday]
 hrefTargetBlank = true
