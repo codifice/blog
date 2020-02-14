@@ -84,20 +84,11 @@ body.home blockquote {
     .widget-recent_posts_home .item {
         width: 100%;
         max-width: 600px;
-        margin: 0px;
-    }
-}
-
-@media screen and (max-width: 656px) {
-    .widget-recent_posts_home .item {
-        width: 100%;
-        max-width: 600px;
-        margin: 0px;
     }
 }
 
 @media screen and (max-width: 656px) {
     body.home .profile {
-        display: none;
+        clear: both;
     }
 }
