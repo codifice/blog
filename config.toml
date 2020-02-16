@@ -7,7 +7,7 @@ description = "Martin Jarvis - Team Lead, Architect, .Net Developer"
 theme = "minimo"
 
 disqusShortname = ""
-googleAnalytics = ""
+googleAnalytics = "UA-158621587-1"
 
 Paginate = 5
 preserveTaxonomyNames = true
