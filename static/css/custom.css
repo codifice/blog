@@ -44,12 +44,11 @@
 }
 
 body.home img.profile {
-    margin: 0 30px;
+    margin: 0 50px 0 30px;
     border-radius: 50%;
     width: 150px;
     height: 150px;
     float: left;
-    margin-right: 50px;
 }
 
 body.home section.summary {
