@@ -1,5 +1,5 @@
 ---
-title: "Configuring a Raspberry Pi Cluster"
+title: "RPi Cluster (Part 2) - Basic Configuration"
 date: 2020-02-17T16:47:32Z
 draft: false
 authors: ["martincjarvis"]
@@ -7,17 +7,7 @@ comments: true
 thumbnail: "/architecture-gallery"
 series: ["rpi"]
 ---
-# Why?
-
-One of the great things about modern cloud developement is how quickly you can get a [kubernetes](https://kubernetes.io/) cluster up and running quickly and easily, but it hides a lot of the detail and nuts and bolts involved in the setup.  So I wanted to go back to basics (but still pretty advanced) and spin up my own cluster on bare metal from the ground up.
-
-My plan is to build a 4 Node cluster (RPi 4B) (1 master, 3 workers) with an additional (Rpi 3B+) configured as an `apt` cache to reduce the time taken to setup multiple identical Pi's.  Since RPi's use an SDCard for storage I want' reduce the number of writes, so I'm going to install Log2Ram which mounts the default `/var/logs/` to a ramdisk, I'll also install a USB stick which will be mounted for storage.
-
-{{< imgproc kit-pic Fill "650x200" >}}
-Mass Amazon Delivery :)
-{{< / imgproc>}}
-
-# Plan
+# Basic Installation and Configuration
 
 Before I get going on the Kubernetes proper I wanted to make sure all the PI's are essentially configured and update to date.  There are lots of guides out there for providing more detail, but the steps I'm running through are:
 
@@ -28,7 +18,7 @@ Before I get going on the Kubernetes proper I wanted to make sure all the PI's a
 From this basic connectivity setup, will continue onto:
 
 * Configure hostnames
-* Configure the RPi 3B+ to act as an `apt` caching using [`apt-cacher-ng`](https://geekflare.com/create-apt-proxy-on-raspberrypi/)
+* Configure the Gateway/Cache RPi to act as an `apt` caching using [`apt-cacher-ng`](https://geekflare.com/create-apt-proxy-on-raspberrypi/)
 * Configure all RPi's Apt clients to use the `apt-cacher-ng` service
 * Configure all RPi's to log to ram by default ([Log2Ram](https://github.com/azlux/log2ram))
 * Bring all the RPi's up to date
@@ -42,7 +32,7 @@ At this point, I'll have all the RPi's communicating and up to date, but on my W
 
 # Basic Customisation
 
-Discover the assigned IP address of the RPi and connect using `ssh pi@<ip>` ( or [Putty](https://www.putty.org)).  Expect to get a warning asking if you want to continue, this is a one off and after you accept you won't be prompted again
+After the RPi's have been flashed and are on the WiFi network, discover the assigned IP address of the RPi and connect using `ssh pi@<ip>` ( or [Putty](https://www.putty.org)).  Expect to get a warning asking if you want to continue, this is a one off and after you accept you won't be prompted again
 
 ```plain
 The authenticity of host '<ip> (<ip>)' can't be established.
@@ -50,7 +40,9 @@ ECDSA key fingerprint is SHA256:sSbB1s3IpXMon5yZTE2tIV/IdwuwYc0hDQaRKZhQXbM.
 Are you sure you want to continue connecting (yes/no)?
 ```
 
-First thing to do is to update the default password (`passwd`)/create a new user and disable the default `pi` login.  
+First thing to do is to update the default password (`passwd`)/create a new user and disable the default `pi` login. 
+
+> It's also a great idea to use key based authentication rather than a password... [instructions](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server)
 
 ## Configure Basic Node Setting
 
@@ -90,7 +82,11 @@ PING <new-hostname> (<ip>) 56(84) bytes of data.
 64 bytes from <new-hostname> (<ip>): icmp_seq=3 ttl=64 time=8.72 ms
 ```
 
-> If your configuring the cache configure `apt-cacher-ng` install it now with `sudo apt install apt-cacher-ng`
+> If your configuring the cache configure `apt-cacher-ng` install it now with `sudo apt install apt-cacher-ng`.
+>
+> When prompted select `No` to allowing HTTPS Tunnels.
+>
+> You can see a report of how much bandwidth you've saved by visiting `http://<cache-ip>:3142/acng-report.html`
 
 ## Configure APT Cache
 
@@ -182,7 +178,175 @@ UUID=<your-uuid> /mnt/usb ext4 defaults 0 0
 * Change owner from root (`sudo chown -R $USER:$USER /mnt/usb`)
 * Reboot to double check that disk mounts as expected (`sudo reboot`)
 
-## Summary
+#### Move APT Cache to USB
+
+We can now move the APT cache over to the mounted USB Stick, we'll do this by moving the files and then creating a bind mount between the original location and new location so that we can leave config files as is.  Before you start check the contents of `/var/cache` so you can confirm all is working after the move:
+
+```bash
+sudo ls /var/cache -al
+sudo mv /var/cache /mnt/usb/
+sudo mkdir /var/cache
+sudo nano /etc/fstab
+```
+
+Then append the line:
+
+```plain
+/mnt/usb/cache  /var/cache      none    bind    0 0
+```
+Save the file and then:
+
+```bash
+sudo mount -a`
+sudo ls /var/cache -al
+```
+
+This should then mount cache folder from the USB drive to the original location if the file tree and list the directory contents (which should match from before).
+
+Finally, test that `apt` still works as expected: with `sudo apt get update`.  There shouldn't be any errors.
+
+## Installing Docker
+
+The cluster nodes will all need Docker installed as a Kubernetes pre-requisite and the cache RPi will need it to serve as a read-through cache Docker Repo.
+
+On each RPi, install docker with (leveraging the apt cache):
+
+```bash
+sudo apt-get update -qq >/dev/null && \
+DEBIAN_FRONTEND=noninteractive sudo apt-get install -y -qq apt-transport-https ca-certificates curl >/dev/null && \
+curl -fsSL https://download.docker.com/linux/raspbian/gpg | sudo apt-key add -qq - >/dev/null && \
+echo "deb [arch=$(dpkg --print-architecture)] http://cache:3142/HTTPS///download.docker.com/linux/raspbian buster stable" | sudo tee /etc/apt/sources.list.d/docker.list && \
+sudo apt-get update -qq >/dev/null && \
+sudo apt-get install -y -qq --no-install-recommends docker-ce-cli && \
+sudo apt-get install -y -qq --no-install-recommends docker-ce && \
+sudo usermod pi -aG docker && \
+newgrp docker
+```
+
+> To use the non-cached official installer:
+> ```bash
+> curl -sSL get.docker.com | sh && \
+> sudo usermod pi -aG docker && \
+> newgrp docker
+> ```
+
+
+You can test that docker has installed correctly by `docker --version` you should see output similar to:
+
+```plain
+Docker version 19.03.6, build 369ce74
+```
+
+For improved compatibility, disable swap for kubernetes compatibility:
+
+```bash
+sudo dphys-swapfile swapoff && \
+sudo dphys-swapfile uninstall && \
+sudo update-rc.d dphys-swapfile remove
+```
+
+We also need to enable the following cgroups, by appending the parameters below to `/boot/cmdline.txt` (`sudo nano /boot/cmdline.txt`) this shold all be on one line.
+
+```plain
+cgroup_enable=cpuset cgroup_memory=1 cgroup_enable=memory
+```
+
+Reboot the RPi `sudo reboot`
+
+## Configure Docker Cache on Cache RPi
+
+> For more details see [Official Docs](https://docs.docker.com/registry/recipes/mirror/)
+
+SSH into the Cache RPi and verify docker is running: 
+
+```bash
+docker ps
+```
+
+Create a directory to store cached docker images: 
+```bash
+sudo mkdir /mnt/usb/docker-cache
+```
+
+Download the official Docker Repository Repo and export the latest config for modification:
+
+```bash
+sudo docker run -it --rm registry cat /etc/docker/registry/config.yml | sudo tee /mnt/usb/docker-cache/config.yml
+```
+
+This should result in `/mnt/usb/docker-cache/config.yml` containing something similar to:
+
+```plain
+version: 0.1
+log:
+  fields:
+    service: registry
+storage:
+  cache:
+    blobdescriptor: inmemory
+  filesystem:
+    rootdirectory: /var/lib/registry
+http:
+  addr: :5000
+  headers:
+    X-Content-Type-Options: [nosniff]
+health:
+  storagedriver:
+    enabled: true
+    interval: 10s
+    threshold: 3
+```
+
+Append the proxy configuration to the end of the config:
+
+```plain
+proxy:
+  remoteurl: https://registry-1.docker.io
+```
+
+We can now start the caching private repo set to always start with the docker daemon:
+
+```bash
+sudo docker run --restart=always -p 5000:5000 \
+         --name repo-cache -v /mnt/usb/docker-cache:/var/lib/registry \
+         --detach registry serve /var/lib/registry/config.yml
+```
+
+You can monitor the running process with `docker ps`, you can also query the current repo contents with:
+
+```bash
+$ curl http://cache:5000/v2/_catalog
+{"repositories":[]}
+```
+
+We need to update all the nodes to refer to the caching repo by creating `/etc/docker/daemon.json` (`sudo nano /etc/docker/daemon.json`) with the contents:
+
+```json
+{
+    "registry-mirrors": ["http://cache:5000"]
+}
+```
+
+and restart Docker
+
+```bash
+sudo service docker restart
+```
+
+You can then pull a docker image to check the caching is working:
+
+```bash
+$ docker pull hello-world
+...
+$ docker pull redis
+...
+$ $ curl http://cache:5000/v2/_catalog
+{"repositories":["library/hello-world","library/redis"]}
+```
+
+You should notice after the first node has pulled an image, the other nodes can download at a much faster rate due to pulling straight from the cache.
+
+# Summary
 
 So far this has gotten us to:
 
@@ -190,4 +354,4 @@ So far this has gotten us to:
 First Stage Network Sketch
 {{< / imgproc>}}
 
-The RPi's are working, but no kubernetes cluster and all network comms is over WIFI not a faster Ethernet backbone.  I'll be looking to address this next.
+The RPi's are working with a pull through apt cache and private docker repository, but no kubernetes cluster and all network comms is over WIFI not a faster Ethernet backbone.  I'll be looking to address this next.
