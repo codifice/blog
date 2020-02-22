@@ -242,7 +242,8 @@ For improved compatibility, disable swap for kubernetes compatibility:
 ```bash
 sudo dphys-swapfile swapoff && \
 sudo dphys-swapfile uninstall && \
-sudo update-rc.d dphys-swapfile remove
+sudo update-rc.d dphys-swapfile remove && \
+sudo systemctl disable dphys-swapfile.service
 ```
 
 We also need to enable the following cgroups, by appending the parameters below to `/boot/cmdline.txt` (`sudo nano /boot/cmdline.txt`) this shold all be on one line.
@@ -345,6 +346,17 @@ $ $ curl http://cache:5000/v2/_catalog
 ```
 
 You should notice after the first node has pulled an image, the other nodes can download at a much faster rate due to pulling straight from the cache.
+
+## Install Kubernetes CLI Tools
+
+Install the common CLI tooling on each of the RPi's:
+
+```bash
+echo "deb http://cache:3142/apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+wget -qO - https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install -qy kubeadm
+```
 
 # Summary
 

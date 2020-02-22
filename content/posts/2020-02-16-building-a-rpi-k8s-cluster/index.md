@@ -32,11 +32,24 @@ This a run down of the bits that I purchased, but shop around as I ended up with
 * 1 x [RPi Passive Cooling Case](https://amzn.to/39OoKUn)
 * 1 x [USB Ethernet Adapter](https://amzn.to/2SYK1nt)
 
-> I also brought a Quieter 120mm fan to replace the brightly coloured jet turbine that came with the cluster case [Noctua 120mm Silent Fan](https://amzn.to/2uMHmFu)
+> I also brought a Quieter 120mm fan to replace the brightly coloured jet turbine that came with the cluster case [Noctua 120mm Silent Fan](https://amzn.to/2uMHmFu).  If anyone follows suit, I needed to rewire the power headers for the fan (black => black , red=> yellow - remove the blue and green wires)
 
 {{< imgproc kit-pic Fill "650x200" >}}
 Mass Amazon Delivery :)
 {{< / imgproc>}}
 
+{{< imgproc rpi-assembled Fill "650x600" >}}
+Cluster Assembled
+{{< / imgproc>}}
 
+Assemblig the RPi's is fairly straight forward and a few warranty-voiding minutes with a hot glue gun, I'd mounted the USB Charger and 5 Port Switch, Gateway/Cache RPi and USB ethernet adapter to the chassis.    The result isn't the neatest bit of work, but it only needs a single power cable and an optional ethernet cable to "install".  
 
+{{< imgproc rpi-wires Fill "650x600" >}}
+USB and Ethernet cables wiring
+{{< / imgproc>}}
+
+My plan is to hang the cluster from hooks under a desk by it's handle so all in the assembly was pretty easy and successful.   Now comes the configuration and setup :).
+
+{{< imgproc rpi-hung Fill "650x600" >}}
+Cluster Hung from Handle
+{{< / imgproc>}}

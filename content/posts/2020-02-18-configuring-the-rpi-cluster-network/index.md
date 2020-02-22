@@ -59,7 +59,11 @@ listen-address=10.0.1.1
 interface=eth0
 dhcp-range=10.0.1.100,10.0.1.200,255.255.255.0,24h
 dhcp-option=option:router,10.0.1.1
+
+dhcp-host=master,10.0.1.2
 ```
+
+> The last line will assign a static IP of 10.0.1.2 to any host named `master` 
 
 We also need to update the RPi `/etc/hosts` to use the static IP address for the cluster/gateway/cache RPis
 
@@ -81,12 +85,12 @@ You should be able to see the RPi's of the cluster get assigned their IP's by us
 1582215976 dc:a6:32:66:e4:6c 10.0.1.107 node3 01:dc:a6:32:66:e4:6c
 tail: /var/lib/misc/dnsmasq.leases: file truncated
 1582215987 dc:a6:32:66:e4:b7 10.0.1.119 node1 01:dc:a6:32:66:e4:b7
-1582215984 dc:a6:32:66:e4:7c 10.0.1.102 master 01:dc:a6:32:66:e4:7c
+1582215984 dc:a6:32:66:e4:7c 10.0.1.2 master 01:dc:a6:32:66:e4:7c
 1582215976 dc:a6:32:66:e4:6c 10.0.1.107 node3 01:dc:a6:32:66:e4:6c
 tail: /var/lib/misc/dnsmasq.leases: file truncated
 1582215991 dc:a6:32:66:e4:2d 10.0.1.108 node2 01:dc:a6:32:66:e4:2d
 1582215987 dc:a6:32:66:e4:b7 10.0.1.119 node1 01:dc:a6:32:66:e4:b7
-1582215984 dc:a6:32:66:e4:7c 10.0.1.102 master 01:dc:a6:32:66:e4:7c
+1582215984 dc:a6:32:66:e4:7c 10.0.1.2 master 01:dc:a6:32:66:e4:7c
 1582215976 dc:a6:32:66:e4:6c 10.0.1.107 node3 01:dc:a6:32:66:e4:6c
 ```
 
@@ -128,10 +132,12 @@ Add a masquarade rules for `eth1` and `wlan0` and then save the rules:
 ```bash
 sudo iptables -t nat -A  POSTROUTING -o eth1 -j MASQUERADE
 sudo iptables -t nat -A  POSTROUTING -o wlan0 -j MASQUERADE
+sudo iptables -A FORWARD -i eth0 -j ACCEPT
+sudo iptables -A FORWARD -m state --state RELATED,ESTABLISHED -j ACCEPT
 sudo sh -c "iptables-save > /etc/iptables.ipv4.nat"
 ```
 
-To restore these settings on rebbot, we need to enable IP forwarding, edit `/etc/sysctl.conf` witht `sudo nano /etc/sysctl.conf`:
+To restore these settings on reboot, we need to enable IP forwarding, edit `/etc/sysctl.conf` witht `sudo nano /etc/sysctl.conf`:
 
 ```plain
 net.ipv4.ip_forward=1
@@ -145,21 +151,17 @@ iptables-restore < /etc/iptables.ipv4.nat
 
 At this point we should remove any static IP addresses assigned in `/etc/hosts` on any of the non-gateway nodes as name resolution should all be done via the dnsmasq DNS server which is configured during DHCP.
 
+You should now be able SSH onto any of the RPi's and ping an existing domain/ip (such as `ping www.google.com` or `ping 8.8.8.8`) and get a ping response back via the gateway.
+
+## SSHing on to the RPi's behind the gateway:
+
+
 ## Disable WIFI on cluster RPis
 
 If you SSH onto one of the cluster RPi's (master, node1-3) and run `ifconfig` you'll see three adapters:
 * `eth0` - wired ethernet
 * `lo` - loop back (essentially 127.0.0.1)
 * `wlan0` - Wifi
-
-We need to disabled the WiFi adapter to isolate the cluster RPi's...but if we do that we can no longer SSH onto the box directly.  So before we disable the adapter we will need to SSH into the node via the gateway RPi as a jumpbox:
-
-```bash
-ssh -J pi@<gateway-ip> pi@master
-```
-> For Windows users, try using `Linux Subsystem for Windows` to use linux SSH tools.  However, if for `putty` instructions see [putty/plink config](https://jamesd3142.wordpress.com/2018/02/05/jump-box-config-for-putty/)
-
-You will need to enter the SSH Passwords first for the Jumpbox, and then for `master`.
 
 ```bash
 pi@node1:~ $ ifconfig
@@ -191,7 +193,44 @@ wlan0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 ```
 
-To disable the `wlan0` adapter:
+We need to disabled the WiFi adapter to isolate the cluster RPi's...but if we do that we can no longer SSH onto the box directly.  
+
+So before we disable the adapter we will need to SSH into the node via the gateway RPi as a jumpbox:
+
+```bash
+ssh -J pi@<gateway-ip> pi@master
+```
+> For Windows users, try using `Windows Subsystem for Linux` (WSL) to use linux SSH tools.  However, if for `putty` instructions see [putty/plink config](https://jamesd3142.wordpress.com/2018/02/05/jump-box-config-for-putty/)
+
+You will need to enter the SSH Passwords first for the Jumpbox, and then for `master`.
+
+If you a WSL/Linux/Mac you can configure SSH to automatically use the jumpbox so that you don't need to enter the `-J pi@<gateway-ip>` each time.  Edit your local `~/.ssh/config` file and add entries similar to:
+
+```plain
+Host master
+User          pi
+HostName      master
+ProxyCommand  ssh pi@<gateway-ip> nc %h %p 2> /dev/null
+
+Host node1
+User          pi
+HostName      node1
+ProxyCommand  ssh pi@<gateway-ip> nc %h %p 2> /dev/null
+
+Host node2
+User          pi
+HostName      node2
+ProxyCommand  ssh pi@<gateway-ip> nc %h %p 2> /dev/null
+
+Host node3
+User          pi
+HostName      node3
+ProxyCommand  ssh pi@<gateway-ip> nc %h %p 2> /dev/null
+```
+
+This will allow you to `ssh` / `scp` onto the boxes behind the jumpbox transparently using `ssh pi@master`
+
+So...to disable the `wlan0` adapter:
 
 ```bash
 rfkill block wifi
@@ -203,6 +242,37 @@ Repeating the `ifconfig` command will show that the `wlan0` adapter has been dis
 
 To double check connectivity try `ping www.google.com`
 
+## Shutting down the cluster cleanly
+
+Up until now we've had to shutdown the Raspberry PI cluster by logging onto each machine and running `sudo shutdown -h now` or `sudo poweroff`.  If we configure [SSH Key Authentication](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server) with the private key on the cache/gateway RPi and install the public key on each of the other nodes (in `~/.ssh/authorized_keys`) we can parse the DHCP Leases file and shutdown each node in turn and finally the cache/gateway RPi.
+
+```bash
+#!/bin/bash
+
+while IFS="" read -r p || [ -n "$p" ]
+do
+  IFS=' ' read -r -a array <<< "$p"
+  echo "Shutting down ${array[3]}"
+  ssh -n pi@${array[3]} 'sudo poweroff' >> /dev/null
+
+done < /var/lib/misc/dnsmasq.leases
+
+sudo poweroff
+```
+
+After the nodes have safely shutdown (the flashing green LED next to the red power LED stays dark) the power can safely be turned off.
+
+```bash
+pi@cluster:~ $ ./shutdown_cluster.sh
+Shutting down node2
+Connection to node2 closed by remote host.
+Shutting down node1
+Connection to node1 closed by remote host.
+Shutting down master
+Connection to master closed by remote host.
+Shutting down node3
+Connection to node3 closed by remote host.
+```
 # Summary
 
 We've now configured the RPi cluster network to isolate the RPi's behind a single gateway and enable the cluster-as-an appliance network isolation.  We can add the cluster to a network by either joining the gateway RPi to the host WIFI network or by patching in via the `eth1` port and DHCP on the host network will assign the cluster an IP address which can be used to SSH into the gateway RPi or use it as a jump box to the internal RPi's.
