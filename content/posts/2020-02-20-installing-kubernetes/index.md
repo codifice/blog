@@ -4,11 +4,11 @@ date: 2020-02-20T20:47:08Z
 draft: false
 authors: ["martincjarvis"]
 comments: true
-thumbnail: "/architecture-gallery"
+thumbnail: "/devops-gallery"
 series: ["rpi"]
 ---
 
-Now the RPi Cluster is assembled, setup and has its network correctly configured we can install Kubernetes!
+Now the RPi Cluster is assembled, set up and has its network correctly configured we can install Kubernetes!
 
 # On the Master RPi
 
@@ -17,7 +17,8 @@ sudo kubeadm config images pull -v3
 sudo kubeadm init --token-ttl=0
 ```
 
-At the end of the output there's the command that must be used to join worker nodes to the master, it will resemble:
+At the end of the output, there's the command that must be used to join worker nodes to the master, it will resemble:
+
 ```bash
 kubeadm join 10.0.1.2:6443 --token hqrwwd.zia49kiu5096aq0p \
     --discovery-token-ca-cert-hash sha256:2b22b8c62774bdfd051720326ccb49970457140a19ec9f425c28727ef4b4dae9

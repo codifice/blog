@@ -4,7 +4,7 @@ date: 2020-02-16T12:47:32Z
 draft: false
 authors: ["martincjarvis"]
 comments: true
-thumbnail: "/architecture-gallery"
+thumbnail: "/networking-gallery"
 series: ["rpi"]
 ---
 One of the great things about modern cloud developement is how quickly you can get a [kubernetes](https://kubernetes.io/) cluster up and running quickly and easily, but it hides a lot of the detail and nuts and bolts involved in the setup.  So I wanted to go back to basics (but still pretty advanced) and spin up my own cluster on bare metal from the ground up.  It would also be pretty cool to have a portable plug-and-play cluster which you can plugin into a network and start using it.  A portable kubernetes cluster appliance as it were!

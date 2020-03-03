@@ -4,22 +4,22 @@ date: 2020-02-18T11:27:56Z
 draft: false
 authors: ["martincjarvis"]
 comments: true
-thumbnail: "/architecture-gallery"
+thumbnail: "/networking-gallery"
 series: ["rpi"]
 ---
 # Configuring the RPi Cluster Network
 
-Now the that the cluster is configured and all the RPi's are up and running, it's time to sort out the networking so that the cluster operates on it's own, predictable network and external connectivity is through a single Gateway.
+Now the that the cluster is configured and all the RPi's are up and running, it's time to sort out the networking so that the cluster operates on its own, predictable network and external connectivity is through a single Gateway.
 
 {{< imgproc simple-network Resize "650x472" >}}
 Simple Network Diagram
 {{< / imgproc>}}
 
-We're going to configure the gateway RPi (which is doing double duty as the cache RPi in my case) to be be a DHCP server using `dnsmasq` for all the devices connected to the 5 Port Switch which is serving as our backplane.  We'll also need a second ethernet port to be our "hotplug" network port which will get it's IP Address assigned by the host networks DHCP server, and similarly with the RPi's built in WIFI.  All the other RPi's on the cluster will have their WiFi interfaces disabled.
+We're going to configure the gateway RPi (which is doing double duty as the cache RPi in my case) to be a DHCP server using `dnsmasq` for all the devices connected to the 5 Port Switch which is serving as our backplane.  We'll also need a second ethernet port to be our "hotplug" network port which will get it's IP Address assigned by the host networks DHCP server, and similarly with the RPi's built-in WIFI.  All the other RPi's on the cluster will have their WiFi interfaces disabled.
 
-# Steps to Configure
+## Steps to Configure
 
-## On the Gateway RPi
+### On the Gateway RPi
 
 Install the dnsmasq software, but stop the service until we've configured it correctly:
 
@@ -28,7 +28,7 @@ sudo apt install dnsmasq
 sudo systemctl stop dnsmasq
 ```
 
-Assign a static IP address (`10.0.1.1`) to `eth0` (the on board ethernet port - connected to the 5 port switch) by adding the following to the end of `/etc/dhcpcd.conf` (`sudo nano /etc/dhcpcd.conf`):
+Assign a static IP address (`10.0.1.1`) to `eth0` (the onboard ethernet port - connected to the 5 port switch) by adding the following to the end of `/etc/dhcpcd.conf` (`sudo nano /etc/dhcpcd.conf`):
 
 ```plain
 interface eth0
@@ -50,8 +50,8 @@ domain-needed
 bogus-priv
 filterwin2k
 expand-hosts
-domain=cluster.local
-local=/cluster.local/
+domain=cluster.lan
+local=/cluster.lan/
 listen-address=127.0.0.1
 listen-address=10.0.1.1
 
@@ -119,7 +119,7 @@ PING cache (10.0.1.1) 56(84) bytes of data.
 rtt min/avg/max/mdev = 0.208/0.212/0.220/0.005 ms
 ```
 
-## Configure the gateway to allow outwards communication
+### Configure the gateway to allow outwards communication
 
 Back on the the gateway RPi to activate the IP Forwarding:
 
@@ -149,16 +149,14 @@ and edit `/etc/rc.local` with `sudo nano /etc/rc.local` and add the line below a
 iptables-restore < /etc/iptables.ipv4.nat
 ```
 
-At this point we should remove any static IP addresses assigned in `/etc/hosts` on any of the non-gateway nodes as name resolution should all be done via the dnsmasq DNS server which is configured during DHCP.
+At this point, we should remove any static IP addresses assigned in `/etc/hosts` on any of the non-gateway nodes as name resolution should all be done via the dnsmasq DNS server which is configured during DHCP.
 
-You should now be able SSH onto any of the RPi's and ping an existing domain/ip (such as `ping www.google.com` or `ping 8.8.8.8`) and get a ping response back via the gateway.
+You should now be able to SSH onto any of the RPi's and ping an existing domain/IP (such as `ping www.google.com` or `ping 8.8.8.8`) and get a ping response back via the gateway.
 
-## SSHing on to the RPi's behind the gateway:
-
-
-## Disable WIFI on cluster RPis
+## Disable WIFI on cluster RPis and SSH via Jumpbox
 
 If you SSH onto one of the cluster RPi's (master, node1-3) and run `ifconfig` you'll see three adapters:
+
 * `eth0` - wired ethernet
 * `lo` - loop back (essentially 127.0.0.1)
 * `wlan0` - Wifi
@@ -193,13 +191,14 @@ wlan0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 ```
 
-We need to disabled the WiFi adapter to isolate the cluster RPi's...but if we do that we can no longer SSH onto the box directly.  
+We need to disable the WiFi adapter to isolate the cluster RPi's...but if we do that we can no longer SSH onto the box directly.  
 
 So before we disable the adapter we will need to SSH into the node via the gateway RPi as a jumpbox:
 
 ```bash
 ssh -J pi@<gateway-ip> pi@master
 ```
+
 > For Windows users, try using `Windows Subsystem for Linux` (WSL) to use linux SSH tools.  However, if for `putty` instructions see [putty/plink config](https://jamesd3142.wordpress.com/2018/02/05/jump-box-config-for-putty/)
 
 You will need to enter the SSH Passwords first for the Jumpbox, and then for `master`.
@@ -240,11 +239,11 @@ rfkill block wifi
 
 Repeating the `ifconfig` command will show that the `wlan0` adapter has been disabled and no longer appears on the list.
 
-To double check connectivity try `ping www.google.com`
+To double-check connectivity try `ping www.google.com`
 
 ## Shutting down the cluster cleanly
 
-Up until now we've had to shutdown the Raspberry PI cluster by logging onto each machine and running `sudo shutdown -h now` or `sudo poweroff`.  If we configure [SSH Key Authentication](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server) with the private key on the cache/gateway RPi and install the public key on each of the other nodes (in `~/.ssh/authorized_keys`) we can parse the DHCP Leases file and shutdown each node in turn and finally the cache/gateway RPi.
+Up until now, we've had to shut down the Raspberry PI cluster by logging onto each machine and running `sudo shutdown -h now` or `sudo poweroff`.  If we configure [SSH Key Authentication](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server) with the private key on the cache/gateway RPi and install the public key on each of the other nodes (in `~/.ssh/authorized_keys`) we can parse the DHCP Leases file and shutdown each node in turn and finally the cache/gateway RPi.
 
 ```bash
 #!/bin/bash
@@ -273,6 +272,7 @@ Connection to master closed by remote host.
 Shutting down node3
 Connection to node3 closed by remote host.
 ```
-# Summary
+
+## Summary
 
 We've now configured the RPi cluster network to isolate the RPi's behind a single gateway and enable the cluster-as-an appliance network isolation.  We can add the cluster to a network by either joining the gateway RPi to the host WIFI network or by patching in via the `eth1` port and DHCP on the host network will assign the cluster an IP address which can be used to SSH into the gateway RPi or use it as a jump box to the internal RPi's.

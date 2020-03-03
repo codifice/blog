@@ -4,7 +4,7 @@ date: 2020-02-17T16:47:32Z
 draft: false
 authors: ["martincjarvis"]
 comments: true
-thumbnail: "/architecture-gallery"
+thumbnail: "/devops-gallery"
 series: ["rpi"]
 ---
 # Basic Installation and Configuration
